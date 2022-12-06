@@ -1,10 +1,10 @@
 import 'package:elberte_com/utils/screen_helper.dart';
 import 'package:flutter/material.dart';
 
-import 'components.dart';
+import './header.dart';
 
-class Header extends StatelessWidget {
-  const Header({super.key});
+class SiteHeader extends StatelessWidget {
+  const SiteHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class Header extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
             HeaderLogo(),
-            DrawerButton(),
+            HeaderDrawerButton(),
           ],
         ),
       ),

@@ -19,7 +19,8 @@ class Home extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            Header(),
+            SiteHeader(),
+            // Intro(),
           ],
         ),
       ),

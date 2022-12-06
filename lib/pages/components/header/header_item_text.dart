@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/header_item.dart';
+import '../../../models/header_item.dart';
 
 class HeaderItemText extends StatelessWidget {
   final HeaderItem item;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/globals.dart';
+import '../../../utils/globals.dart';
 
-class DrawerButton extends StatelessWidget {
-  const DrawerButton({
+class HeaderDrawerButton extends StatelessWidget {
+  const HeaderDrawerButton({
     Key? key,
   }) : super(key: key);
 

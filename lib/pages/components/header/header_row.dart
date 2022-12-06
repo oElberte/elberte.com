@@ -2,7 +2,8 @@ import 'package:elberte_com/pages/components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-import '../../utils/header_items.dart';
+import '../../../utils/header_items.dart';
+
 
 class HeaderRow extends StatelessWidget {
   const HeaderRow({super.key});

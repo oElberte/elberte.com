@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../utils/constants.dart';
+import '../../../utils/constants.dart';
+
 
 class HeaderLogo extends StatelessWidget {
   const HeaderLogo({super.key});
