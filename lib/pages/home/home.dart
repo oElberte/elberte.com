@@ -15,16 +15,12 @@ class Home extends StatelessWidget {
       endDrawer: Drawer(
         child: MobileDrawer(headerItems),
       ),
-      body: SizedBox(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              SizedBox(
-                child: Header(),
-              ),
-            ],
-          ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Header(),
+          ],
         ),
       ),
     );

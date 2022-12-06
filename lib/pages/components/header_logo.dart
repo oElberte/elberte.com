@@ -8,32 +8,31 @@ class HeaderLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: MouseRegion(
-        cursor: SystemMouseCursors.click,
-        child: GestureDetector(
-          onTap: () {},
-          child: RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: "E",
-                  style: GoogleFonts.oswald(
-                    color: Colors.white,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                  ),
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        //TODO: Implement onTap
+        onTap: () {},
+        child: RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: "E",
+                style: GoogleFonts.oswald(
+                  color: Colors.white,
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
                 ),
-                TextSpan(
-                  text: ".",
-                  style: GoogleFonts.oswald(
-                    color: kPrimaryColor,
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                  ),
+              ),
+              TextSpan(
+                text: ".",
+                style: GoogleFonts.oswald(
+                  color: kPrimaryColor,
+                  fontSize: 36,
+                  fontWeight: FontWeight.bold,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

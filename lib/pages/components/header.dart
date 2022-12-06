@@ -8,12 +8,10 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: ScreenHelper(
-        desktop: buildHeader(),
-        tablet: buildHeader(),
-        mobile: buildMobileHeader(),
-      ),
+    return ScreenHelper(
+      desktop: buildHeader(),
+      tablet: buildHeader(),
+      mobile: buildMobileHeader(),
     );
   }
 

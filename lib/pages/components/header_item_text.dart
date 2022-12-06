@@ -12,10 +12,10 @@ class HeaderItemText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: Container(
-        margin: const EdgeInsets.only(right: 30),
+    return Container(
+      margin: const EdgeInsets.only(right: 30),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
         child: GestureDetector(
           onTap: item.onTap,
           child: Text(

@@ -16,10 +16,8 @@ class HeaderRow extends StatelessWidget {
       ],
       child: Row(
         children: headerItems
-            .map(
-              (item) =>
-                  item.isButton ? HeaderItemButton(item) : HeaderItemText(item),
-            )
+            .map((item) =>
+                item.isButton ? HeaderItemButton(item) : HeaderItemText(item))
             .toList(),
       ),
     );

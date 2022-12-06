@@ -1,6 +1,6 @@
 import '../models/header_item.dart';
 
-//TODO: Implement onTap on items
+//TODO: Implement onTap
 List<HeaderItem> headerItems = [
   HeaderItem(
     title: "HOME",
