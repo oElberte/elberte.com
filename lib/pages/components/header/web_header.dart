@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import './header.dart';
 
-class SiteHeader extends StatelessWidget {
-  const SiteHeader({super.key});
+class WebHeader extends StatelessWidget {
+  const WebHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
