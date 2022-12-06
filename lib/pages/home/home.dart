@@ -19,8 +19,9 @@ class Home extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            WebHeader(),
-            WebIntro(),
+            HeaderSection(),
+            IntroSection(),
+            SizedBox(height: 20),
           ],
         ),
       ),

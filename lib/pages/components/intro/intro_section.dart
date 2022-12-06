@@ -5,8 +5,8 @@ import 'package:responsive_framework/responsive_framework.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/screen_helper.dart';
 
-class WebIntro extends StatelessWidget {
-  const WebIntro({super.key});
+class IntroSection extends StatelessWidget {
+  const IntroSection({super.key});
 
   @override
   Widget build(BuildContext context) {
