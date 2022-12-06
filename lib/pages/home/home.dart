@@ -22,6 +22,7 @@ class Home extends StatelessWidget {
             HeaderSection(),
             IntroSection(),
             SizedBox(height: 20),
+            PortfolioSection(),
           ],
         ),
       ),
