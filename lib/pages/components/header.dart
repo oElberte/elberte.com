@@ -1,4 +1,5 @@
 import 'package:elberte_com/utils/constants.dart';
+import 'package:elberte_com/utils/screen_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -134,6 +135,41 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return SizedBox(
+      child: ScreenHelper(
+        desktop: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: buildHeader(),
+        ),
+        tablet: buildHeader(),
+        mobile: buildMobileHeader(),
+      ),
+    );
+  }
+
+  Widget buildMobileHeader() {
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const HeaderLogo(),
+            GestureDetector(
+              onTap: () {},
+              child: const Icon(
+                Icons.menu,
+                color: Colors.white,
+                size: 28,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildHeader() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
