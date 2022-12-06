@@ -1,4 +1,5 @@
 import 'package:elberte_com/utils/constants.dart';
+import 'package:elberte_com/utils/globals.dart';
 import 'package:elberte_com/utils/screen_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -86,7 +87,7 @@ class HeaderRow extends StatelessWidget {
                       cursor: SystemMouseCursors.click,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: kDangerColor,
+                          color: kPrimaryColor,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         padding: const EdgeInsets.symmetric(
@@ -156,7 +157,10 @@ class Header extends StatelessWidget {
           children: [
             const HeaderLogo(),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                //Open drawer with global key
+                Globals.scaffoldKey.currentState!.openEndDrawer();
+              },
               child: const Icon(
                 Icons.menu,
                 color: Colors.white,
