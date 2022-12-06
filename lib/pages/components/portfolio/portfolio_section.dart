@@ -19,7 +19,7 @@ class PortfolioSection extends StatelessWidget {
   Widget _buildUi(double width) {
     return Center(
       child: LayoutBuilder(
-        builder: (context, constraints) {
+        builder: (BuildContext context, BoxConstraints constraints) {
           return ResponsiveWrapper(
             maxWidth: width,
             minWidth: width,
@@ -30,9 +30,15 @@ class PortfolioSection extends StatelessWidget {
               children: [
                 Expanded(
                   flex: constraints.maxWidth > 720 ? 1 : 0,
-                  child: Image.asset(
-                    'assets/portfolio/pokedex.png',
-                    width: constraints.maxWidth > 720 ? null : 350,
+                  child: Padding(
+                    padding: constraints.maxWidth > 720
+                        ? const EdgeInsets.only(bottom: 0)
+                        : const EdgeInsets.only(bottom: 25),
+                    child: Image.asset(
+                      'assets/portfolio/pokedex_small.png',
+                      height: 500,
+                      width: constraints.maxWidth > 720 ? null : 350,
+                    ),
                   ),
                 ),
                 Expanded(
@@ -61,7 +67,7 @@ class PortfolioSection extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       const Text(
-                        'This is a random text about the project brabo de maisThis is a random text about the project brabo de maisThis is a random text about the project brabo de maisThis is a random text about the project brabo de mais',
+                        'This is a random text about the project This is a random text about the project This is a random text about the project This is a random text about the project This is a random text about the project This is a random text about the project This is a random text about the project ',
                         style: TextStyle(
                           color: kCaptionColor,
                           height: 1.5,

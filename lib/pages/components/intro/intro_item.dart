@@ -90,11 +90,10 @@ IntroItemModel introItem = IntroItemModel(
       )
     ],
   ),
-  image: ClipRRect(
-    borderRadius: BorderRadius.circular(250),
-    child: Image.asset(
-      'assets/elberte.jpeg',
-      fit: BoxFit.contain,
-    ),
+  image: Image.asset(
+    'assets/elberte.png',
+    fit: BoxFit.contain,
+    width: 400,
+    height: 400,
   ),
 );

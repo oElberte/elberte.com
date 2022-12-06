@@ -21,8 +21,9 @@ class Home extends StatelessWidget {
           children: const [
             HeaderSection(),
             IntroSection(),
-            SizedBox(height: 20),
             PortfolioSection(),
+            SizedBox(height: 130),
+            SkillsSection(),
           ],
         ),
       ),
