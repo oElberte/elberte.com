@@ -1,8 +1,9 @@
+import 'dart:html' as html;
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../utils/constants.dart';
-
 
 class HeaderLogo extends StatelessWidget {
   const HeaderLogo({super.key});
@@ -12,29 +13,36 @@ class HeaderLogo extends StatelessWidget {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        //TODO: Implement onTap
-        onTap: () {},
-        child: RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: "E",
-                style: GoogleFonts.oswald(
-                  color: Colors.white,
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
+        onTap: () => html.window.open(
+          kLinkedinLink,
+          '_blank',
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: "E",
+                    style: GoogleFonts.oswald(
+                      color: Colors.white,
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextSpan(
+                    text: ".",
+                    style: GoogleFonts.oswald(
+                      color: kPrimaryColor,
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
-              TextSpan(
-                text: ".",
-                style: GoogleFonts.oswald(
-                  color: kPrimaryColor,
-                  fontSize: 36,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

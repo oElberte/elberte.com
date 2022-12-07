@@ -22,6 +22,7 @@ class EducationSection extends StatelessWidget {
 
   Widget _buildUi(double width) {
     return Container(
+      padding: const EdgeInsets.only(bottom: 130),
       alignment: Alignment.center,
       child: ResponsiveWrapper(
         maxWidth: width,

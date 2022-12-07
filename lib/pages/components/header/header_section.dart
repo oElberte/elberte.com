@@ -16,8 +16,8 @@ class HeaderSection extends StatelessWidget {
   }
 
   Widget buildHeader() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [
@@ -31,7 +31,7 @@ class HeaderSection extends StatelessWidget {
   Widget buildMobileHeader() {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
@@ -42,4 +42,7 @@ class HeaderSection extends StatelessWidget {
       ),
     );
   }
+
+  // @override
+  // Size get preferredSize => const Size.fromHeight(60);
 }

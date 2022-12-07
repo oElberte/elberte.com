@@ -1,26 +1,46 @@
+import 'package:elberte_com/utils/globals.dart';
+
 import '../models/header_item.dart';
 
-//TODO: Implement onTap
 List<HeaderItem> headerItems = [
   HeaderItem(
-    title: "HOME",
-    onTap: () {},
+    title: 'INÍCIO',
+    onTap: () {
+      scrollTo(0);
+      Globals.scaffoldKey.currentState!.closeEndDrawer();
+    },
   ),
   HeaderItem(
-    title: "EXPERIÊNCIA",
-    onTap: () {},
+    title: 'EXPERIÊNCIA',
+    onTap: () {
+      scrollTo(1);
+      Globals.scaffoldKey.currentState!.closeEndDrawer();
+    },
   ),
   HeaderItem(
-    title: "CERTIFICADOS",
-    onTap: () {},
+    title: 'CERTIFICADOS',
+    onTap: () {
+      scrollTo(2);
+      Globals.scaffoldKey.currentState!.closeEndDrawer();
+    },
   ),
   HeaderItem(
-    title: "SKILLS",
-    onTap: () {},
+    title: 'HABILIDADES',
+    onTap: () {
+      scrollTo(3);
+      Globals.scaffoldKey.currentState!.closeEndDrawer();
+    },
   ),
   HeaderItem(
-    title: "CONTATO",
-    onTap: () {},
+    title: 'CONTATO',
+    onTap: () {
+      scrollTo(4);
+      Globals.scaffoldKey.currentState!.closeEndDrawer();
+    },
     isButton: true,
   ),
 ];
+
+void scrollTo(int index) {
+  Globals().scrollToIndex(index);
+}

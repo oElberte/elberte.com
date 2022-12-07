@@ -74,12 +74,12 @@ class FooterSection extends StatelessWidget {
                                 onTap: () {
                                   if (item.text == 'contato@elberte.com') {
                                     html.window.open(
-                                      'mailto:contato@elberte.com',
+                                      kMailTo,
                                       '_blank',
                                     );
                                   } else {
                                     html.window.open(
-                                      'https://www.github.com/oElberte',
+                                      kGithubLink,
                                       '_blank',
                                     );
                                   }
@@ -128,7 +128,7 @@ class FooterSection extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 25),
                           child: GestureDetector(
                             onTap: () => html.window.open(
-                              'https://www.github.com/oElberte',
+                              kGithubLink,
                               '_blank',
                             ),
                             child: const MouseRegion(

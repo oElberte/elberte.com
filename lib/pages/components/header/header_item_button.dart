@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../models/header_item.dart';
 import '../../../utils/constants.dart';
 
-
 class HeaderItemButton extends StatelessWidget {
   final HeaderItem item;
 
@@ -22,8 +21,8 @@ class HeaderItemButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 5,
+          horizontal: 10,
+          vertical: 3,
         ),
         child: TextButton(
           onPressed: item.onTap,

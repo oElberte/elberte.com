@@ -1,10 +1,10 @@
+import 'package:elberte_com/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../models/intro_item.dart';
 import '../../../utils/constants.dart';
 
-//TODO: Implement onTap on this file
 IntroItemModel introItem = IntroItemModel(
   text: Column(
     mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +50,7 @@ IntroItemModel introItem = IntroItemModel(
             ),
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () => Globals().scrollToIndex(4),
             child: const MouseRegion(
               cursor: SystemMouseCursors.click,
               child: Text(
