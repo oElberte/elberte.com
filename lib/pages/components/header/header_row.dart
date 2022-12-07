@@ -1,4 +1,4 @@
-import 'package:elberte_com/pages/components/components.dart';
+import '../components.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 

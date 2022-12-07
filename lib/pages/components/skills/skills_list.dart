@@ -2,26 +2,26 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../../../models/skill.dart';
+import '../../../models/skill_item.dart';
 
 const double _width = 50;
 const double _height = 50;
 
-List<Skill> skills = [
-  Skill(
-    skill: 'Flutter',
+List<SkillItem> skills = [
+  SkillItem(
+    name: 'Flutter\n1 ano',
     image: const ImageDropShadow('assets/skills/flutter-icon.png'),
   ),
-  Skill(
-    skill: 'Swift',
+  SkillItem(
+    name: 'Swift\n6 meses',
     image: const ImageDropShadow('assets/skills/swift-icon.webp'),
   ),
-  Skill(
-    skill: 'Git',
+  SkillItem(
+    name: 'Git\n1 ano',
     image: const ImageDropShadow('assets/skills/git-icon.png'),
   ),
-  Skill(
-    skill: 'MySQL',
+  SkillItem(
+    name: 'MySQL\n1 ano',
     image: const ImageDropShadow('assets/skills/mysql-icon.png'),
   ),
 ];

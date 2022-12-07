@@ -1,5 +1,5 @@
-import 'package:elberte_com/utils/constants.dart';
-import 'package:elberte_com/utils/screen_helper.dart';
+import '../../../utils/constants.dart';
+import '../../../utils/screen_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';

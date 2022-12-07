@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Skill {
-  final String skill;
+class SkillItem {
+  final String name;
   final Widget image;
 
-  Skill({
-    required this.skill,
+  SkillItem({
+    required this.name,
     required this.image,
   });
 }

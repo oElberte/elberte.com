@@ -1,7 +1,7 @@
-import 'package:elberte_com/utils/screen_helper.dart';
+import '../../../utils/screen_helper.dart';
 import 'package:flutter/material.dart';
 
-import './header.dart';
+import 'header.dart';
 
 class HeaderSection extends StatelessWidget {
   const HeaderSection({super.key});

@@ -7,15 +7,15 @@ List<HeaderItem> headerItems = [
     onTap: () {},
   ),
   HeaderItem(
-    title: "SKILLS",
-    onTap: () {},
-  ),
-  HeaderItem(
     title: "EXPERIÊNCIA",
     onTap: () {},
   ),
   HeaderItem(
-    title: "PORTIFÓLIO",
+    title: "CERTIFICADOS",
+    onTap: () {},
+  ),
+  HeaderItem(
+    title: "SKILLS",
     onTap: () {},
   ),
   HeaderItem(

@@ -1,6 +1,6 @@
-import 'package:elberte_com/utils/globals.dart';
 import 'package:flutter/material.dart';
 
+import '../../utils/globals.dart';
 import '../../utils/header_items.dart';
 import '../components/components.dart';
 import 'components/components.dart';
@@ -24,6 +24,8 @@ class Home extends StatelessWidget {
             PortfolioSection(),
             SizedBox(height: 130),
             SkillsSection(),
+            SizedBox(height: 130),
+            FooterSection(),
           ],
         ),
       ),

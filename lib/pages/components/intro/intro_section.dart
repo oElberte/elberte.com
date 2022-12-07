@@ -1,4 +1,4 @@
-import 'package:elberte_com/pages/components/intro/intro_item.dart';
+import 'intro_item.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -11,7 +11,7 @@ class IntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double introContainerHeight = MediaQuery.of(context).size.height *
-        (ScreenHelper.isMobile(context) ? .6 : .7);
+        (ScreenHelper.isMobile(context) ? .8 : .7);
 
     return SizedBox(
       height: introContainerHeight,
@@ -86,6 +86,18 @@ Widget _buildMobile(BuildContext context, Widget text, Widget image) {
       maxWidth: getMobileMaxWidth(context),
     ),
     width: double.infinity,
-    child: text,
+    child: Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(bottom: 30),
+          child: SizedBox(
+            height: 250,
+            width: 250,
+            child: image,
+          ),
+        ),
+        text,
+      ],
+    ),
   );
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../utils/constants.dart';
 import '../../../utils/on_hover_button.dart';
@@ -19,7 +18,7 @@ Widget buildSkillItem(BuildContext context, width) {
               return Container(
                 width: ScreenHelper.isMobile(context) ? null : 420,
                 margin: const EdgeInsets.only(bottom: 15),
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 decoration: BoxDecoration(
                   color: isHovered ? Colors.grey[850] : null,
                   border: Border.all(
@@ -32,10 +31,12 @@ Widget buildSkillItem(BuildContext context, width) {
                 ),
                 child: Row(
                   children: [
-                    skill.image,
-                    const SizedBox(width: 20),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: skill.image,
+                    ),
                     Text(
-                      skill.skill,
+                      skill.name,
                       style: const TextStyle(
                         letterSpacing: 0.4,
                         color: Colors.white,
