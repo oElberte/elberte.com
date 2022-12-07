@@ -19,8 +19,8 @@ class PortfolioSection extends StatelessWidget {
   }
 
   Widget _buildUi(double width, BuildContext context) {
-    double carouselContainerHeight = MediaQuery.of(context).size.height *
-        (ScreenHelper.isMobile(context) ? .7 : .6);
+    double carouselContainerHeight =
+        MediaQuery.of(context).size.width < 720 ? 770 : 550;
 
     final CarouselOptions carouselOptions = CarouselOptions(
       viewportFraction: 1,
@@ -28,28 +28,25 @@ class PortfolioSection extends StatelessWidget {
       height: carouselContainerHeight,
     );
 
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 130),
-      child: Center(
-        child: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints) {
-            return CarouselSlider(
-              carouselController: Globals.carouselController,
-              options: carouselOptions,
-              items: [
-                PortfolioItem(
-                  width: width,
-                  constraints: constraints,
-                  imageAsset: 'assets/portfolio/pokedex_small.png',
-                  title: 'Pokédex app',
-                  description:
-                      'Um aplicativo de Pokédex feito para mobile e que conta com diversas funções, como dark mode, permanecer dados na memória do aparelho, favoritos e muito mais.',
-                  repository: 'pokedex',
-                ),
-              ],
-            );
-          },
-        ),
+    return Center(
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          return CarouselSlider(
+            carouselController: Globals.carouselController,
+            options: carouselOptions,
+            items: [
+              PortfolioItem(
+                width: width,
+                constraints: constraints,
+                imageAsset: 'assets/portfolio/pokedex_small.png',
+                title: 'Pokédex app',
+                description:
+                    'Um aplicativo de Pokédex feito para mobile e que conta com diversas funções, como dark mode, permanecer dados na memória do aparelho, favoritos e muito mais.',
+                repository: 'pokedex',
+              ),
+            ],
+          );
+        },
       ),
     );
   }

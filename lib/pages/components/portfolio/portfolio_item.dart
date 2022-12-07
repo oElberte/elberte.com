@@ -49,7 +49,7 @@ class PortfolioItem extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: 80),
+          SizedBox(width: constraints.maxWidth > 1200 ? 80 : 0),
           Expanded(
             flex: constraints.maxWidth > 720 ? 1 : 0,
             child: Column(
@@ -90,11 +90,12 @@ class PortfolioItem extends StatelessWidget {
                       cursor: SystemMouseCursors.click,
                       child: Container(
                         decoration: BoxDecoration(
-                            color: kPrimaryColor,
-                            borderRadius: BorderRadius.circular(8)),
+                          color: kPrimaryColor,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                         height: 48,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 28,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: constraints.maxWidth < 800 ? 0 : 28,
                         ),
                         //TODO: Add images of the app in github page
                         child: TextButton(
@@ -124,10 +125,9 @@ class PortfolioItem extends StatelessWidget {
                           border: Border.all(color: kPrimaryColor),
                         ),
                         height: 48,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 28,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: constraints.maxWidth < 800 ? 0 : 28,
                         ),
-                        //TODO: Implement onTap for changing the app with carousel and onHover
                         child: TextButton(
                           onPressed: () => Globals.carouselController.nextPage(
                             duration: const Duration(seconds: 1),

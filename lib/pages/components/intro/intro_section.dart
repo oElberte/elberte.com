@@ -11,7 +11,7 @@ class IntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double introContainerHeight = MediaQuery.of(context).size.height *
-        (ScreenHelper.isMobile(context) ? .8 : .7);
+        (ScreenHelper.isMobile(context) ? .7 : .6);
 
     return SizedBox(
       height: introContainerHeight,

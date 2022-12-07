@@ -31,6 +31,7 @@ List<HeaderItem> headerItems = [
       Globals.scaffoldKey.currentState!.closeEndDrawer();
     },
   ),
+  //TODO: Implement modal onTap
   HeaderItem(
     title: 'CONTATO',
     onTap: () {

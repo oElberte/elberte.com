@@ -24,6 +24,11 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         canvasColor: kBackgroundColor,
         textTheme: GoogleFonts.latoTextTheme(),
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            overlayColor: MaterialStateProperty.all(Colors.transparent),
+          ),
+        ),
       ),
       builder: (context, widget) => ResponsiveWrapper.builder(
         ClampingScrollWrapper.builder(context, widget!),

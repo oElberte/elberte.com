@@ -1,3 +1,5 @@
+import 'dart:html' as html;
+
 import 'package:elberte_com/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -76,7 +78,10 @@ IntroItemModel introItem = IntroItemModel(
           height: 48,
           padding: const EdgeInsets.symmetric(horizontal: 28),
           child: TextButton(
-            onPressed: () {},
+            onPressed: () => html.window.open(
+              kLinkedinLink,
+              '_blank',
+            ),
             child: const Text(
               'SAIBA MAIS',
               style: TextStyle(

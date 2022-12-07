@@ -28,7 +28,10 @@ class Home extends StatelessWidget {
             index: index,
             key: ValueKey(index),
             controller: controller,
-            child: homeSections[index],
+            child: Padding(
+              padding: EdgeInsets.only(bottom: index == 4 ? 0 : 130),
+              child: homeSections[index],
+            ),
           );
         },
       ),
