@@ -38,7 +38,7 @@ IntroItemModel introItem = IntroItemModel(
           height: 1,
         ),
       ),
-      const SizedBox(height: 10),
+      const SizedBox(height: 5),
       Wrap(
         children: [
           const Text(
@@ -54,7 +54,7 @@ IntroItemModel introItem = IntroItemModel(
             child: const MouseRegion(
               cursor: SystemMouseCursors.click,
               child: Text(
-                'Vamos conversar.',
+                'Fale comigo.',
                 style: TextStyle(
                   height: 1.5,
                   color: Colors.white,

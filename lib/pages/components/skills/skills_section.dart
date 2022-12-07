@@ -46,12 +46,15 @@ class SkillsSection extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      const Text(
-                        'Essas são todas as linguagens que utilizo no meu dia a dia, atualmente estou aprendendo Kotlin.',
-                        style: TextStyle(
-                          color: kCaptionColor,
-                          height: 1.5,
-                          fontSize: 16,
+                      Container(
+                        constraints: const BoxConstraints(maxWidth: 400),
+                        child: const Text(
+                          'Essas são todas as linguagens que utilizo no meu dia a dia, atualmente estou aprendendo Kotlin.',
+                          style: TextStyle(
+                            color: kCaptionColor,
+                            height: 1.5,
+                            fontSize: 15,
+                          ),
                         ),
                       ),
                       const SizedBox(height: 15),
