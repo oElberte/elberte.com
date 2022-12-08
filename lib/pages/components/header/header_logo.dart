@@ -1,9 +1,7 @@
-import 'dart:html' as html;
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../utils/constants.dart';
+import '../../../utils/utils.dart';
 
 class HeaderLogo extends StatelessWidget {
   const HeaderLogo({super.key});
@@ -13,10 +11,7 @@ class HeaderLogo extends StatelessWidget {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: () => html.window.open(
-          kLinkedinLink,
-          '_blank',
-        ),
+        onTap: () => htmlOpen(kLinkedinLink),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

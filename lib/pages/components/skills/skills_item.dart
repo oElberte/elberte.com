@@ -26,7 +26,7 @@ Widget buildSkillItem(BuildContext context, width) {
                     width: 1,
                   ),
                   borderRadius: const BorderRadius.all(
-                    Radius.circular(200),
+                    Radius.circular(20),
                   ),
                 ),
                 child: Row(

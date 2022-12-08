@@ -1,12 +1,12 @@
 import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:sprung/sprung.dart';
 
 import '../../../utils/constants.dart';
 import '../../../utils/globals.dart';
+import '../../widgets/widgets.dart';
 
 class PortfolioItem extends StatelessWidget {
   final double width;
@@ -56,33 +56,15 @@ class PortfolioItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Headline1Text(
                   'MOBILE APP',
-                  style: GoogleFonts.oswald(
-                    color: kPrimaryColor,
-                    fontWeight: FontWeight.w900,
-                    fontSize: 16,
-                  ),
+                  color: kPrimaryColor,
+                  fontSize: 16,
                 ),
                 const SizedBox(height: 15),
-                Text(
-                  title.toUpperCase(),
-                  style: GoogleFonts.oswald(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w900,
-                    height: 1.3,
-                    fontSize: 35,
-                  ),
-                ),
+                Headline1Text(title.toUpperCase()),
                 const SizedBox(height: 10),
-                Text(
-                  description,
-                  style: const TextStyle(
-                    color: kCaptionColor,
-                    height: 1.5,
-                    fontSize: 15,
-                  ),
-                ),
+                DescriptionText(description),
                 const SizedBox(height: 25),
                 Row(
                   children: [
@@ -100,7 +82,7 @@ class PortfolioItem extends StatelessWidget {
                         //TODO: Add images of the app in github page
                         child: TextButton(
                           onPressed: () => html.window.open(
-                            '$kGithubLink/$repository/',
+                            'https://$kGithubLink/$repository/',
                             '_blank',
                           ),
                           child: const Center(
@@ -130,7 +112,7 @@ class PortfolioItem extends StatelessWidget {
                         ),
                         child: TextButton(
                           onPressed: () => Globals.carouselController.nextPage(
-                            duration: const Duration(seconds: 1),
+                            duration: const Duration(milliseconds: 750),
                             curve: Sprung.overDamped,
                           ),
                           child: const Center(

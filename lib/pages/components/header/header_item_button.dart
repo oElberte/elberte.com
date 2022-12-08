@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../models/header_item.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/globals.dart';
-import '../../home/components/components.dart';
+import '../../widgets/widgets.dart';
 
 class HeaderItemButton extends StatelessWidget {
   final HeaderItem item;

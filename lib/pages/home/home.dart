@@ -19,7 +19,7 @@ class Home extends StatelessWidget {
       endDrawer: Drawer(
         child: MobileDrawer(headerItems),
       ),
-      appBar: const AppBarSection(),
+      appBar: const HeaderAppBar(),
       body: ListView.builder(
         itemCount: homeSections.length,
         controller: controller,

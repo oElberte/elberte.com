@@ -1,12 +1,9 @@
-import 'dart:html' as html;
-
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-import '../../../utils/constants.dart';
-import '../../../utils/screen_helper.dart';
-import './education_list.dart';
+import '../../../utils/utils.dart';
+import '../../widgets/widgets.dart';
+import './education.dart';
 
 class EducationSection extends StatelessWidget {
   const EducationSection({super.key});
@@ -30,30 +27,15 @@ class EducationSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
+            const Headline1Text(
               'CERTIFICADOS',
-              style: GoogleFonts.oswald(
-                color: Colors.white,
-                fontWeight: FontWeight.w900,
-                fontSize: 30,
-                height: 1.3,
-              ),
+              fontSize: 30,
             ),
             const SizedBox(height: 20),
             // const SizedBox(height: 5),
             // Wrap(
-            //   children: [
-            //     Container(
-            //       constraints: const BoxConstraints(maxWidth: 400),
-            //       child: const Text(
-            //         'This is the education section of the website This is the education section of the website This is the education section of the website This is the education section of the website This is the education section of the website This is the education section of the website This is the education section of the website ',
-            //         style: TextStyle(
-            //           color: kCaptionColor,
-            //           height: 1.5,
-            //           fontSize: 15,
-            //         ),
-            //       ),
-            //     ),
+            //   children: const [
+            //     DescriptionText('DESCRIPTION'),
             //   ],
             // ),
             // const SizedBox(height: 40),
@@ -64,47 +46,9 @@ class EducationSection extends StatelessWidget {
                   runSpacing: 20,
                   children: educationList
                       .map(
-                        (education) => SizedBox(
-                          width: constraints.maxWidth / 2 - 20,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                education.period,
-                                style: GoogleFonts.oswald(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 20,
-                                ),
-                              ),
-                              const SizedBox(height: 5),
-                              Text(
-                                education.description,
-                                maxLines: 4,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                  color: kCaptionColor,
-                                  height: 1.5,
-                                ),
-                              ),
-                              const SizedBox(height: 20),
-                              MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: GestureDetector(
-                                  onTap: () => html.window.open(
-                                    'https://${education.linkName}',
-                                    '_blank',
-                                  ),
-                                  child: Text(
-                                    education.linkName,
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                        (education) => EducationItem(
+                          education: education,
+                          constraints: constraints,
                         ),
                       )
                       .toList(),

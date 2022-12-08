@@ -1,9 +1,9 @@
-import '../../../utils/constants.dart';
-import '../../../utils/screen_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
+import '../../../utils/constants.dart';
+import '../../../utils/screen_helper.dart';
+import '../../widgets/widgets.dart';
 import '../components.dart';
 
 class SkillsSection extends StatelessWidget {
@@ -36,26 +36,10 @@ class SkillsSection extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'SKILLS',
-                        style: GoogleFonts.oswald(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w900,
-                          fontSize: 28,
-                          height: 1.3,
-                        ),
-                      ),
+                      const Headline1Text('SKILLS', fontSize: 28),
                       const SizedBox(height: 10),
-                      Container(
-                        constraints: const BoxConstraints(maxWidth: 400),
-                        child: const Text(
-                          'Essas são todas as linguagens que utilizo no meu dia a dia, atualmente estou aprendendo Kotlin.',
-                          style: TextStyle(
-                            color: kCaptionColor,
-                            height: 1.5,
-                            fontSize: 15,
-                          ),
-                        ),
+                      const DescriptionText(
+                        'Essas são todas as linguagens que utilizo no meu dia a dia, atualmente estou aprendendo Kotlin.',
                       ),
                       const SizedBox(height: 15),
                       buildSkillItem(context, width),

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'dart:html' as html;
 
-import '../../../utils/constants.dart';
-import '../../../utils/screen_helper.dart';
-import './footer_items.dart';
+import '../../../utils/utils.dart';
+import './footer.dart';
 
 class FooterSection extends StatelessWidget {
   const FooterSection({super.key});
@@ -38,65 +35,9 @@ class FooterSection extends StatelessWidget {
                   runSpacing: 20,
                   children: footerItems
                       .map(
-                        (item) => SizedBox(
-                          height: 120,
-                          width: ScreenHelper.isMobile(context)
-                              ? constraints.maxWidth / 1.95 - 20
-                              : constraints.maxWidth / 2 - 20,
-                          child: Column(
-                            crossAxisAlignment: item.title == 'EMAIL'
-                                ? CrossAxisAlignment.start
-                                : CrossAxisAlignment.end,
-                            children: [
-                              Row(
-                                mainAxisAlignment: item.title == 'EMAIL'
-                                    ? MainAxisAlignment.start
-                                    : MainAxisAlignment.end,
-                                children: [
-                                  Image.asset(
-                                    item.iconPath,
-                                    width: 30,
-                                    color: kPrimaryColor,
-                                  ),
-                                  const SizedBox(width: 15),
-                                  Text(
-                                    item.title,
-                                    style: GoogleFonts.oswald(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 5),
-                              GestureDetector(
-                                onTap: () {
-                                  if (item.text == kEmail) {
-                                    html.window.open(
-                                      kMailTo,
-                                      '_blank',
-                                    );
-                                  } else {
-                                    html.window.open(
-                                      kGithubLink,
-                                      '_blank',
-                                    );
-                                  }
-                                },
-                                child: MouseRegion(
-                                  cursor: SystemMouseCursors.click,
-                                  child: Text(
-                                    item.text,
-                                    style: const TextStyle(
-                                      color: kCaptionColor,
-                                      fontSize: 17,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                        (footerItem) => FooterItemWidget(
+                          item: footerItem,
+                          constraints: constraints,
                         ),
                       )
                       .toList(),
@@ -127,10 +68,7 @@ class FooterSection extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(bottom: 25),
                           child: GestureDetector(
-                            onTap: () => html.window.open(
-                              kGithubLink,
-                              '_blank',
-                            ),
+                            onTap: () => htmlOpen(kGithubLink),
                             child: const MouseRegion(
                               cursor: SystemMouseCursors.click,
                               child: Text(
@@ -154,3 +92,5 @@ class FooterSection extends StatelessWidget {
     );
   }
 }
+
+

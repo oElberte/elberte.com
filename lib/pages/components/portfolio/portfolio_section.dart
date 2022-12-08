@@ -41,7 +41,7 @@ class PortfolioSection extends StatelessWidget {
                 imageAsset: 'assets/portfolio/pokedex_small.png',
                 title: 'Pokédex app',
                 description:
-                    'Um aplicativo de Pokédex feito para mobile e que conta com diversas funções, como dark mode, permanecer dados na memória do aparelho, favoritos e muito mais.',
+                    'Um aplicativo de Pokédex feito para mobile que conta com diversas funções como, dark mode, favoritos, manter configurações do usuário na memória do dispositivo, e muito mais.',
                 repository: 'pokedex',
               ),
             ],

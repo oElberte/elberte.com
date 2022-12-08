@@ -1,9 +1,8 @@
-import 'intro_item.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-import '../../../utils/constants.dart';
-import '../../../utils/screen_helper.dart';
+import '../../../utils/utils.dart';
+import './intro_item.dart';
 
 class IntroSection extends StatelessWidget {
   const IntroSection({super.key});

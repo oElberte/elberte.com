@@ -1,12 +1,11 @@
-import 'package:elberte_com/utils/constants.dart';
-
-import '../../../utils/screen_helper.dart';
 import 'package:flutter/material.dart';
 
-import 'header.dart';
+import '../../../utils/constants.dart';
+import '../../../utils/screen_helper.dart';
+import './header.dart';
 
-class AppBarSection extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarSection({super.key});
+class HeaderAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const HeaderAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {

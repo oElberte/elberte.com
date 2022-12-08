@@ -1,16 +1,14 @@
-import 'dart:html' as html;
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../utils/constants.dart';
+import '../../utils/utils.dart';
 
-class ModalContactItem extends StatelessWidget {
+class ShowDialogItem extends StatelessWidget {
   final String title;
   final String imageAsset;
   final String contact;
 
-  const ModalContactItem({
+  const ShowDialogItem({
     Key? key,
     required this.title,
     required this.imageAsset,
@@ -45,15 +43,9 @@ class ModalContactItem extends StatelessWidget {
         GestureDetector(
           onTap: () {
             if (title == 'WhatsApp') {
-              html.window.open(
-                kWhatsAppLink,
-                '_blank',
-              );
+              htmlOpen(kWhatsAppLink);
             } else {
-              html.window.open(
-                kMailTo,
-                '_blank',
-              );
+              mailTo();
             }
           },
           child: MouseRegion(

@@ -1,11 +1,8 @@
-import 'dart:html' as html;
-
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../models/intro_item.dart';
-import '../../../utils/constants.dart';
-import '../../home/components/components.dart';
+import '../../../utils/utils.dart';
+import '../../widgets/widgets.dart';
 
 IntroItemModel buildIntroItem(BuildContext context) {
   return IntroItemModel(
@@ -14,24 +11,13 @@ IntroItemModel buildIntroItem(BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(
-          "MOBILE DEVELOPER",
-          style: GoogleFonts.oswald(
-            color: kPrimaryColor,
-            fontWeight: FontWeight.w900,
-            fontSize: 16,
-          ),
+        const Headline1Text(
+          'MOBILE DEVELOPER',
+          color: kPrimaryColor,
+          fontSize: 16,
         ),
         const SizedBox(height: 18),
-        Text(
-          'ELBERTE\nPLINIO',
-          style: GoogleFonts.oswald(
-            color: Colors.white,
-            fontSize: 40,
-            fontWeight: FontWeight.w900,
-            height: 1.3,
-          ),
-        ),
+        const Headline1Text('ELBERTE\nPLINIO'),
         const SizedBox(height: 10),
         const Text(
           'Flutter como linguagem principal para desenvolvimento.',
@@ -44,25 +30,14 @@ IntroItemModel buildIntroItem(BuildContext context) {
         const SizedBox(height: 5),
         Wrap(
           children: [
-            const Text(
-              'Precisa de um aplicativo? ',
-              style: TextStyle(
-                color: kCaptionColor,
-                fontSize: 15,
-                height: 1.5,
-              ),
-            ),
+            const DescriptionText('Precisa de um aplicativo? '),
             GestureDetector(
               onTap: () => showContactDialog(context),
               child: const MouseRegion(
                 cursor: SystemMouseCursors.click,
-                child: Text(
+                child: DescriptionText(
                   'Fale comigo.',
-                  style: TextStyle(
-                    height: 1.5,
-                    color: Colors.white,
-                    fontSize: 15,
-                  ),
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -79,10 +54,7 @@ IntroItemModel buildIntroItem(BuildContext context) {
             height: 48,
             padding: const EdgeInsets.symmetric(horizontal: 28),
             child: TextButton(
-              onPressed: () => html.window.open(
-                kLinkedinLink,
-                '_blank',
-              ),
+              onPressed: () => htmlOpen(kLinkedinLink),
               child: const Text(
                 'SAIBA MAIS',
                 style: TextStyle(

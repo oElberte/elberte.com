@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/constants.dart';
-import '../../../utils/screen_helper.dart';
-import '../../components/components.dart';
+import '../../utils/constants.dart';
+import '../../utils/screen_helper.dart';
+import 'widgets.dart';
 
 void showContactDialog(BuildContext context) {
   showDialog(
@@ -20,13 +20,13 @@ void showContactDialog(BuildContext context) {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: const [
-            ModalContactItem(
+            ShowDialogItem(
               title: 'Email',
               imageAsset: 'mail',
               contact: kEmail,
             ),
             SizedBox(width: 50),
-            ModalContactItem(
+            ShowDialogItem(
               title: 'WhatsApp',
               imageAsset: 'whatsapp',
               contact: kNumber,
