@@ -10,39 +10,21 @@ class IntroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double introContainerHeight = MediaQuery.of(context).size.height *
-        (ScreenHelper.isMobile(context) ? .7 : .6);
-
-    return SizedBox(
-      height: introContainerHeight,
-      width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Container(
-            alignment: Alignment.center,
-            constraints: BoxConstraints(
-              minHeight: introContainerHeight,
-            ),
-            child: ScreenHelper(
-              desktop: _buildDesktop(
-                context,
-                introItem.text,
-                introItem.image,
-              ),
-              tablet: _buildTablet(
-                context,
-                introItem.text,
-                introItem.image,
-              ),
-              mobile: _buildMobile(
-                context,
-                introItem.text,
-                introItem.image,
-              ),
-            ),
-          ),
-        ],
+    return ScreenHelper(
+      desktop: _buildDesktop(
+        context,
+        buildIntroItem(context).text,
+        buildIntroItem(context).image,
+      ),
+      tablet: _buildTablet(
+        context,
+        buildIntroItem(context).text,
+        buildIntroItem(context).image,
+      ),
+      mobile: _buildMobile(
+        context,
+        buildIntroItem(context).text,
+        buildIntroItem(context).image,
       ),
     );
   }

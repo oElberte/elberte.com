@@ -31,13 +31,9 @@ List<HeaderItem> headerItems = [
       Globals.scaffoldKey.currentState!.closeEndDrawer();
     },
   ),
-  //TODO: Implement modal onTap
   HeaderItem(
     title: 'CONTATO',
-    onTap: () {
-      scrollTo(4);
-      Globals.scaffoldKey.currentState!.closeEndDrawer();
-    },
+    onTap: () {},
     isButton: true,
   ),
 ];

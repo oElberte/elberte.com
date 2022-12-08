@@ -4,7 +4,6 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../../utils/header_items.dart';
 
-
 class HeaderRow extends StatelessWidget {
   const HeaderRow({super.key});
 

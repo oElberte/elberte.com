@@ -41,7 +41,7 @@ class FooterSection extends StatelessWidget {
                         (item) => SizedBox(
                           height: 120,
                           width: ScreenHelper.isMobile(context)
-                              ? constraints.maxWidth / 2 - 20
+                              ? constraints.maxWidth / 1.95 - 20
                               : constraints.maxWidth / 2 - 20,
                           child: Column(
                             crossAxisAlignment: item.title == 'EMAIL'
@@ -69,10 +69,10 @@ class FooterSection extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              const SizedBox(height: 15),
+                              const SizedBox(height: 5),
                               GestureDetector(
                                 onTap: () {
-                                  if (item.text == 'contato@elberte.com') {
+                                  if (item.text == kEmail) {
                                     html.window.open(
                                       kMailTo,
                                       '_blank',

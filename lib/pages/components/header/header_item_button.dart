@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../models/header_item.dart';
 import '../../../utils/constants.dart';
+import '../../../utils/globals.dart';
+import '../../home/components/components.dart';
 
 class HeaderItemButton extends StatelessWidget {
   final HeaderItem item;
@@ -25,7 +27,10 @@ class HeaderItemButton extends StatelessWidget {
           vertical: 3,
         ),
         child: TextButton(
-          onPressed: item.onTap,
+          onPressed: () {
+            Globals.scaffoldKey.currentState!.closeEndDrawer();
+            showContactDialog(context);
+          },
           child: Text(
             item.title,
             style: const TextStyle(

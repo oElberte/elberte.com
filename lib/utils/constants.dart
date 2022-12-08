@@ -11,6 +11,11 @@ const double kTabletMaxWidth = 760.0;
 double getMobileMaxWidth(BuildContext context) =>
     MediaQuery.of(context).size.width * .8;
 
+//TODO: Add WhatsApp link
+const String kWhatsAppLink = 'TBD';
 const String kLinkedinLink = 'https://www.linkedin.com/in/oElberte/';
 const String kGithubLink = 'https://www.github.com/oElberte';
 const String kMailTo = 'mailto:contato@elberte.com';
+
+const String kEmail = 'contato@elberte.com';
+const String kNumber = '+55 34 ***** ****';
