@@ -20,7 +20,7 @@ class PortfolioSection extends StatelessWidget {
 
   Widget _buildUi(double width, BuildContext context) {
     double carouselContainerHeight =
-        MediaQuery.of(context).size.width < 720 ? 770 : 550;
+        MediaQuery.of(context).size.width < 720 ? 800 : 550;
 
     final CarouselOptions carouselOptions = CarouselOptions(
       viewportFraction: 1,

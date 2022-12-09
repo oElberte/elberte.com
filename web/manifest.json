@@ -1,11 +1,11 @@
 {
-    "name": "elberte_com",
-    "short_name": "elberte_com",
+    "name": "Elberte",
+    "short_name": "Elberte",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
+    "background_color": "#444444",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Desenvolvedor de aplicativos mobile.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
