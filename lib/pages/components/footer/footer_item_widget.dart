@@ -26,27 +26,6 @@ class FooterItemWidget extends StatelessWidget {
             ? CrossAxisAlignment.start
             : CrossAxisAlignment.end,
         children: [
-          Row(
-            mainAxisAlignment: item.title == 'EMAIL'
-                ? MainAxisAlignment.start
-                : MainAxisAlignment.end,
-            children: [
-              Image.asset(
-                item.iconPath,
-                width: 30,
-              ),
-              const SizedBox(width: 15),
-              Text(
-                item.title,
-                style: GoogleFonts.oswald(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 5),
           GestureDetector(
             onTap: () {
               if (item.text == kEmail) {
@@ -57,13 +36,34 @@ class FooterItemWidget extends StatelessWidget {
             },
             child: MouseRegion(
               cursor: SystemMouseCursors.click,
-              child: Text(
-                item.text,
-                style: const TextStyle(
-                  color: kCaptionColor,
-                  fontSize: 17,
-                ),
+              child: Row(
+                mainAxisAlignment: item.title == 'EMAIL'
+                    ? MainAxisAlignment.start
+                    : MainAxisAlignment.end,
+                children: [
+                  Image.asset(
+                    item.iconPath,
+                    width: 30,
+                  ),
+                  const SizedBox(width: 15),
+                  Text(
+                    item.title,
+                    style: GoogleFonts.oswald(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
+            ),
+          ),
+          const SizedBox(height: 5),
+          SelectableText(
+            item.text,
+            style: const TextStyle(
+              color: kCaptionColor,
+              fontSize: 17,
             ),
           ),
         ],

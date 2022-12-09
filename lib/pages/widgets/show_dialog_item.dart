@@ -21,24 +21,6 @@ class ShowDialogItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Row(
-          children: [
-            Image.asset(
-              'assets/contact/$imageAsset.png',
-              width: 30,
-            ),
-            const SizedBox(width: 15),
-            Text(
-              title.toUpperCase(),
-              style: GoogleFonts.oswald(
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 15),
         GestureDetector(
           onTap: () {
             if (title == 'WhatsApp') {
@@ -49,13 +31,31 @@ class ShowDialogItem extends StatelessWidget {
           },
           child: MouseRegion(
             cursor: SystemMouseCursors.click,
-            child: Text(
-              contact,
-              style: const TextStyle(
-                color: kCaptionColor,
-                fontSize: 17,
-              ),
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/contact/$imageAsset.png',
+                  width: 30,
+                ),
+                const SizedBox(width: 15),
+                Text(
+                  title.toUpperCase(),
+                  style: GoogleFonts.oswald(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
+          ),
+        ),
+        const SizedBox(height: 15),
+        SelectableText(
+          contact,
+          style: const TextStyle(
+            color: kCaptionColor,
+            fontSize: 17,
           ),
         ),
       ],
