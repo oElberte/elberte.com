@@ -4,7 +4,7 @@
     "start_url": ".",
     "display": "standalone",
     "background_color": "#444444",
-    "theme_color": "#0175C2",
+    "theme_color": "#444444",
     "description": "Desenvolvedor de aplicativos mobile.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,

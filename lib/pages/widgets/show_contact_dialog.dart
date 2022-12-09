@@ -19,14 +19,14 @@ void showContactDialog(BuildContext context) {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            ShowDialogItem(
+          children: [
+            const ShowDialogItem(
               title: 'Email',
               imageAsset: 'mail',
               contact: kEmail,
             ),
-            SizedBox(width: 50),
-            ShowDialogItem(
+            SizedBox(width: ScreenHelper.isMobile(context) ? 15 : 50),
+            const ShowDialogItem(
               title: 'WhatsApp',
               imageAsset: 'whatsapp',
               contact: kNumber,
