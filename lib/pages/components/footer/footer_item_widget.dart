@@ -34,7 +34,6 @@ class FooterItemWidget extends StatelessWidget {
               Image.asset(
                 item.iconPath,
                 width: 30,
-                color: kPrimaryColor,
               ),
               const SizedBox(width: 15),
               Text(

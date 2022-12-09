@@ -26,7 +26,6 @@ class ShowDialogItem extends StatelessWidget {
             Image.asset(
               'assets/contact/$imageAsset.png',
               width: 30,
-              color: kPrimaryColor,
             ),
             const SizedBox(width: 15),
             Text(
