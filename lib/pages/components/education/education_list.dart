@@ -11,7 +11,7 @@ final List<Education> educationList = [
   ),
   Education(
     description:
-        'Curso de Swift. Utilizo ele majoritariamente para código nativo dentro das aplicações em Flutter.',
+        'Curso de Swift pela AppBrewery. Utilizo ele majoritariamente para código nativo dentro das aplicações em Flutter.',
     linkName: 'www.appbrewery.co',
     linkCertificate:
         'https://www.udemy.com/certificate/UC-badfe305-43ea-4a27-ae40-7dc5f072079c/',
