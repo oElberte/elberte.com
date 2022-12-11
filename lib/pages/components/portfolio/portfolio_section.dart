@@ -38,7 +38,8 @@ class PortfolioSection extends StatelessWidget {
               PortfolioItem(
                 width: width,
                 constraints: constraints,
-                imageAsset: 'assets/portfolio/pokedex_small.png',
+                // imageAsset: 'assets/portfolio/pokedex_small.png',
+                imageAsset: 'assets/portfolio/pokedex_light.png',
                 title: 'Pokédex app',
                 description:
                     'Um aplicativo de Pokédex feito para mobile que conta com diversas funções como, dark mode, favoritos, manter configurações do usuário na memória do dispositivo, e muito mais.',

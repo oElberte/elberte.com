@@ -18,6 +18,7 @@ class HeaderAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   Widget buildHeader() {
     return AppBar(
+      centerTitle: false,
       elevation: 0,
       title: const HeaderLogo(),
       actions: const [
@@ -32,6 +33,7 @@ class HeaderAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   Widget buildMobileHeader() {
     return AppBar(
+      centerTitle: false,
       elevation: 0,
       title: const HeaderLogo(),
       actions: const [
