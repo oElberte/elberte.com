@@ -26,39 +26,27 @@ class FooterItemWidget extends StatelessWidget {
             ? CrossAxisAlignment.start
             : CrossAxisAlignment.end,
         children: [
-          GestureDetector(
-            onTap: () {
+          //GestureDetector
+          //MouseRegion - SystemMouseCursors.click
+          TextButton.icon(
+            onPressed: () {
               if (item.text == kEmail) {
                 mailTo();
               } else {
                 htmlOpen(kWhatsAppLink);
               }
             },
-            child: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: Row(
-                mainAxisAlignment: item.title == 'EMAIL'
-                    ? MainAxisAlignment.start
-                    : MainAxisAlignment.end,
-                children: [
-                  Image.asset(
-                    item.iconPath,
-                    width: 30,
-                  ),
-                  const SizedBox(width: 15),
-                  Text(
-                    item.title,
-                    style: GoogleFonts.oswald(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
+            icon: Image.asset(item.iconPath, width: 30, height: 30),
+            label: Text(
+              item.title,
+              style: GoogleFonts.oswald(
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
               ),
             ),
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 8),
           SelectableText(
             item.text,
             style: const TextStyle(

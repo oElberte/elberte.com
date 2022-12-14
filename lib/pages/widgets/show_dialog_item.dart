@@ -18,39 +18,34 @@ class ShowDialogItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: title == 'WhatsApp'
+          ? CrossAxisAlignment.end
+          : CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        GestureDetector(
-          onTap: () {
+        TextButton.icon(
+          onPressed: () {
             if (title == 'WhatsApp') {
               htmlOpen(kWhatsAppLink);
             } else {
               mailTo();
             }
           },
-          child: MouseRegion(
-            cursor: SystemMouseCursors.click,
-            child: Row(
-              children: [
-                Image.asset(
-                  'assets/contact/$imageAsset.png',
-                  width: 30,
-                ),
-                const SizedBox(width: 15),
-                Text(
-                  title.toUpperCase(),
-                  style: GoogleFonts.oswald(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
+          icon: Image.asset(
+            'assets/contact/$imageAsset.png',
+            width: 30,
+            height: 30,
+          ),
+          label: Text(
+            title.toUpperCase(),
+            style: GoogleFonts.oswald(
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+              color: Colors.white,
             ),
           ),
         ),
-        const SizedBox(height: 15),
+        const SizedBox(height: 8),
         SelectableText(
           contact,
           style: const TextStyle(

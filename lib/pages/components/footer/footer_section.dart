@@ -34,12 +34,10 @@ class FooterSection extends StatelessWidget {
                   spacing: 20,
                   runSpacing: 20,
                   children: footerItems
-                      .map(
-                        (footerItem) => FooterItemWidget(
-                          item: footerItem,
-                          constraints: constraints,
-                        ),
-                      )
+                      .map((footerItem) => FooterItemWidget(
+                            item: footerItem,
+                            constraints: constraints,
+                          ))
                       .toList(),
                 ),
                 const SizedBox(height: 20),
@@ -92,5 +90,3 @@ class FooterSection extends StatelessWidget {
     );
   }
 }
-
-

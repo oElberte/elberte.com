@@ -79,7 +79,6 @@ class PortfolioItem extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                           horizontal: constraints.maxWidth < 800 ? 0 : 28,
                         ),
-                        //TODO: Add images of the app in github page
                         child: TextButton(
                           onPressed: () => html.window.open(
                             'https://$kGithubLink/$repository/',
