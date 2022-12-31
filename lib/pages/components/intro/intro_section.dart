@@ -31,6 +31,7 @@ class IntroSection extends StatelessWidget {
 
 Widget _buildDesktop(BuildContext context, Widget text, Widget image) {
   return Center(
+    heightFactor: 0.7,
     child: ResponsiveWrapper(
       maxWidth: kDesktopMaxWidth,
       minWidth: kDesktopMaxWidth,
@@ -47,6 +48,7 @@ Widget _buildDesktop(BuildContext context, Widget text, Widget image) {
 
 Widget _buildTablet(BuildContext context, Widget text, Widget image) {
   return Center(
+    heightFactor: 0.6,
     child: ResponsiveWrapper(
       maxWidth: kTabletMaxWidth,
       minWidth: kTabletMaxWidth,
@@ -72,8 +74,8 @@ Widget _buildMobile(BuildContext context, Widget text, Widget image) {
         Padding(
           padding: const EdgeInsets.only(bottom: 30),
           child: SizedBox(
-            height: 250,
-            width: 250,
+            height: 300,
+            width: 300,
             child: image,
           ),
         ),

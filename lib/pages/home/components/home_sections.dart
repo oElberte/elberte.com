@@ -5,10 +5,7 @@ import '../../components/components.dart';
 //TODO: Add download curriculum
 final List<Widget> homeSections = [
   // const HeaderSection(),
-  const Padding(
-    padding: EdgeInsets.only(top: 20),
-    child: IntroSection(),
-  ),
+  const IntroSection(),
   const PortfolioSection(),
   const EducationSection(),
   const SkillsSection(),

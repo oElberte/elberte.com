@@ -69,10 +69,10 @@ IntroItemModel buildIntroItem(BuildContext context) {
       ],
     ),
     image: Image.asset(
-      'assets/elberte.png',
+      'assets/elberte_background.png',
       fit: BoxFit.contain,
-      width: 400,
-      height: 400,
+      width: 800,
+      height: 800,
     ),
   );
 }
