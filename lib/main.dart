@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'src/core/ui/styles/text_styles.dart';
 import 'src/core/ui/theme/theme_config.dart';
-import 'src/core/widgets/app_bar/app_bar_logo.dart';
+import 'src/core/widgets/custom_app_bar/custom_app_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,12 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Elberte',
       theme: ThemeConfig.theme,
-      // themeMode: ThemeMode.dark,
       home: Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          title: const AppBarLogo(),
-        ),
+        appBar: customAppBar(context),
         body: Center(
           child: Column(
             mainAxisSize: MainAxisSize.max,

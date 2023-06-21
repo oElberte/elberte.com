@@ -5,7 +5,25 @@ import 'package:flutter/material.dart';
 extension HtmlOpen on BuildContext {
   void openLinkedin() {
     html.window.open(
-      'https://www.linkedin.com/in/oelberte/',
+      'https://linkedin.com/in/oelberte/',
+      '_blank',
+    );
+  }
+  void openGithub() {
+    html.window.open(
+      'https://github.com/oElberte',
+      '_blank',
+    );
+  }
+  void openWhatsApp() {
+    html.window.open(
+      'https://wa.me/5534991355629',
+      '_blank',
+    );
+  }
+  void openMailTo() {
+    html.window.open(
+      'mailto:contato@elberte.com',
       '_blank',
     );
   }
