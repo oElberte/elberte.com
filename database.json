@@ -1,0 +1,134 @@
+{
+    "about_me": "Desenvolvedor com mais de 2 anos de experiência no mobile. Trabalho como freelancer a mais de 1 ano, possuo habilidades em Inglês avançadas para conversação.",
+    "skills": [
+        {
+            "name": "Flutter",
+            "enabled": true
+        },
+        {
+            "name": "Swift",
+            "enabled": true
+        },
+        {
+            "name": "Kotlin",
+            "enabled": true
+        },
+        {
+            "name": "SQL",
+            "enabled": true
+        },
+        {
+            "name": "API Rest",
+            "enabled": false
+        },
+        {
+            "name": "Git",
+            "enabled": true
+        },
+        {
+            "name": "DevOps",
+            "enabled": true
+        },
+        {
+            "name": "Postman",
+            "enabled": true
+        }
+    ],
+    "apps": [
+        {
+            "app_type": "MOBILE APP",
+            "name": "MDAL",
+            "description": "O aplicativo é uma loja de roupas virtual da marca MDAL, onde os usuários podem comprar as roupas diretamente e acompanhar os pedidos conforme o administrador atualiza.",
+            "images": [
+                "/assets/apps/mdal/",
+                "/assets/apps/mdal/",
+                "/assets/apps/mdal/"
+            ],
+            "link": null,
+            "enabled": false
+        },
+        {
+            "app_type": "MOBILE APP",
+            "name": "AIDA",
+            "description": "O aplicativo oferece funções para que o usuário cadastre receitas e despesas monetárias, com uma visão ampla dos dados e com gráficos, para maior controle da sua vida financeira.",
+            "images": [
+                "/assets/apps/aida/",
+                "/assets/apps/aida/",
+                "/assets/apps/aida/"
+            ],
+            "link": "https://play.google.com/store/apps/details?id=br.com.carteiraverde.carteira_verde",
+            "enabled": true
+        },
+        {
+            "app_type": "MOBILE APP",
+            "name": "Pokédex",
+            "description": "O aplicativo oferece uma interface com todos os Pokémons disponíveis para que o usuário consiga ver detalhes e favoritar cada um, conta com tema escuro para melhor experiência.",
+            "images": [
+                "/assets/apps/pokedex/",
+                "/assets/apps/pokedex/",
+                "/assets/apps/pokedex/"
+            ],
+            "link": null,
+            "enabled": true
+        },
+        {
+            "app_type": "WEBSITE",
+            "name": "Elberte.com",
+            "description": "Este site que você está agora! Feito totalmente utilizando Flutter Web para que as pessoas possam ver sobre meus trabalhos e me contratarem caso precisem de algum serviço.",
+            "images": [
+                "/assets/apps/website/",
+                "/assets/apps/website/",
+                "/assets/apps/website/"
+            ],
+            "link": null,
+            "enabled": true
+        }
+    ],
+    "education": [
+        {
+            "type": "Bacharel",
+            "name": "Sistemas de Informação",
+            "university": "UNA",
+            "start_date": 2023,
+            "end_date": null,
+            "present": true,
+            "enabled": true
+        },
+        {
+            "type": "Especialização",
+            "name": "Flutter e Dart",
+            "university": "Academia do Flutter",
+            "start_date": 2023,
+            "end_date": null,
+            "present": true,
+            "enabled": true
+        }
+    ],
+    "certifications": [
+        {
+            "name": "Flutter",
+            "institution": "Cod3r",
+            "enabled": true
+        },
+        {
+            "name": "Swift",
+            "institution": "AppBrewery",
+            "enabled": true
+        },
+        {
+            "name": "Dart Database",
+            "institution": "Academia do Flutter",
+            "enabled": true
+        },
+        {
+            "name": "9ª Imersão Dart Week",
+            "institution": "Academia do Flutter",
+            "enabled": true
+        },
+        {
+            "name": "10ª Imersão Dart Week",
+            "institution": "Academia do Flutter",
+            "enabled": false
+        }
+    ]
+}

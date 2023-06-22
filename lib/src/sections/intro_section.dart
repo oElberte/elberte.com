@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../core/ui/size_extensions.dart';
 import '../core/ui/styles/colors_app.dart';
 import '../core/ui/styles/text_styles.dart';
 
 class IntroSection extends StatelessWidget {
+  final double? height;
+  final double? width;
+
   const IntroSection({
     super.key,
+    required this.height,
+    required this.width,
   });
 
   @override
@@ -14,8 +18,8 @@ class IntroSection extends StatelessWidget {
     return LayoutBuilder(
       builder: (_, constraints) {
         return Container(
-          height: context.screenHeight,
-          width: context.screenWidth > 1200 ? context.percentWidth(.90) : context.percentWidth(.80),
+          height: height,
+          width: width,
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Column(
             mainAxisSize: MainAxisSize.min,

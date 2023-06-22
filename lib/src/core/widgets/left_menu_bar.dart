@@ -19,97 +19,142 @@ class LeftMenuBar extends StatefulWidget {
 class _LeftMenuBarState extends State<LeftMenuBar> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: SizedBox(
-        width: context.screenWidth > 1200 ? context.percentWidth(.10) : context.percentWidth(.20),
-        child: Column(
-          children: [
-            Column(
+    final width = context.screenWidth > 1200 ? context.percentWidth(.1) : context.percentWidth(.2);
+
+    return Stack(
+      children: [
+        Container(
+          width: width,
+          height: context.screenHeight,
+          color: Colors.black,
+        ),
+        SingleChildScrollView(
+          child: SizedBox(
+            width: width,
+            child: Column(
               children: [
-                InkWell(
-                  onTap: context.openLinkedin,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        'E',
-                        style: context.textStyles.textBold.copyWith(
-                          color: Colors.white,
-                          fontFamily: context.textStyles.fontFamilyOswald,
-                          fontSize: 122,
-                        ),
-                      ),
-                      Text(
-                        '.',
-                        style: context.textStyles.textBold.copyWith(
-                          color: context.colors.primary,
-                          fontFamily: context.textStyles.fontFamilyOswald,
-                          fontSize: 116,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const Divider(
-                  color: Colors.grey,
-                  thickness: 0.5,
-                  indent: 30,
-                  endIndent: 30,
-                ),
-                LeftMenuButton(
-                  label: 'Sobre mim',
-                  onPressed: () {},
-                ),
-                LeftMenuButton(
-                  label: 'Projetos',
-                  onPressed: () {},
-                ),
-                LeftMenuButton(
-                  label: 'Habilidades',
-                  onPressed: () {},
-                ),
-                LeftMenuButton(
-                  label: 'Educação',
-                  onPressed: () {},
-                ),
-                LeftMenuButton(
-                  label: 'Certificados',
-                  onPressed: () {},
-                ),
-                const Divider(
-                  color: Colors.grey,
-                  thickness: 0.5,
-                  indent: 30,
-                  endIndent: 30,
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                Column(
                   children: [
-                    SocialMediaButton(
-                      onTap: context.openLinkedin,
-                      icon: 'linkedin',
+                    const LeftMenuLogo(),
+                    const Divider(
+                      color: Colors.grey,
+                      thickness: 0.5,
+                      indent: 30,
+                      endIndent: 30,
                     ),
-                    SocialMediaButton(
-                      onTap: context.openGithub,
-                      icon: 'github',
+                    LeftMenuButton(
+                      label: 'Sobre mim',
+                      onPressed: () {},
                     ),
-                    SocialMediaButton(
-                      onTap: context.openWhatsApp,
-                      icon: 'whatsapp',
+                    LeftMenuButton(
+                      label: 'Projetos',
+                      onPressed: () {},
                     ),
-                    SocialMediaButton(
-                      onTap: context.openMailTo,
-                      icon: 'mail',
+                    LeftMenuButton(
+                      label: 'Habilidades',
+                      onPressed: () {},
                     ),
+                    LeftMenuButton(
+                      label: 'Educação',
+                      onPressed: () {},
+                    ),
+                    LeftMenuButton(
+                      label: 'Certificados',
+                      onPressed: () {},
+                    ),
+                    const Divider(
+                      color: Colors.grey,
+                      thickness: 0.5,
+                      indent: 30,
+                      endIndent: 30,
+                    ),
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        SocialMediaButton(
+                          onTap: context.openLinkedin,
+                          icon: 'linkedin',
+                        ),
+                        SocialMediaButton(
+                          onTap: context.openGithub,
+                          icon: 'github',
+                        ),
+                        SocialMediaButton(
+                          onTap: context.openWhatsApp,
+                          icon: 'whatsapp',
+                        ),
+                        SocialMediaButton(
+                          onTap: context.openMailTo,
+                          icon: 'mail',
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 50),
                   ],
                 ),
-                const SizedBox(height: 50),
               ],
             ),
-          ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class LeftMenuLogo extends StatefulWidget {
+  const LeftMenuLogo({
+    super.key,
+  });
+
+  @override
+  State<LeftMenuLogo> createState() => _LeftMenuLogoState();
+}
+
+class _LeftMenuLogoState extends State<LeftMenuLogo> {
+  var isHover = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      child: AnimatedPhysicalModel(
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.fastOutSlowIn,
+        elevation: isHover ? 6 : 0,
+        shape: BoxShape.rectangle,
+        shadowColor: context.colors.primary,
+        color: Colors.black,
+        child: InkWell(
+          onTap: context.openLinkedin,
+          onHover: (value) {
+            setState(() {
+              isHover = value;
+            });
+          },
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                'E',
+                style: context.textStyles.textBold.copyWith(
+                  color: Colors.white,
+                  fontFamily: context.textStyles.fontFamilyOswald,
+                  fontSize: 122,
+                ),
+              ),
+              Text(
+                '.',
+                style: context.textStyles.textBold.copyWith(
+                  color: context.colors.primary,
+                  fontFamily: context.textStyles.fontFamilyOswald,
+                  fontSize: 116,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'src/core/template/base_layout.dart';
+import 'src/core/ui/size_extensions.dart';
 import 'src/sections/intro_section.dart';
 import 'package:flutter/material.dart';
 
@@ -13,14 +14,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = context.screenWidth > 1200 ? context.percentWidth(.90) : context.percentWidth(.80);
+    
     return MaterialApp(
       title: 'Elberte',
       theme: ThemeConfig.theme,
-      home: const Scaffold(
+      home: Scaffold(
         extendBodyBehindAppBar: true,
         body: BaseLayout(
           children: [
-            IntroSection(),
+            IntroSection(
+              height: context.screenHeight,
+              width: width,
+            ),
           ],
         ),
       ),
