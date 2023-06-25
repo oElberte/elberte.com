@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../ui/size_extensions.dart';
 import '../widgets/left_menu_bar.dart';
 import 'widgets/scroll_down.dart';
 
@@ -14,18 +15,23 @@ class BaseLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const LeftMenuBar(),
-        Stack(
-          children: [
-            const ScrollDown(),
-            SingleChildScrollView(
-              child: Column(
-                children: children,
+        LeftMenuBar(
+          width: context.screenWidth > 1200 ? context.percentWidth(.14) : context.percentWidth(.2),
+        ),
+        Expanded(
+          child: Stack(
+            children: [
+              SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: children,
+                ),
               ),
-            ),
-          ],
+              const ScrollDown(),
+            ],
+          ),
         ),
       ],
     );

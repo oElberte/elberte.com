@@ -8,8 +8,11 @@ import 'left_menu_button.dart';
 import 'social_media_button.dart';
 
 class LeftMenuBar extends StatefulWidget {
+  final double width;
+
   const LeftMenuBar({
     super.key,
+    required this.width,
   });
 
   @override
@@ -19,18 +22,16 @@ class LeftMenuBar extends StatefulWidget {
 class _LeftMenuBarState extends State<LeftMenuBar> {
   @override
   Widget build(BuildContext context) {
-    final width = context.screenWidth > 1200 ? context.percentWidth(.1) : context.percentWidth(.2);
-
     return Stack(
       children: [
         Container(
-          width: width,
+          width: widget.width,
           height: context.screenHeight,
           color: Colors.black,
         ),
         SingleChildScrollView(
           child: SizedBox(
-            width: width,
+            width: widget.width,
             child: Column(
               children: [
                 Column(

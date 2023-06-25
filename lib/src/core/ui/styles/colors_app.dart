@@ -11,7 +11,7 @@ class ColorsApp {
   }
 
   Color get primary => Colors.purple;
-  Color get secondary => Colors.purple[300]!;
+  Color get secondary => Colors.purple[400]!;
   Color get black => const Color(0XFF140E0E);
 }
 
