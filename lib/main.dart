@@ -7,8 +7,10 @@ import 'src/core/ui/size_extensions.dart';
 import 'src/core/ui/styles/colors_app.dart';
 import 'src/core/widgets/left_menu_bar.dart';
 import 'src/models/apps_model.dart';
+import 'src/models/education_model.dart';
 import 'src/models/skills_model.dart';
-import 'src/sections/habilities/skills_section.dart';
+import 'src/sections/education/education_section.dart';
+import 'src/sections/skills/skills_section.dart';
 import 'src/sections/intro/intro_section.dart';
 import 'package:flutter/material.dart';
 
@@ -76,9 +78,21 @@ class _MainAppState extends State<MainApp> {
         future: readJson(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            final List<AppsModel> apps = snapshot.data['apps'].map<AppsModel>((a) => AppsModel.fromMap(a)).toList();
-            final List<SkillsModel> skills =
-                snapshot.data['skills'].map<SkillsModel>((a) => SkillsModel.fromMap(a)).toList();
+            final List<AppsModel> apps = snapshot.data['apps']
+                .map<AppsModel>(
+                  (a) => AppsModel.fromMap(a),
+                )
+                .toList();
+            final List<SkillsModel> skills = snapshot.data['skills']
+                .map<SkillsModel>(
+                  (s) => SkillsModel.fromMap(s),
+                )
+                .toList();
+            final List<EducationModel> educations = snapshot.data['education']
+                .map<EducationModel>(
+                  (e) => EducationModel.fromMap(e),
+                )
+                .toList();
 
             return BaseLayout(
               scaffoldKey: _scaffoldKey,
@@ -90,6 +104,9 @@ class _MainAppState extends State<MainApp> {
                 ),
                 SkillsSection(
                   skills: skills.where((s) => s.enabled == true).toList(),
+                ),
+                EducationSection(
+                  educations: educations.where((e) => e.enabled == true).toList(),
                 ),
               ],
             );

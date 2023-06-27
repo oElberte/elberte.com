@@ -18,7 +18,7 @@ class SkillsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 30),
-      height: context.screenWidth > 700 ? context.percentHeight(.8) : context.percentHeight(.9),
+      height: context.percentHeight(.9),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

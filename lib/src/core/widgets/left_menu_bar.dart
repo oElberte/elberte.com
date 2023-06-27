@@ -40,7 +40,7 @@ class LeftMenuBar extends StatelessWidget {
                       endIndent: 30,
                     ),
                     LeftMenuButton(
-                      label: 'Sobre mim',
+                      label: 'Início',
                       onPressed: () => navigateTo(0),
                     ),
                     LeftMenuButton(
@@ -52,7 +52,7 @@ class LeftMenuBar extends StatelessWidget {
                       onPressed: () => navigateTo(2),
                     ),
                     LeftMenuButton(
-                      label: 'Educação',
+                      label: 'Formação',
                       onPressed: () => navigateTo(3),
                     ),
                     LeftMenuButton(

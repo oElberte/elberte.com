@@ -69,13 +69,6 @@ class _BaseLayoutState extends State<BaseLayout> {
                   );
                 },
               ),
-              // SingleChildScrollView(
-              //   child: Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     mainAxisAlignment: MainAxisAlignment.center,
-              //     children: children,
-              //   ),
-              // ),
               Visibility(
                 visible: context.screenWidth < 700,
                 child: Align(
