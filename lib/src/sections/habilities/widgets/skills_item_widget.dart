@@ -1,15 +1,18 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/ui/styles/colors_app.dart';
 import '../../../core/ui/styles/text_styles.dart';
 import '../../../models/skills_model.dart';
 
 class SkillsItem extends StatelessWidget {
   final SkillsModel skill;
+  final bool isHovered;
 
   const SkillsItem({
     super.key,
     required this.skill,
+    required this.isHovered,
   });
 
   @override
@@ -26,9 +29,13 @@ class SkillsItem extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(20),
           ),
-          child: Image.asset(
-            skill.icon,
-            color: Colors.white,
+          child: Visibility(
+            visible: !isHovered,
+            replacement: Image.asset(skill.iconHovered),
+            child: Image.asset(
+              skill.icon,
+              color: Colors.white,
+            ),
           ),
         ),
         const SizedBox(width: 20),
@@ -36,10 +43,15 @@ class SkillsItem extends StatelessWidget {
           flex: 2,
           child: AutoSizeText(
             skill.name,
-            style: context.textStyles.textRegular.copyWith(
-              fontSize: 32,
-              color: Colors.white,
-            ),
+            style: isHovered
+                ? context.textStyles.textRegular.copyWith(
+                    fontSize: 32,
+                    color: context.colors.secondary,
+                  )
+                : context.textStyles.textLight.copyWith(
+                    fontSize: 32,
+                    color: Colors.white,
+                  ),
           ),
         ),
       ],

@@ -4,41 +4,49 @@
         {
             "name": "Flutter",
             "icon": "assets/skills/icons_2/flutter.png",
+            "icon_hovered": "assets/skills/icons_3/flutter.png",
             "enabled": true
         },
         {
             "name": "Swift",
             "icon": "assets/skills/icons_2/swift.png",
+            "icon_hovered": "assets/skills/icons_3/swift.png",
             "enabled": true
         },
         {
             "name": "Kotlin",
             "icon": "assets/skills/icons_2/kotlin.png",
+            "icon_hovered": "assets/skills/icons_3/kotlin.png",
             "enabled": true
         },
         {
             "name": "SQL",
             "icon": "assets/skills/icons_2/sql.png",
+            "icon_hovered": "assets/skills/icons_3/sql.png",
             "enabled": true
         },
         {
             "name": "API Rest",
             "icon": "assets/skills/icons_2/api.png",
+            "icon_hovered": "assets/skills/icons_3/api.png",
             "enabled": true
         },
         {
             "name": "Git",
             "icon": "assets/skills/icons_2/git.png",
+            "icon_hovered": "assets/skills/icons_3/git.png",
             "enabled": true
         },
         {
             "name": "DevOps",
             "icon": "assets/skills/icons_2/devops.png",
+            "icon_hovered": "assets/skills/icons_3/devops.png",
             "enabled": true
         },
         {
             "name": "Postman",
             "icon": "assets/skills/icons_2/postman.png",
+            "icon_hovered": "assets/skills/icons_3/postman.png",
             "enabled": true
         }
     ],

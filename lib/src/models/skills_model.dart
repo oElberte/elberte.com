@@ -3,11 +3,13 @@ import 'dart:convert';
 class SkillsModel {
   final String name;
   final String icon;
+  final String iconHovered;
   final bool enabled;
   
   const SkillsModel({
     required this.name,
     required this.icon,
+    required this.iconHovered,
     required this.enabled,
   });
 
@@ -15,6 +17,7 @@ class SkillsModel {
     return {
       'name': name,
       'icon': icon,
+      'icon_hovered': iconHovered,
       'enabled': enabled,
     };
   }
@@ -23,6 +26,7 @@ class SkillsModel {
     return SkillsModel(
       name: map['name'] ?? '',
       icon: map['icon'] ?? '',
+      iconHovered: map['icon_hovered'] ?? '',
       enabled: map['enabled'] ?? false,
     );
   }

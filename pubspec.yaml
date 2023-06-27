@@ -38,6 +38,7 @@ dependencies:
   carousel_slider: ^4.2.1
   auto_size_text: ^3.0.0
   scroll_to_index: ^3.0.1
+  sprung: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +69,7 @@ flutter:
     - assets/apps/pokedex/
     - assets/apps/website/
     - assets/skills/icons_2/
+    - assets/skills/icons_3/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
