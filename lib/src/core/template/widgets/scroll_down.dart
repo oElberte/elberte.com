@@ -33,7 +33,11 @@ class _ScrollDownState extends State<ScrollDown> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     return Positioned.fill(
       bottom: 0,
-      left: context.screenWidth > 1200 ? context.percentWidth(.4) : context.percentWidth(.3),
+      left: (context.screenWidth < 700)
+          ? context.percentWidth(.48)
+          : context.screenWidth > 1200
+              ? context.percentWidth(.4)
+              : context.percentWidth(.3),
       child: FadeTransition(
         opacity: _animationFade,
         child: SlideTransition(

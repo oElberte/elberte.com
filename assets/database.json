@@ -71,7 +71,7 @@
                 "assets/apps/pokedex/img_4.png",
                 "assets/apps/pokedex/img_5.png"
             ],
-            "link": null,
+            "link": "https://github.com/oelberte/pokedex#readme",
             "enabled": true
         },
         {
@@ -79,11 +79,9 @@
             "name": "Elberte.com",
             "description": "Este site que você está agora! Feito totalmente utilizando Flutter Web para que as pessoas possam ver sobre meus trabalhos e me contratarem caso precisem de algum serviço.",
             "images": [
-                "assets/apps/website/",
-                "assets/apps/website/",
-                "assets/apps/website/"
+                "assets/apps/website/img_1.png"
             ],
-            "link": null,
+            "link": "https://elberte.com",
             "enabled": true
         }
     ],

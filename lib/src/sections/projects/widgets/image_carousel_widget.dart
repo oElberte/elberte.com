@@ -30,33 +30,36 @@ class ImageCarousel extends StatelessWidget {
           return Dialog(
             backgroundColor: Colors.transparent,
             child: SizedBox(
-              height: context.percentHeight(.8),
-              width: context.percentWidth(.6),
+              height: context.screenWidth > 700 ? context.percentHeight(.8) : context.screenHeight,
+              width: context.screenWidth > 700 ? context.percentWidth(.6) : context.screenWidth,
               child: Stack(
                 children: [
-                  CarouselSlider.builder(
-                    carouselController: controller,
-                    itemCount: apps[index].images.length,
-                    options: CarouselOptions(
-                      height: context.percentHeight(.75),
-                      enableInfiniteScroll: true,
-                      // viewportFraction: 0.8,
-                      enlargeCenterPage: true,
-                      // enlargeFactor: 0.3,
-                      enlargeStrategy: CenterPageEnlargeStrategy.zoom,
-                      onPageChanged: (index, reason) {
-                        imgIndex.value = index + 1;
+                  Align(
+                    alignment: Alignment.center,
+                    child: CarouselSlider.builder(
+                      carouselController: controller,
+                      itemCount: apps[index].images.length,
+                      options: CarouselOptions(
+                        height: context.percentHeight(.75),
+                        enableInfiniteScroll: true,
+                        // viewportFraction: 0.8,
+                        enlargeCenterPage: true,
+                        // enlargeFactor: 0.3,
+                        enlargeStrategy: CenterPageEnlargeStrategy.zoom,
+                        onPageChanged: (index, reason) {
+                          imgIndex.value = index + 1;
+                        },
+                      ),
+                      itemBuilder: (context, imageIndex, realIndex) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 5),
+                          child: Image.asset(
+                            apps[index].images[imageIndex],
+                            fit: BoxFit.cover,
+                          ),
+                        );
                       },
                     ),
-                    itemBuilder: (context, imageIndex, realIndex) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5),
-                        child: Image.asset(
-                          apps[index].images[imageIndex],
-                          fit: BoxFit.cover,
-                        ),
-                      );
-                    },
                   ),
                   Align(
                     alignment: Alignment.topRight,
@@ -125,9 +128,18 @@ class ImageCarousel extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         child: Stack(
           children: [
-            Image.asset(
-              apps[index].images.first,
-              fit: BoxFit.fitHeight,
+            Visibility(
+              visible: context.screenWidth > 700,
+              replacement: Positioned.fill(
+                child: Image.asset(
+                  apps[index].images.first,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Image.asset(
+                apps[index].images.first,
+                fit: BoxFit.fitHeight,
+              ),
             ),
             const Positioned.fill(
               child: Align(

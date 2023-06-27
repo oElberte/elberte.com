@@ -3,6 +3,9 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 import 'src/core/template/base_layout.dart';
+import 'src/core/ui/size_extensions.dart';
+import 'src/core/ui/styles/colors_app.dart';
+import 'src/core/widgets/left_menu_bar.dart';
 import 'src/models/apps_model.dart';
 import 'src/sections/intro/intro_section.dart';
 import 'package:flutter/material.dart';
@@ -27,12 +30,23 @@ class _MyAppState extends State<MyApp> {
     return await json.decode(response);
   }
 
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Elberte',
       theme: ThemeConfig.theme,
       home: Scaffold(
+        key: _scaffoldKey,
+        drawer: Drawer(
+          width: context.percentWidth(.7),
+          backgroundColor: context.colors.black,
+          child: LeftMenuBarLayout(
+            width: context.percentWidth(.7),
+          ),
+        ),
         extendBodyBehindAppBar: true,
         body: FutureBuilder<dynamic>(
           future: readJson(),
@@ -41,6 +55,7 @@ class _MyAppState extends State<MyApp> {
               final List<AppsModel> apps = snapshot.data['apps'].map<AppsModel>((a) => AppsModel.fromMap(a)).toList();
 
               return BaseLayout(
+                scaffoldKey: _scaffoldKey,
                 children: [
                   const IntroSection(),
                   ProjectsSection(

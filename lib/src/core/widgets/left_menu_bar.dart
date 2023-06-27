@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../helpers/html_open.dart';
 import '../ui/size_extensions.dart';
-import '../ui/styles/colors_app.dart';
-import '../ui/styles/text_styles.dart';
 import 'left_menu_button.dart';
+import 'left_menu_logo.dart';
 import 'social_media_button.dart';
 
-class LeftMenuBar extends StatefulWidget {
+class LeftMenuBar extends StatelessWidget {
   final double width;
 
   const LeftMenuBar({
@@ -16,22 +15,33 @@ class LeftMenuBar extends StatefulWidget {
   });
 
   @override
-  State<LeftMenuBar> createState() => _LeftMenuBarState();
+  Widget build(BuildContext context) {
+    return LeftMenuBarLayout(
+      width: width,
+    );
+  }
 }
 
-class _LeftMenuBarState extends State<LeftMenuBar> {
+class LeftMenuBarLayout extends StatelessWidget {
+  const LeftMenuBarLayout({
+    super.key,
+    required this.width,
+  });
+
+  final double width;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          width: widget.width,
+          width: width,
           height: context.screenHeight,
           color: Colors.black,
         ),
         SingleChildScrollView(
           child: SizedBox(
-            width: widget.width,
+            width: width,
             child: Column(
               children: [
                 Column(
@@ -99,65 +109,6 @@ class _LeftMenuBarState extends State<LeftMenuBar> {
           ),
         ),
       ],
-    );
-  }
-}
-
-class LeftMenuLogo extends StatefulWidget {
-  const LeftMenuLogo({
-    super.key,
-  });
-
-  @override
-  State<LeftMenuLogo> createState() => _LeftMenuLogoState();
-}
-
-class _LeftMenuLogoState extends State<LeftMenuLogo> {
-  var isHover = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      child: AnimatedPhysicalModel(
-        duration: const Duration(milliseconds: 250),
-        curve: Curves.fastOutSlowIn,
-        elevation: isHover ? 6 : 0,
-        shape: BoxShape.rectangle,
-        shadowColor: context.colors.primary,
-        color: Colors.black,
-        child: InkWell(
-          onTap: context.openLinkedin,
-          onHover: (value) {
-            setState(() {
-              isHover = value;
-            });
-          },
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text(
-                'E',
-                style: context.textStyles.textBold.copyWith(
-                  color: Colors.white,
-                  fontFamily: context.textStyles.fontFamilyOswald,
-                  fontSize: 122,
-                ),
-              ),
-              Text(
-                '.',
-                style: context.textStyles.textBold.copyWith(
-                  color: context.colors.primary,
-                  fontFamily: context.textStyles.fontFamilyOswald,
-                  fontSize: 116,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }
