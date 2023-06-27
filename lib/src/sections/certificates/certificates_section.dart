@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../../core/ui/size_extensions.dart';
 import '../../core/ui/styles/text_styles.dart';
-import '../../models/education_model.dart';
-import 'widgets/education_item_widget.dart';
+import '../../models/certifications_model.dart';
+import 'widgets/certificates_item_widget.dart';
 
-class EducationSection extends StatelessWidget {
-  final List<EducationModel> educations;
+class CertificatesSection extends StatelessWidget {
+  final List<CertificationsModel> certificates;
 
-  const EducationSection({
+  const CertificatesSection({
     super.key,
-    required this.educations,
+    required this.certificates,
   });
 
   @override
@@ -24,7 +24,7 @@ class EducationSection extends StatelessWidget {
           Align(
             alignment: Alignment.topLeft,
             child: Text(
-              'Formação',
+              'Certificados',
               style: context.textStyles.textBold.copyWith(
                 color: Colors.white,
                 fontSize: 42,
@@ -40,13 +40,13 @@ class EducationSection extends StatelessWidget {
             visible: context.screenWidth > 700,
             replacement: Column(
               children: [
-                ...educations
+                ...certificates
                     .map(
-                      (e) => Padding(
+                      (c) => Padding(
                         padding: const EdgeInsets.only(bottom: 10),
                         child: SizedBox(
-                          child: EducationItem(
-                            education: e,
+                          child: CertificatesItem(
+                            certification: c,
                           ),
                         ),
                       ),
@@ -56,19 +56,19 @@ class EducationSection extends StatelessWidget {
             ),
             child: SizedBox(
               width: context.screenWidth,
-              height: 400,
+              height: context.percentHeight(.8),
               child: GridView.builder(
+                itemCount: certificates.length,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: educations.length,
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   mainAxisExtent: 120,
                   mainAxisSpacing: 20,
                   crossAxisSpacing: 10,
-                  maxCrossAxisExtent: context.screenWidth > 1360 ? context.screenWidth / 2 : context.screenWidth / 1,
+                  maxCrossAxisExtent: context.screenWidth > 1200 ? context.screenWidth / 2 : context.screenWidth / 1,
                 ),
                 itemBuilder: (context, index) {
-                  return EducationItem(
-                    education: educations[index],
+                  return CertificatesItem(
+                    certification: certificates[index],
                   );
                 },
               ),

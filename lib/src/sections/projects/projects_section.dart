@@ -36,7 +36,7 @@ class ProjectsSection extends StatelessWidget {
                 'Projetos',
                 style: context.textStyles.textBold.copyWith(
                   color: Colors.white,
-                  fontSize: 36,
+                  fontSize: 42,
                 ),
               ),
             ),

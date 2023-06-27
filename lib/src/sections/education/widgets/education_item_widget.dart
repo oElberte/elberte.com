@@ -37,7 +37,7 @@ class EducationItem extends StatelessWidget {
                     ),
                   ],
                   style: context.textStyles.textSemiBold.copyWith(
-                    fontSize: 36,
+                    fontSize: context.screenWidth < 800 && context.screenWidth > 700 ? 28 : 36,
                     color: context.colors.secondary,
                   ),
                 ),

@@ -91,7 +91,7 @@ class ProjectItem extends StatelessWidget {
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () => context.openApp(apps[index].link ?? ''),
+                    onPressed: () => context.openLink(apps[index].link ?? ''),
                     style: ElevatedButton.styleFrom(backgroundColor: context.colors.secondary),
                     child: const Text('VEJA MAIS'),
                   ),

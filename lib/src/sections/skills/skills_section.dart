@@ -28,7 +28,7 @@ class SkillsSection extends StatelessWidget {
               'Habilidades',
               style: context.textStyles.textBold.copyWith(
                 color: Colors.white,
-                fontSize: 36,
+                fontSize: 42,
               ),
             ),
           ),
@@ -66,6 +66,7 @@ class SkillsSection extends StatelessWidget {
               height: 400,
               child: GridView.builder(
                 itemCount: skills.length,
+                physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   mainAxisExtent: 80,
                   mainAxisSpacing: 20,

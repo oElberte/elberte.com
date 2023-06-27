@@ -7,8 +7,10 @@ import 'src/core/ui/size_extensions.dart';
 import 'src/core/ui/styles/colors_app.dart';
 import 'src/core/widgets/left_menu_bar.dart';
 import 'src/models/apps_model.dart';
+import 'src/models/certifications_model.dart';
 import 'src/models/education_model.dart';
 import 'src/models/skills_model.dart';
+import 'src/sections/certificates/certificates_section.dart';
 import 'src/sections/education/education_section.dart';
 import 'src/sections/skills/skills_section.dart';
 import 'src/sections/intro/intro_section.dart';
@@ -93,6 +95,11 @@ class _MainAppState extends State<MainApp> {
                   (e) => EducationModel.fromMap(e),
                 )
                 .toList();
+            final List<CertificationsModel> certifications = snapshot.data['certifications']
+                .map<CertificationsModel>(
+                  (e) => CertificationsModel.fromMap(e),
+                )
+                .toList();
 
             return BaseLayout(
               scaffoldKey: _scaffoldKey,
@@ -107,6 +114,9 @@ class _MainAppState extends State<MainApp> {
                 ),
                 EducationSection(
                   educations: educations.where((e) => e.enabled == true).toList(),
+                ),
+                CertificatesSection(
+                  certificates: certifications.where((c) => c.enabled == true).toList(),
                 ),
               ],
             );

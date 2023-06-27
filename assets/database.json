@@ -125,26 +125,41 @@
         {
             "name": "Flutter",
             "institution": "Cod3r",
+            "date": 2022,
+            "link": "https://ude.my/UC-8a060972-2613-44d1-af56-b719c51c8f4e",
+            "website": "https://cod3r.com.br",
             "enabled": true
         },
         {
             "name": "Swift",
             "institution": "AppBrewery",
+            "date": 2022,
+            "link": "https://ude.my/UC-badfe305-43ea-4a27-ae40-7dc5f072079c",
+            "website": "https://appbrewery.com/",
             "enabled": true
         },
         {
-            "name": "Dart Database",
+            "name": "Jornada Dart",
             "institution": "Academia do Flutter",
+            "date": 2023,
+            "link": "https://drive.google.com/file/d/1z5Lr0uiuzaD8UjIPPMEDmERS6LHRsSfk/view?usp=drive_link",
+            "website": "https://academiadoflutter.com.br/",
             "enabled": true
         },
         {
             "name": "9ª Imersão Dart Week",
             "institution": "Academia do Flutter",
+            "date": 2023,
+            "link": "https://drive.google.com/file/d/13_sOrjG2svfckYN0F2Ssg3Y2TGp1e_qv/view?usp=drive_link",
+            "website": "https://academiadoflutter.com.br/",
             "enabled": true
         },
         {
             "name": "10ª Imersão Dart Week",
             "institution": "Academia do Flutter",
+            "date": 2023,
+            "link": "https://drive.google.com/file/d/1O15RJlZ_sHvvRnWQpDZKxfY4GPsFPjP4/view?usp=drive_link",
+            "website": "https://academiadoflutter.com.br/",
             "enabled": false
         }
     ]

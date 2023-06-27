@@ -31,7 +31,7 @@ extension HtmlOpen on BuildContext {
     );
   }
 
-  void openApp(String link) {
+  void openLink(String link) {
     html.window.open(
       link,
       '_blank',
