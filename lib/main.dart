@@ -7,6 +7,8 @@ import 'src/core/ui/size_extensions.dart';
 import 'src/core/ui/styles/colors_app.dart';
 import 'src/core/widgets/left_menu_bar.dart';
 import 'src/models/apps_model.dart';
+import 'src/models/skills_model.dart';
+import 'src/sections/habilities/skills_section.dart';
 import 'src/sections/intro/intro_section.dart';
 import 'package:flutter/material.dart';
 
@@ -53,6 +55,8 @@ class _MyAppState extends State<MyApp> {
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
               final List<AppsModel> apps = snapshot.data['apps'].map<AppsModel>((a) => AppsModel.fromMap(a)).toList();
+              final List<SkillsModel> skills =
+                  snapshot.data['skills'].map<SkillsModel>((a) => SkillsModel.fromMap(a)).toList();
 
               return BaseLayout(
                 scaffoldKey: _scaffoldKey,
@@ -60,6 +64,9 @@ class _MyAppState extends State<MyApp> {
                   const IntroSection(),
                   ProjectsSection(
                     apps: apps.where((a) => a.enabled == true).toList(),
+                  ),
+                  SkillsSection(
+                    skills: skills.where((s) => s.enabled == true).toList(),
                   ),
                 ],
               );

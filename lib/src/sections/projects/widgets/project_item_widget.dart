@@ -31,8 +31,22 @@ class ProjectItem extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.grey.withOpacity(.5),
               border: Border.all(
-                color: Colors.white,
+                color: context.colors.secondary,
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: context.colors.secondary.withAlpha(60),
+                  blurRadius: 3,
+                  spreadRadius: 3,
+                  offset: const Offset(-3, -3),
+                ),
+                BoxShadow(
+                  color: context.colors.secondary.withAlpha(60),
+                  blurRadius: 3,
+                  spreadRadius: 3,
+                  offset: const Offset(3, 3),
+                ),
+              ],
               borderRadius: BorderRadius.circular(20),
             ),
             height: constraints.maxHeight,

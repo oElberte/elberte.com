@@ -3,34 +3,42 @@
     "skills": [
         {
             "name": "Flutter",
+            "icon": "assets/skills/icons_2/flutter.png",
             "enabled": true
         },
         {
             "name": "Swift",
+            "icon": "assets/skills/icons_2/swift.png",
             "enabled": true
         },
         {
             "name": "Kotlin",
+            "icon": "assets/skills/icons_2/kotlin.png",
             "enabled": true
         },
         {
             "name": "SQL",
+            "icon": "assets/skills/icons_2/sql.png",
             "enabled": true
         },
         {
             "name": "API Rest",
-            "enabled": false
+            "icon": "assets/skills/icons_2/api.png",
+            "enabled": true
         },
         {
             "name": "Git",
+            "icon": "assets/skills/icons_2/git.png",
             "enabled": true
         },
         {
             "name": "DevOps",
+            "icon": "assets/skills/icons_2/devops.png",
             "enabled": true
         },
         {
             "name": "Postman",
+            "icon": "assets/skills/icons_2/postman.png",
             "enabled": true
         }
     ],
