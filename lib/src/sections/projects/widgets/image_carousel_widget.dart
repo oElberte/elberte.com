@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/ui/size_extensions.dart';
+import '../../../core/ui/styles/text_styles.dart';
 import '../../../models/apps_model.dart';
 import 'arrow_button_widget.dart';
 
@@ -20,6 +21,7 @@ class ImageCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = CarouselController();
+    final imgIndex = ValueNotifier<int>(1);
 
     return InkWell(
       onTap: () => showDialog(
@@ -36,12 +38,15 @@ class ImageCarousel extends StatelessWidget {
                     carouselController: controller,
                     itemCount: apps[index].images.length,
                     options: CarouselOptions(
-                      height: double.infinity,
+                      height: context.percentHeight(.75),
                       enableInfiniteScroll: true,
                       // viewportFraction: 0.8,
                       enlargeCenterPage: true,
                       // enlargeFactor: 0.3,
                       enlargeStrategy: CenterPageEnlargeStrategy.zoom,
+                      onPageChanged: (index, reason) {
+                        imgIndex.value = index + 1;
+                      },
                     ),
                     itemBuilder: (context, imageIndex, realIndex) {
                       return Padding(
@@ -55,23 +60,59 @@ class ImageCarousel extends StatelessWidget {
                   ),
                   Align(
                     alignment: Alignment.topRight,
-                    child: Button(
+                    child: CustomButton(
                       onTap: Navigator.of(context).pop,
                       icon: Icons.close,
                     ),
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
-                    child: Button(
+                    child: CustomButton(
                       onTap: () => controller.previousPage(),
                       icon: Icons.arrow_circle_left_outlined,
                     ),
                   ),
                   Align(
                     alignment: Alignment.centerRight,
-                    child: Button(
+                    child: CustomButton(
                       onTap: () => controller.nextPage(),
                       icon: Icons.arrow_circle_right_outlined,
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[800]!.withOpacity(.70),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: ValueListenableBuilder(
+                        valueListenable: imgIndex,
+                        builder: (context, value, child) {
+                          return Stack(
+                            children: [
+                              Text(
+                                '$value / ${apps[index].images.length}',
+                                style: context.textStyles.textBold.copyWith(
+                                  color: Colors.white,
+                                  fontSize: 24,
+                                ),
+                              ),
+                              Text(
+                                '$value / ${apps[index].images.length}',
+                                style: context.textStyles.textBold.copyWith(
+                                  foreground: Paint()
+                                    ..style = PaintingStyle.stroke
+                                    ..strokeWidth = 1
+                                    ..color = Colors.black,
+                                  fontSize: 24,
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ],

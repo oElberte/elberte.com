@@ -65,9 +65,11 @@
             "name": "Pokédex",
             "description": "O aplicativo oferece uma interface com todos os Pokémons disponíveis para que o usuário consiga ver detalhes e favoritar cada um, conta com tema escuro para melhor experiência.",
             "images": [
-                "assets/apps/pokedex/",
-                "assets/apps/pokedex/",
-                "assets/apps/pokedex/"
+                "assets/apps/pokedex/img_1.png",
+                "assets/apps/pokedex/img_2.png",
+                "assets/apps/pokedex/img_3.png",
+                "assets/apps/pokedex/img_4.png",
+                "assets/apps/pokedex/img_5.png"
             ],
             "link": null,
             "enabled": true

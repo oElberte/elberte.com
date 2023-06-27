@@ -49,8 +49,8 @@ class ProjectItem extends StatelessWidget {
                 flex: 1,
                 child: AutoSizeText(
                   apps[index].name,
-                  style: context.textStyles.textBlack.copyWith(
-                    fontSize: 48,
+                  style: context.textStyles.textSemiBold.copyWith(
+                    fontSize: 32,
                     color: Colors.white,
                   ),
                 ),
