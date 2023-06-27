@@ -27,6 +27,25 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Elberte',
+      theme: ThemeConfig.theme,
+      home: const MainApp(),
+    );
+  }
+}
+
+class MainApp extends StatefulWidget {
+  const MainApp({super.key});
+
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
   Future<dynamic> readJson() async {
     final String response = await rootBundle.loadString('database.json');
     return await json.decode(response);
@@ -34,47 +53,50 @@ class _MyAppState extends State<MyApp> {
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  var index = ValueNotifier(0);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Elberte',
-      theme: ThemeConfig.theme,
-      home: Scaffold(
-        key: _scaffoldKey,
-        drawer: Drawer(
+    return Scaffold(
+      key: _scaffoldKey,
+      drawer: Drawer(
+        width: context.percentWidth(.7),
+        backgroundColor: context.colors.black,
+        child: LeftMenuBar(
           width: context.percentWidth(.7),
-          backgroundColor: context.colors.black,
-          child: LeftMenuBarLayout(
-            width: context.percentWidth(.7),
-          ),
-        ),
-        extendBodyBehindAppBar: true,
-        body: FutureBuilder<dynamic>(
-          future: readJson(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              final List<AppsModel> apps = snapshot.data['apps'].map<AppsModel>((a) => AppsModel.fromMap(a)).toList();
-              final List<SkillsModel> skills =
-                  snapshot.data['skills'].map<SkillsModel>((a) => SkillsModel.fromMap(a)).toList();
+          navigateTo: (i) {
+            Navigator.pop(context);
 
-              return BaseLayout(
-                scaffoldKey: _scaffoldKey,
-                children: [
-                  const IntroSection(),
-                  ProjectsSection(
-                    apps: apps.where((a) => a.enabled == true).toList(),
-                  ),
-                  SkillsSection(
-                    skills: skills.where((s) => s.enabled == true).toList(),
-                  ),
-                ],
-              );
-            }
-
-            return const SizedBox.shrink();
+            index.value = i;
           },
         ),
+      ),
+      extendBodyBehindAppBar: true,
+      body: FutureBuilder<dynamic>(
+        future: readJson(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            final List<AppsModel> apps = snapshot.data['apps'].map<AppsModel>((a) => AppsModel.fromMap(a)).toList();
+            final List<SkillsModel> skills =
+                snapshot.data['skills'].map<SkillsModel>((a) => SkillsModel.fromMap(a)).toList();
+
+            return BaseLayout(
+              scaffoldKey: _scaffoldKey,
+              navigateTo: index,
+              children: [
+                const IntroSection(),
+                ProjectsSection(
+                  apps: apps.where((a) => a.enabled == true).toList(),
+                ),
+                SkillsSection(
+                  skills: skills.where((s) => s.enabled == true).toList(),
+                ),
+              ],
+            );
+          }
+
+          return const SizedBox.shrink();
+        },
       ),
     );
   }

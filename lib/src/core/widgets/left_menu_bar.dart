@@ -8,27 +8,13 @@ import 'social_media_button.dart';
 
 class LeftMenuBar extends StatelessWidget {
   final double width;
+  final Function(int index) navigateTo;
 
   const LeftMenuBar({
     super.key,
     required this.width,
+    required this.navigateTo,
   });
-
-  @override
-  Widget build(BuildContext context) {
-    return LeftMenuBarLayout(
-      width: width,
-    );
-  }
-}
-
-class LeftMenuBarLayout extends StatelessWidget {
-  const LeftMenuBarLayout({
-    super.key,
-    required this.width,
-  });
-
-  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -55,23 +41,23 @@ class LeftMenuBarLayout extends StatelessWidget {
                     ),
                     LeftMenuButton(
                       label: 'Sobre mim',
-                      onPressed: () {},
+                      onPressed: () => navigateTo(0),
                     ),
                     LeftMenuButton(
                       label: 'Projetos',
-                      onPressed: () {},
+                      onPressed: () => navigateTo(1),
                     ),
                     LeftMenuButton(
                       label: 'Habilidades',
-                      onPressed: () {},
+                      onPressed: () => navigateTo(2),
                     ),
                     LeftMenuButton(
                       label: 'Educação',
-                      onPressed: () {},
+                      onPressed: () => navigateTo(3),
                     ),
                     LeftMenuButton(
                       label: 'Certificados',
-                      onPressed: () {},
+                      onPressed: () => navigateTo(4),
                     ),
                     const Divider(
                       color: Colors.grey,
