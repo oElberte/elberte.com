@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:animate_gradient/animate_gradient.dart';
 import 'package:flutter/services.dart';
 
 import 'src/core/template/base_layout.dart';
@@ -62,6 +63,7 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       key: _scaffoldKey,
       drawer: Drawer(
         width: context.percentWidth(.7),
@@ -76,54 +78,72 @@ class _MainAppState extends State<MainApp> {
         ),
       ),
       extendBodyBehindAppBar: true,
-      body: FutureBuilder<dynamic>(
-        future: readJson(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            final List<AppsModel> apps = snapshot.data['apps']
-                .map<AppsModel>(
-                  (a) => AppsModel.fromMap(a),
-                )
-                .toList();
-            final List<SkillsModel> skills = snapshot.data['skills']
-                .map<SkillsModel>(
-                  (s) => SkillsModel.fromMap(s),
-                )
-                .toList();
-            final List<EducationModel> educations = snapshot.data['education']
-                .map<EducationModel>(
-                  (e) => EducationModel.fromMap(e),
-                )
-                .toList();
-            final List<CertificationsModel> certifications = snapshot.data['certifications']
-                .map<CertificationsModel>(
-                  (e) => CertificationsModel.fromMap(e),
-                )
-                .toList();
+      body: AnimateGradient(
+        primaryBegin: Alignment.bottomLeft,
+        primaryEnd: Alignment.topRight,
+        secondaryBegin: Alignment.topRight,
+        secondaryEnd: Alignment.bottomLeft,
+        primaryColors: [
+          const Color(0XFF140E0E),
+          context.colors.black.withOpacity(.98),
+          context.colors.black.withOpacity(.98),
+          const Color(0XFF140E0E),
+        ],
+        secondaryColors: [
+          context.colors.black.withOpacity(.98),
+          const Color(0XFF140E0E),
+          const Color(0XFF140E0E),
+          context.colors.black.withOpacity(.98),
+        ],
+        child: FutureBuilder<dynamic>(
+          future: readJson(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              final List<AppsModel> apps = snapshot.data['apps']
+                  .map<AppsModel>(
+                    (a) => AppsModel.fromMap(a),
+                  )
+                  .toList();
+              final List<SkillsModel> skills = snapshot.data['skills']
+                  .map<SkillsModel>(
+                    (s) => SkillsModel.fromMap(s),
+                  )
+                  .toList();
+              final List<EducationModel> educations = snapshot.data['education']
+                  .map<EducationModel>(
+                    (e) => EducationModel.fromMap(e),
+                  )
+                  .toList();
+              final List<CertificationsModel> certifications = snapshot.data['certifications']
+                  .map<CertificationsModel>(
+                    (e) => CertificationsModel.fromMap(e),
+                  )
+                  .toList();
 
-            return BaseLayout(
-              scaffoldKey: _scaffoldKey,
-              navigateTo: index,
-              children: [
-                const IntroSection(),
-                ProjectsSection(
-                  apps: apps.where((a) => a.enabled == true).toList(),
-                ),
-                SkillsSection(
-                  skills: skills.where((s) => s.enabled == true).toList(),
-                ),
-                EducationSection(
-                  educations: educations.where((e) => e.enabled == true).toList(),
-                ),
-                CertificatesSection(
-                  certificates: certifications.where((c) => c.enabled == true).toList(),
-                ),
-              ],
-            );
-          }
+              return BaseLayout(
+                scaffoldKey: _scaffoldKey,
+                navigateTo: index,
+                children: [
+                  const IntroSection(),
+                  ProjectsSection(
+                    apps: apps.where((a) => a.enabled == true).toList(),
+                  ),
+                  SkillsSection(
+                    skills: skills.where((s) => s.enabled == true).toList(),
+                  ),
+                  EducationSection(
+                    educations: educations.where((e) => e.enabled == true).toList(),
+                  ),
+                  CertificatesSection(
+                    certificates: certifications.where((c) => c.enabled == true).toList(),
+                  ),
+                ],
+              );
+            }
 
-          return const SizedBox.shrink();
-        },
+            return const SizedBox.shrink();
+          },
+        ),
       ),
     );
   }

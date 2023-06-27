@@ -62,7 +62,7 @@ class ProjectsSection extends StatelessWidget {
                     itemCount: apps.length,
                     itemBuilder: (context, index) {
                       return Container(
-                        margin: const EdgeInsets.only(left: 15, right: 15),
+                        margin: const EdgeInsets.all(15),
                         height: context.percentHeight(.5),
                         width: context.screenWidth > 1200 ? context.percentWidth(.4) : context.percentWidth(.7),
                         child: LayoutBuilder(

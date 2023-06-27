@@ -13,7 +13,7 @@ class ThemeConfig {
   );
 
   static final theme = ThemeData(
-    scaffoldBackgroundColor: const Color(0XFF140E0E),
+    scaffoldBackgroundColor: const Color(0XFF151717),
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.black.withAlpha(175),
       elevation: 5,

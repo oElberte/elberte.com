@@ -1,11 +1,37 @@
+// ignore_for_file: unused_field
+
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../core/ui/size_extensions.dart';
 import '../../core/ui/styles/colors_app.dart';
 import '../../core/ui/styles/text_styles.dart';
 
-class IntroSection extends StatelessWidget {
+class IntroSection extends StatefulWidget {
   const IntroSection({super.key});
+
+  @override
+  State<IntroSection> createState() => _IntroSectionState();
+}
+
+class _IntroSectionState extends State<IntroSection> {
+  bool _show = true;
+  Timer? _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer.periodic(const Duration(milliseconds: 700), (_) {
+      setState(() => _show = !_show);
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,14 +68,30 @@ class IntroSection extends StatelessWidget {
                     ),
                   ),
                 ),
-                FittedBox(
-                  child: Text(
-                    'desenvolvedor mobile.',
-                    style: context.textStyles.textSemiBold.copyWith(
-                      fontSize: 82,
-                      color: context.colors.primary,
+                Row(
+                  children: [
+                    FittedBox(
+                      child: Text(
+                        'desenvolvedor mobile',
+                        style: context.textStyles.textSemiBold.copyWith(
+                          fontSize: 82,
+                          color: context.colors.primary,
+                        ),
+                      ),
                     ),
-                  ),
+                    Visibility(
+                      visible: _show,
+                      child: FittedBox(
+                        child: Text(
+                          '.',
+                          style: context.textStyles.textSemiBold.copyWith(
+                            fontSize: 82,
+                            color: context.colors.primary,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 15),
                 FittedBox(
