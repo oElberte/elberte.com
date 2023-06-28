@@ -1,3 +1,4 @@
+import 'package:animate_gradient/animate_gradient.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'database.dart';
@@ -77,35 +78,40 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-          colors: [
-            const Color(0XFF140E0E),
-            context.colors.black.withOpacity(.95),
-            const Color(0XFF140E0E),
-          ],
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      key: _scaffoldKey,
+      drawer: Drawer(
+        width: context.percentWidth(.7),
+        backgroundColor: context.colors.black,
+        child: LeftMenuBar(
+          width: context.percentWidth(.7),
+          navigateTo: (i) {
+            Navigator.pop(context);
+
+            index.value = i;
+          },
         ),
       ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        key: _scaffoldKey,
-        drawer: Drawer(
-          width: context.percentWidth(.7),
-          backgroundColor: context.colors.black,
-          child: LeftMenuBar(
-            width: context.percentWidth(.7),
-            navigateTo: (i) {
-              Navigator.pop(context);
-
-              index.value = i;
-            },
-          ),
-        ),
-        extendBodyBehindAppBar: true,
-        body: BaseLayout(
+      extendBodyBehindAppBar: true,
+      body: AnimateGradient(
+        primaryBegin: Alignment.bottomLeft,
+        primaryEnd: Alignment.topRight,
+        secondaryBegin: Alignment.topRight,
+        secondaryEnd: Alignment.bottomLeft,
+        primaryColors: [
+          const Color(0XFF140E0E),
+          context.colors.black.withOpacity(.9),
+          context.colors.black.withOpacity(.9),
+          const Color(0XFF140E0E),
+        ],
+        secondaryColors: [
+          context.colors.black.withOpacity(.9),
+          const Color(0XFF140E0E),
+          const Color(0XFF140E0E),
+          context.colors.black.withOpacity(.9),
+        ],
+        child: BaseLayout(
           scaffoldKey: _scaffoldKey,
           navigateTo: index,
           children: [
