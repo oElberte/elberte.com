@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../../core/ui/on_hover_button.dart';
+import '../../core/ui/on_tap_button.dart';
 import '../../core/ui/size_extensions.dart';
 import '../../core/ui/styles/text_styles.dart';
 import '../../models/skills_model.dart';
 import 'widgets/skills_item_widget.dart';
 
-class SkillsSection extends StatelessWidget {
+class SkillsSection extends StatefulWidget {
   final List<SkillsModel> skills;
 
   const SkillsSection({
@@ -14,6 +15,11 @@ class SkillsSection extends StatelessWidget {
     required this.skills,
   });
 
+  @override
+  State<SkillsSection> createState() => _SkillsSectionState();
+}
+
+class _SkillsSectionState extends State<SkillsSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,23 +44,23 @@ class SkillsSection extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Visibility(
-            visible: context.screenWidth > 700,
+            visible: context.screenWidth > 800,
             replacement: Column(
               children: [
-                ...skills
+                ...widget.skills
                     .map(
                       (e) => Padding(
                         padding: const EdgeInsets.only(bottom: 10),
-                        child: OnHoverButton(
-                          builder: (isHovered) {
-                            return SizedBox(
-                              height: context.percentHeight(.075),
-                              child: SkillsItem(
+                        child: SizedBox(
+                          height: context.percentHeight(.075),
+                          child: OnTapButton(
+                            builder: (isTapped) {
+                              return SkillsItem(
                                 skill: e,
-                                isHovered: isHovered,
-                              ),
-                            );
-                          },
+                                isHovered: isTapped,
+                              );
+                            },
+                          ),
                         ),
                       ),
                     )
@@ -65,7 +71,7 @@ class SkillsSection extends StatelessWidget {
               width: context.screenWidth,
               height: 400,
               child: GridView.builder(
-                itemCount: skills.length,
+                itemCount: widget.skills.length,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   mainAxisExtent: 80,
@@ -77,7 +83,7 @@ class SkillsSection extends StatelessWidget {
                   return OnHoverButton(
                     builder: (isHovered) {
                       return SkillsItem(
-                        skill: skills[index],
+                        skill: widget.skills[index],
                         isHovered: isHovered,
                       );
                     },

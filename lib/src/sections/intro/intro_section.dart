@@ -28,6 +28,12 @@ class _IntroSectionState extends State<IntroSection> {
   }
 
   @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: context.screenHeight,
@@ -77,7 +83,7 @@ class _IntroSectionState extends State<IntroSection> {
                         child: Text(
                           '.',
                           style: context.textStyles.textSemiBold.copyWith(
-                          fontSize: context.screenWidth > 1300 ? 82 : 68,
+                            fontSize: context.screenWidth > 1300 ? 82 : 68,
                             color: context.colors.primary,
                           ),
                         ),
