@@ -78,23 +78,18 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      key: _scaffoldKey,
-      drawer: Drawer(
-        width: context.percentWidth(.7),
-        backgroundColor: context.colors.black,
-        child: LeftMenuBar(
-          width: context.percentWidth(.7),
-          navigateTo: (i) {
-            Navigator.pop(context);
-
-            index.value = i;
-          },
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            const Color(0XFF140E0E),
+            context.colors.black.withOpacity(.9),
+            context.colors.black.withOpacity(.9),
+            const Color(0XFF140E0E),
+          ],
         ),
       ),
-      extendBodyBehindAppBar: true,
-      body: AnimateGradient(
+      child: AnimateGradient(
         primaryBegin: Alignment.bottomLeft,
         primaryEnd: Alignment.topRight,
         secondaryBegin: Alignment.topRight,
@@ -111,24 +106,41 @@ class _MainAppState extends State<MainApp> {
           const Color(0XFF140E0E),
           context.colors.black.withOpacity(.9),
         ],
-        child: BaseLayout(
-          scaffoldKey: _scaffoldKey,
-          navigateTo: index,
-          children: [
-            const IntroSection(),
-            ProjectsSection(
-              apps: apps.where((a) => a.enabled == true).toList(),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          key: _scaffoldKey,
+          drawer: Drawer(
+            width: context.percentWidth(.7),
+            backgroundColor: context.colors.black,
+            child: LeftMenuBar(
+              width: context.percentWidth(.7),
+              navigateTo: (i) {
+                Navigator.pop(context);
+
+                index.value = i;
+              },
             ),
-            SkillsSection(
-              skills: skills.where((s) => s.enabled == true).toList(),
-            ),
-            EducationSection(
-              educations: educations.where((e) => e.enabled == true).toList(),
-            ),
-            CertificatesSection(
-              certificates: certifications.where((c) => c.enabled == true).toList(),
-            ),
-          ],
+          ),
+          extendBodyBehindAppBar: true,
+          body: BaseLayout(
+            scaffoldKey: _scaffoldKey,
+            navigateTo: index,
+            children: [
+              const IntroSection(),
+              ProjectsSection(
+                apps: apps.where((a) => a.enabled == true).toList(),
+              ),
+              SkillsSection(
+                skills: skills.where((s) => s.enabled == true).toList(),
+              ),
+              EducationSection(
+                educations: educations.where((e) => e.enabled == true).toList(),
+              ),
+              CertificatesSection(
+                certificates: certifications.where((c) => c.enabled == true).toList(),
+              ),
+            ],
+          ),
         ),
       ),
     );

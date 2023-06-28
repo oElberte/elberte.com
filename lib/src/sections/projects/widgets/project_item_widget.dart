@@ -68,7 +68,7 @@ class ProjectItem extends StatelessWidget {
                 child: AutoSizeText(
                   apps[index].name,
                   style: context.textStyles.textSemiBold.copyWith(
-                    fontSize: 32,
+                    fontSize: context.screenWidth > 1300 ? 32 : 28,
                     color: Colors.white,
                   ),
                 ),
@@ -81,7 +81,7 @@ class ProjectItem extends StatelessWidget {
                   apps[index].description,
                   textAlign: TextAlign.justify,
                   style: context.textStyles.textLight.copyWith(
-                    fontSize: 26,
+                    fontSize: context.screenWidth > 1300 ? 26 : 18,
                     color: Colors.white,
                   ),
                 ),

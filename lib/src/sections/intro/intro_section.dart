@@ -53,7 +53,7 @@ class _IntroSectionState extends State<IntroSection> {
                   child: Text(
                     'Olá! Meu nome é',
                     style: context.textStyles.textLight.copyWith(
-                      fontSize: 42,
+                      fontSize: context.screenWidth > 1300 ? 42 : 32,
                       color: Colors.white,
                     ),
                   ),
@@ -63,7 +63,7 @@ class _IntroSectionState extends State<IntroSection> {
                   child: Text(
                     'Elberte Plínio,',
                     style: context.textStyles.textBlack.copyWith(
-                      fontSize: 136,
+                      fontSize: context.screenWidth > 1300 ? 136 : 100,
                       color: Colors.white,
                     ),
                   ),
@@ -74,7 +74,7 @@ class _IntroSectionState extends State<IntroSection> {
                       Text(
                         'desenvolvedor mobile',
                         style: context.textStyles.textSemiBold.copyWith(
-                          fontSize: 82,
+                          fontSize: context.screenWidth > 1300 ? 82 : 68,
                           color: context.colors.primary,
                         ),
                       ),
@@ -83,7 +83,7 @@ class _IntroSectionState extends State<IntroSection> {
                         child: Text(
                           '.',
                           style: context.textStyles.textSemiBold.copyWith(
-                            fontSize: 82,
+                          fontSize: context.screenWidth > 1300 ? 82 : 68,
                             color: context.colors.primary,
                           ),
                         ),
@@ -97,7 +97,7 @@ class _IntroSectionState extends State<IntroSection> {
                     'Desenvolvedor de aplicações para celular com Flutter.',
                     textAlign: TextAlign.center,
                     style: context.textStyles.textLight.copyWith(
-                      fontSize: 24,
+                      fontSize: context.screenWidth > 1300 ? 24 : 18,
                       color: Colors.grey,
                     ),
                   ),
