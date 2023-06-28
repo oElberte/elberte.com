@@ -68,20 +68,18 @@ class _IntroSectionState extends State<IntroSection> {
                     ),
                   ),
                 ),
-                Row(
-                  children: [
-                    FittedBox(
-                      child: Text(
+                FittedBox(
+                  child: Row(
+                    children: [
+                      Text(
                         'desenvolvedor mobile',
                         style: context.textStyles.textSemiBold.copyWith(
                           fontSize: 82,
                           color: context.colors.primary,
                         ),
                       ),
-                    ),
-                    Visibility(
-                      visible: _show,
-                      child: FittedBox(
+                      Visibility(
+                        visible: _show,
                         child: Text(
                           '.',
                           style: context.textStyles.textSemiBold.copyWith(
@@ -90,8 +88,8 @@ class _IntroSectionState extends State<IntroSection> {
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 15),
                 FittedBox(

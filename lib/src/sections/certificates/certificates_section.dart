@@ -39,6 +39,7 @@ class CertificatesSection extends StatelessWidget {
           Visibility(
             visible: context.screenWidth > 700,
             replacement: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ...certificates
                     .map(

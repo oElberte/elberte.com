@@ -39,20 +39,17 @@ class SkillsItem extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 20),
-        Flexible(
-          flex: 2,
-          child: AutoSizeText(
-            skill.name,
-            style: isHovered
-                ? context.textStyles.textRegular.copyWith(
-                    fontSize: 32,
-                    color: context.colors.secondary,
-                  )
-                : context.textStyles.textLight.copyWith(
-                    fontSize: 32,
-                    color: Colors.white,
-                  ),
-          ),
+        AutoSizeText(
+          skill.name,
+          style: isHovered
+              ? context.textStyles.textRegular.copyWith(
+                  fontSize: 32,
+                  color: context.colors.secondary,
+                )
+              : context.textStyles.textLight.copyWith(
+                  fontSize: 32,
+                  color: Colors.white,
+                ),
         ),
       ],
     );

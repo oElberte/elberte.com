@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:animate_gradient/animate_gradient.dart';
 import 'package:flutter/services.dart';
 import 'package:url_strategy/url_strategy.dart';
 
@@ -64,40 +63,35 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      key: _scaffoldKey,
-      drawer: Drawer(
-        width: context.percentWidth(.7),
-        backgroundColor: context.colors.black,
-        child: LeftMenuBar(
-          width: context.percentWidth(.7),
-          navigateTo: (i) {
-            Navigator.pop(context);
-
-            index.value = i;
-          },
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.bottomLeft,
+          end: Alignment.topRight,
+          colors: [
+            const Color(0XFF140E0E),
+            context.colors.black.withOpacity(.95),
+            const Color(0XFF140E0E),
+          ],
         ),
       ),
-      extendBodyBehindAppBar: true,
-      body: AnimateGradient(
-        primaryBegin: Alignment.bottomLeft,
-        primaryEnd: Alignment.topRight,
-        secondaryBegin: Alignment.topRight,
-        secondaryEnd: Alignment.bottomLeft,
-        primaryColors: [
-          const Color(0XFF140E0E),
-          context.colors.black.withOpacity(.98),
-          context.colors.black.withOpacity(.98),
-          const Color(0XFF140E0E),
-        ],
-        secondaryColors: [
-          context.colors.black.withOpacity(.98),
-          const Color(0XFF140E0E),
-          const Color(0XFF140E0E),
-          context.colors.black.withOpacity(.98),
-        ],
-        child: FutureBuilder<dynamic>(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        key: _scaffoldKey,
+        drawer: Drawer(
+          width: context.percentWidth(.7),
+          backgroundColor: context.colors.black,
+          child: LeftMenuBar(
+            width: context.percentWidth(.7),
+            navigateTo: (i) {
+              Navigator.pop(context);
+
+              index.value = i;
+            },
+          ),
+        ),
+        extendBodyBehindAppBar: true,
+        body: FutureBuilder<dynamic>(
           future: readJson(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
