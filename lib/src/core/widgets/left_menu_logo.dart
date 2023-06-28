@@ -19,7 +19,7 @@ class _LeftMenuLogoState extends State<LeftMenuLogo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(6),
       child: AnimatedPhysicalModel(
         duration: const Duration(milliseconds: 250),
         curve: Curves.fastOutSlowIn,
@@ -44,7 +44,7 @@ class _LeftMenuLogoState extends State<LeftMenuLogo> {
                 style: context.textStyles.textBold.copyWith(
                   color: Colors.white,
                   fontFamily: context.textStyles.fontFamilyOswald,
-                  fontSize: 122,
+                  fontSize: 100,
                 ),
               ),
               Text(
@@ -52,7 +52,7 @@ class _LeftMenuLogoState extends State<LeftMenuLogo> {
                 style: context.textStyles.textBold.copyWith(
                   color: context.colors.primary,
                   fontFamily: context.textStyles.fontFamilyOswald,
-                  fontSize: 116,
+                  fontSize: 96,
                 ),
               ),
             ],

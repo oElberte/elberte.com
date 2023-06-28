@@ -28,12 +28,6 @@ class _IntroSectionState extends State<IntroSection> {
   }
 
   @override
-  void dispose() {
-    _timer?.cancel();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: context.screenHeight,

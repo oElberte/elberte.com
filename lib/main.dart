@@ -1,4 +1,3 @@
-import 'package:animate_gradient/animate_gradient.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'database.dart';
@@ -81,66 +80,49 @@ class _MainAppState extends State<MainApp> {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
+          begin: Alignment.bottomLeft,
+          end: Alignment.topRight,
           colors: [
             const Color(0XFF140E0E),
-            context.colors.black.withOpacity(.9),
             context.colors.black.withOpacity(.9),
             const Color(0XFF140E0E),
           ],
         ),
       ),
-      child: AnimateGradient(
-        primaryBegin: Alignment.bottomLeft,
-        primaryEnd: Alignment.topRight,
-        secondaryBegin: Alignment.topRight,
-        secondaryEnd: Alignment.bottomLeft,
-        primaryColors: [
-          const Color(0XFF140E0E),
-          context.colors.black.withOpacity(.9),
-          context.colors.black.withOpacity(.9),
-          const Color(0XFF140E0E),
-        ],
-        secondaryColors: [
-          context.colors.black.withOpacity(.9),
-          const Color(0XFF140E0E),
-          const Color(0XFF140E0E),
-          context.colors.black.withOpacity(.9),
-        ],
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          key: _scaffoldKey,
-          drawer: Drawer(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        key: _scaffoldKey,
+        drawer: Drawer(
+          width: context.percentWidth(.7),
+          backgroundColor: context.colors.black,
+          child: LeftMenuBar(
             width: context.percentWidth(.7),
-            backgroundColor: context.colors.black,
-            child: LeftMenuBar(
-              width: context.percentWidth(.7),
-              navigateTo: (i) {
-                Navigator.pop(context);
+            navigateTo: (i) {
+              Navigator.pop(context);
 
-                index.value = i;
-              },
+              index.value = i;
+            },
+          ),
+        ),
+        extendBodyBehindAppBar: true,
+        body: BaseLayout(
+          scaffoldKey: _scaffoldKey,
+          navigateTo: index,
+          children: [
+            const IntroSection(),
+            ProjectsSection(
+              apps: apps.where((a) => a.enabled == true).toList(),
             ),
-          ),
-          extendBodyBehindAppBar: true,
-          body: BaseLayout(
-            scaffoldKey: _scaffoldKey,
-            navigateTo: index,
-            children: [
-              const IntroSection(),
-              ProjectsSection(
-                apps: apps.where((a) => a.enabled == true).toList(),
-              ),
-              SkillsSection(
-                skills: skills.where((s) => s.enabled == true).toList(),
-              ),
-              EducationSection(
-                educations: educations.where((e) => e.enabled == true).toList(),
-              ),
-              CertificatesSection(
-                certificates: certifications.where((c) => c.enabled == true).toList(),
-              ),
-            ],
-          ),
+            SkillsSection(
+              skills: skills.where((s) => s.enabled == true).toList(),
+            ),
+            EducationSection(
+              educations: educations.where((e) => e.enabled == true).toList(),
+            ),
+            CertificatesSection(
+              certificates: certifications.where((c) => c.enabled == true).toList(),
+            ),
+          ],
         ),
       ),
     );

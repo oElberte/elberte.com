@@ -29,13 +29,9 @@ class SkillsItem extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(20),
           ),
-          child: Visibility(
-            visible: !isHovered,
-            replacement: Image.asset(skill.iconHovered),
-            child: Image.asset(
-              skill.icon,
-              color: Colors.white,
-            ),
+          child: Image.asset(
+            isHovered ? skill.iconHovered : skill.icon,
+            color: isHovered ? null : Colors.white,
           ),
         ),
         const SizedBox(width: 20),
