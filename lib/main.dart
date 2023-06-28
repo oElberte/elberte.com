@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:animate_gradient/animate_gradient.dart';
 import 'package:flutter/services.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 import 'src/core/template/base_layout.dart';
 import 'src/core/ui/size_extensions.dart';
@@ -21,6 +22,7 @@ import 'src/core/ui/theme/theme_config.dart';
 import 'src/sections/projects/projects_section.dart';
 
 void main() {
+  setPathUrlStrategy();
   runApp(const MyApp());
 }
 
