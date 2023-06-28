@@ -30,66 +30,62 @@ class LeftMenuBar extends StatelessWidget {
             width: width,
             child: Column(
               children: [
-                Column(
+                const LeftMenuLogo(),
+                const Divider(
+                  color: Colors.grey,
+                  thickness: 0.5,
+                  indent: 30,
+                  endIndent: 30,
+                ),
+                LeftMenuButton(
+                  label: 'Início',
+                  onPressed: () => navigateTo(0),
+                ),
+                LeftMenuButton(
+                  label: 'Projetos',
+                  onPressed: () => navigateTo(1),
+                ),
+                LeftMenuButton(
+                  label: 'Habilidades',
+                  onPressed: () => navigateTo(2),
+                ),
+                LeftMenuButton(
+                  label: 'Formação',
+                  onPressed: () => navigateTo(3),
+                ),
+                LeftMenuButton(
+                  label: 'Certificados',
+                  onPressed: () => navigateTo(4),
+                ),
+                const Divider(
+                  color: Colors.grey,
+                  thickness: 0.5,
+                  indent: 30,
+                  endIndent: 30,
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const LeftMenuLogo(),
-                    const Divider(
-                      color: Colors.grey,
-                      thickness: 0.5,
-                      indent: 30,
-                      endIndent: 30,
+                    SocialMediaButton(
+                      onTap: context.openLinkedin,
+                      icon: 'linkedin',
                     ),
-                    LeftMenuButton(
-                      label: 'Início',
-                      onPressed: () => navigateTo(0),
+                    SocialMediaButton(
+                      onTap: context.openGithub,
+                      icon: 'github',
                     ),
-                    LeftMenuButton(
-                      label: 'Projetos',
-                      onPressed: () => navigateTo(1),
+                    SocialMediaButton(
+                      onTap: context.openWhatsApp,
+                      icon: 'whatsapp',
                     ),
-                    LeftMenuButton(
-                      label: 'Habilidades',
-                      onPressed: () => navigateTo(2),
+                    SocialMediaButton(
+                      onTap: context.openMailTo,
+                      icon: 'mail',
                     ),
-                    LeftMenuButton(
-                      label: 'Formação',
-                      onPressed: () => navigateTo(3),
-                    ),
-                    LeftMenuButton(
-                      label: 'Certificados',
-                      onPressed: () => navigateTo(4),
-                    ),
-                    const Divider(
-                      color: Colors.grey,
-                      thickness: 0.5,
-                      indent: 30,
-                      endIndent: 30,
-                    ),
-                    const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        SocialMediaButton(
-                          onTap: context.openLinkedin,
-                          icon: 'linkedin',
-                        ),
-                        SocialMediaButton(
-                          onTap: context.openGithub,
-                          icon: 'github',
-                        ),
-                        SocialMediaButton(
-                          onTap: context.openWhatsApp,
-                          icon: 'whatsapp',
-                        ),
-                        SocialMediaButton(
-                          onTap: context.openMailTo,
-                          icon: 'mail',
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 50),
                   ],
                 ),
+                const SizedBox(height: 50),
               ],
             ),
           ),

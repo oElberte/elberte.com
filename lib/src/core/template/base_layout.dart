@@ -36,7 +36,7 @@ class _BaseLayoutState extends State<BaseLayout> {
 
   @override
   void dispose() {
-    widget.navigateTo.dispose();
+    // widget.navigateTo.dispose();
     super.dispose();
   }
 

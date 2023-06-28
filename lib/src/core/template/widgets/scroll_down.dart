@@ -30,6 +30,12 @@ class _ScrollDownState extends State<ScrollDown> with SingleTickerProviderStateM
   );
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Positioned.fill(
       bottom: 0,
