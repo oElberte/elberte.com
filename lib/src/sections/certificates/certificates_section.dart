@@ -17,7 +17,7 @@ class CertificatesSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 30),
-      height: context.percentHeight(.9),
+      height: context.percentHeight(.95),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
