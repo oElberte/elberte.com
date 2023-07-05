@@ -1,5 +1,5 @@
-class Database {
-  Database._();
+class DatabaseEn {
+  DatabaseEn._();
 
   static const aboutMe =
       'Desenvolvedor com mais de 2 anos de experiência no mobile. Trabalho como freelancer a mais de 1 ano, possuo habilidades em Inglês avançadas para conversação.';
@@ -9,8 +9,12 @@ class Database {
       'app_type': 'MOBILE APP',
       'name': 'MDAL',
       'description':
-          'O aplicativo é uma loja de roupas virtual da marca MDAL, onde os usuários podem comprar as roupas diretamente e acompanhar os pedidos conforme o administrador atualiza.',
-      'images': ['assets/apps/mdal/', 'assets/apps/mdal/', 'assets/apps/mdal/',],
+          'The application is a virtual clothing store for the regional brand MDAL, where users can purchase clothes and track the progress of their orders.',
+      'images': [
+        'assets/apps/mdal/',
+        'assets/apps/mdal/',
+        'assets/apps/mdal/',
+      ],
       'link': null,
       'enabled': false
     },
@@ -18,7 +22,7 @@ class Database {
       'app_type': 'MOBILE APP',
       'name': 'Todo List',
       'description':
-          'O aplicativo oferece uma interface simples porém funcional, onde o usuário pode adicionar lembretes para tarefas que ele precisa efetuar em algum dia específico.',
+          'The application provides a simple yet functional interface, allowing the user to add reminders for tasks they need to perform on a specific day.',
       'images': [
         'assets/apps/todo_list/img_1.png',
         'assets/apps/todo_list/img_2.png',
@@ -34,7 +38,7 @@ class Database {
       'app_type': 'MOBILE APP',
       'name': 'AIDA',
       'description':
-          'O aplicativo oferece funções para que o usuário cadastre receitas e despesas monetárias, com uma visão ampla dos dados e com gráficos, para maior controle da sua vida financeira.',
+          'The application offers features for the user to register income and monetary expenses, providing a comprehensive view of the data along with graphs for better control of their financial life.',
       'images': [
         'assets/apps/aida/img_1.png',
         'assets/apps/aida/img_2.png',
@@ -48,7 +52,7 @@ class Database {
       'app_type': 'MOBILE APP',
       'name': 'Pokédex',
       'description':
-          'O aplicativo oferece uma interface com todos os Pokémons disponíveis para que o usuário consiga ver detalhes e favoritar cada um, conta com tema escuro para melhor experiência.',
+          'The application provides an interface with all available Pokémon, allowing the user to view details and favorite each one, and it also offers a dark theme for an enhanced experience.',
       'images': [
         'assets/apps/pokedex/img_1.png',
         'assets/apps/pokedex/img_2.png',
@@ -63,7 +67,7 @@ class Database {
       'app_type': 'WEBSITE',
       'name': 'Elberte.com',
       'description':
-          'Este site que você está agora! Feito totalmente utilizando Flutter Web para que as pessoas possam ver sobre meus trabalhos e me contatarem caso precisem de algum serviço.',
+          'This website you are currently on! It has been entirely built using Flutter Web, so that people can learn about my work and contact me if they need any services.',
       'images': ['assets/apps/website/img_1.png'],
       'link': 'https://elberte.com',
       'enabled': true
@@ -123,8 +127,8 @@ class Database {
 
   static const education = [
     {
-      'type': 'Bacharel',
-      'name': 'Sistemas de Informação',
+      'type': 'Bachelor',
+      'name': 'Information Systems',
       'university': 'UNA',
       'start_date': 2023,
       'end_date': null,
@@ -132,8 +136,8 @@ class Database {
       'enabled': true
     },
     {
-      'type': 'Especialização',
-      'name': 'Flutter e Dart',
+      'type': 'Specialization',
+      'name': 'Flutter and Dart',
       'university': 'Academia do Flutter',
       'start_date': 2023,
       'end_date': null,

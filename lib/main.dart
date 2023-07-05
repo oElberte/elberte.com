@@ -1,14 +1,10 @@
 import 'package:url_strategy/url_strategy.dart';
 
-import 'database.dart';
+import 'database/database_reader.dart';
 import 'src/core/template/base_layout.dart';
 import 'src/core/ui/size_extensions.dart';
 import 'src/core/ui/styles/colors_app.dart';
 import 'src/core/widgets/left_menu_bar.dart';
-import 'src/models/apps_model.dart';
-import 'src/models/certifications_model.dart';
-import 'src/models/education_model.dart';
-import 'src/models/skills_model.dart';
 import 'src/sections/certificates/certificates_section.dart';
 import 'src/sections/education/education_section.dart';
 import 'src/sections/skills/skills_section.dart';
@@ -50,33 +46,16 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  final List<AppsModel> apps = Database.apps
-      .map<AppsModel>(
-        (a) => AppsModel.fromMap(a),
-      )
-      .toList();
-  final List<SkillsModel> skills = Database.skills
-      .map<SkillsModel>(
-        (s) => SkillsModel.fromMap(s),
-      )
-      .toList();
-  final List<EducationModel> educations = Database.education
-      .map<EducationModel>(
-        (e) => EducationModel.fromMap(e),
-      )
-      .toList();
-  final List<CertificationsModel> certifications = Database.certifications
-      .map<CertificationsModel>(
-        (e) => CertificationsModel.fromMap(e),
-      )
-      .toList();
-
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   var index = ValueNotifier(0);
 
+  var isEnglish = false;
+
   @override
   Widget build(BuildContext context) {
+    final database = DatabaseReader(isEnglish);
+
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -108,19 +87,24 @@ class _MainAppState extends State<MainApp> {
         body: BaseLayout(
           scaffoldKey: _scaffoldKey,
           navigateTo: index,
+          isEnglish: (value) {
+            setState(() {
+              isEnglish = value;
+            });
+          },
           children: [
             const IntroSection(),
             ProjectsSection(
-              apps: apps.where((a) => a.enabled == true).toList(),
+              apps: database.apps().where((a) => a.enabled == true).toList(),
             ),
             SkillsSection(
-              skills: skills.where((s) => s.enabled == true).toList(),
+              skills: database.skills().where((s) => s.enabled == true).toList(),
             ),
             EducationSection(
-              educations: educations.where((e) => e.enabled == true).toList(),
+              educations: database.education().where((e) => e.enabled == true).toList(),
             ),
             CertificatesSection(
-              certificates: certifications.where((c) => c.enabled == true).toList(),
+              certificates: database.certifications().where((c) => c.enabled == true).toList(),
             ),
           ],
         ),

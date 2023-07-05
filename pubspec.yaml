@@ -41,6 +41,7 @@ dependencies:
   sprung: ^3.0.1
   animate_gradient: ^0.0.2+1
   url_strategy: ^0.2.0
+  country_flags: ^2.1.0
 
 dev_dependencies:
   flutter_test:

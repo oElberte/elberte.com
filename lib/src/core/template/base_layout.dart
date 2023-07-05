@@ -1,3 +1,4 @@
+import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
@@ -10,12 +11,14 @@ class BaseLayout extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
   final ValueNotifier<int> navigateTo;
   final List<Widget> children;
+  final void Function(bool) isEnglish;
 
   const BaseLayout({
     super.key,
     required this.scaffoldKey,
     required this.navigateTo,
     required this.children,
+    required this.isEnglish,
   });
 
   @override
@@ -39,6 +42,8 @@ class _BaseLayoutState extends State<BaseLayout> {
     // widget.navigateTo.dispose();
     super.dispose();
   }
+
+  var isEnglish = false;
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +73,32 @@ class _BaseLayoutState extends State<BaseLayout> {
                     child: widget.children[index],
                   );
                 },
+              ),
+              Positioned(
+                right: 10,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CountryFlag.fromCountryCode(
+                      'BR',
+                      height: 30,
+                      width: 30,
+                    ),
+                    Switch(
+                      value: isEnglish,
+                      inactiveTrackColor: Colors.white,
+                      onChanged: (_) {
+                        isEnglish = !isEnglish;
+                        widget.isEnglish(isEnglish);
+                      },
+                    ),
+                    CountryFlag.fromCountryCode(
+                      'US',
+                      height: 30,
+                      width: 30,
+                    ),
+                  ],
+                ),
               ),
               Visibility(
                 visible: context.screenWidth < 700,
