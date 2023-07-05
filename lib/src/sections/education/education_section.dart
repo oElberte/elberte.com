@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/helpers/language_selector.dart';
 import '../../core/ui/size_extensions.dart';
 import '../../core/ui/styles/text_styles.dart';
 import '../../models/education_model.dart';
@@ -7,10 +8,12 @@ import 'widgets/education_item_widget.dart';
 
 class EducationSection extends StatelessWidget {
   final List<EducationModel> educations;
+  final bool isEnglish;
 
   const EducationSection({
     super.key,
     required this.educations,
+    required this.isEnglish,
   });
 
   @override
@@ -24,7 +27,7 @@ class EducationSection extends StatelessWidget {
           Align(
             alignment: Alignment.topLeft,
             child: Text(
-              'Formação',
+              LanguageSelector.education(isEnglish),
               style: context.textStyles.textBold.copyWith(
                 color: Colors.white,
                 fontSize: 42,
@@ -47,6 +50,7 @@ class EducationSection extends StatelessWidget {
                         child: SizedBox(
                           child: EducationItem(
                             education: e,
+                            isEnglish: isEnglish,
                           ),
                         ),
                       ),
@@ -69,6 +73,7 @@ class EducationSection extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return EducationItem(
                     education: educations[index],
+                    isEnglish: isEnglish,
                   );
                 },
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
+import '../../core/helpers/language_selector.dart';
 import '../../core/ui/size_extensions.dart';
 import '../../core/ui/styles/colors_app.dart';
 import '../../core/ui/styles/text_styles.dart';
@@ -10,10 +11,12 @@ import 'widgets/project_item_widget.dart';
 
 class ProjectsSection extends StatelessWidget {
   final List<AppsModel> apps;
+  final bool isEnglish;
 
   const ProjectsSection({
     super.key,
     required this.apps,
+    required this.isEnglish,
   });
 
   @override
@@ -33,7 +36,7 @@ class ProjectsSection extends StatelessWidget {
             child: Align(
               alignment: Alignment.topLeft,
               child: Text(
-                'Projetos',
+                LanguageSelector.projects(isEnglish),
                 style: context.textStyles.textBold.copyWith(
                   color: Colors.white,
                   fontSize: 42,

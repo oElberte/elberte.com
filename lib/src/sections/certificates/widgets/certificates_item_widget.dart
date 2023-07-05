@@ -71,7 +71,7 @@ class _CertificatesItemState extends State<CertificatesItem> {
                 },
                 child: AutoSizeText(
                   widget.certification.institution,
-                  style: context.textStyles.textRegular.copyWith(
+                  style: context.textStyles.textLight.copyWith(
                     color: isInstitutionHover ? context.colors.primary : Colors.white,
                     fontSize: context.screenWidth < 700 ? 26 : 30,
                   ),

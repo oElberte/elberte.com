@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/helpers/language_selector.dart';
 import '../../core/ui/on_hover_button.dart';
 import '../../core/ui/on_tap_button.dart';
 import '../../core/ui/size_extensions.dart';
@@ -9,10 +10,12 @@ import 'widgets/skills_item_widget.dart';
 
 class SkillsSection extends StatefulWidget {
   final List<SkillsModel> skills;
+  final bool isEnglish;
 
   const SkillsSection({
     super.key,
     required this.skills,
+    required this.isEnglish,
   });
 
   @override
@@ -31,7 +34,7 @@ class _SkillsSectionState extends State<SkillsSection> {
           Align(
             alignment: Alignment.topLeft,
             child: Text(
-              'Habilidades',
+              LanguageSelector.skills(widget.isEnglish),
               style: context.textStyles.textBold.copyWith(
                 color: Colors.white,
                 fontSize: 42,

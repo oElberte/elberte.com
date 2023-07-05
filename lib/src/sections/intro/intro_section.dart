@@ -4,12 +4,18 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../core/helpers/language_selector.dart';
 import '../../core/ui/size_extensions.dart';
 import '../../core/ui/styles/colors_app.dart';
 import '../../core/ui/styles/text_styles.dart';
 
 class IntroSection extends StatefulWidget {
-  const IntroSection({super.key});
+  final bool isEnglish;
+
+  const IntroSection({
+    super.key,
+    required this.isEnglish,
+  });
 
   @override
   State<IntroSection> createState() => _IntroSectionState();
@@ -51,7 +57,7 @@ class _IntroSectionState extends State<IntroSection> {
               children: [
                 FittedBox(
                   child: Text(
-                    'Olá! Meu nome é',
+                    LanguageSelector.myName(widget.isEnglish),
                     style: context.textStyles.textLight.copyWith(
                       fontSize: context.screenWidth > 1300 ? 42 : 32,
                       color: Colors.white,
@@ -72,7 +78,7 @@ class _IntroSectionState extends State<IntroSection> {
                   child: Row(
                     children: [
                       Text(
-                        'desenvolvedor mobile',
+                        LanguageSelector.mobileDev(widget.isEnglish),
                         style: context.textStyles.textSemiBold.copyWith(
                           fontSize: context.screenWidth > 1300 ? 82 : 68,
                           color: context.colors.primary,
@@ -94,7 +100,7 @@ class _IntroSectionState extends State<IntroSection> {
                 const SizedBox(height: 15),
                 FittedBox(
                   child: Text(
-                    'Desenvolvedor de aplicações para celular com Flutter.',
+                    LanguageSelector.mobileDev2(widget.isEnglish),
                     textAlign: TextAlign.center,
                     style: context.textStyles.textLight.copyWith(
                       fontSize: context.screenWidth > 1300 ? 24 : 18,

@@ -11,13 +11,15 @@ class BaseLayout extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
   final ValueNotifier<int> navigateTo;
   final List<Widget> children;
-  final void Function(bool) isEnglish;
+  final void Function(bool value) shouldChangeLanguage;
+  final bool isEnglish;
 
   const BaseLayout({
     super.key,
     required this.scaffoldKey,
     required this.navigateTo,
     required this.children,
+    required this.shouldChangeLanguage,
     required this.isEnglish,
   });
 
@@ -38,20 +40,13 @@ class _BaseLayoutState extends State<BaseLayout> {
   }
 
   @override
-  void dispose() {
-    // widget.navigateTo.dispose();
-    super.dispose();
-  }
-
-  var isEnglish = false;
-
-  @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Visibility(
           visible: context.screenWidth > 700,
           child: LeftMenuBar(
+            isEnglish: widget.isEnglish,
             width: context.screenWidth > 1200 ? context.percentWidth(.14) : context.percentWidth(.2),
             navigateTo: (index) {
               controller.scrollToIndex(index, preferPosition: AutoScrollPosition.end);
@@ -79,23 +74,32 @@ class _BaseLayoutState extends State<BaseLayout> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    CountryFlag.fromCountryCode(
-                      'BR',
-                      height: 30,
-                      width: 30,
+                    InkWell(
+                      onTap: () {
+                        widget.shouldChangeLanguage(false);
+                      },
+                      child: CountryFlag.fromCountryCode(
+                        'BR',
+                        height: 30,
+                        width: 30,
+                      ),
                     ),
                     Switch(
-                      value: isEnglish,
+                      value: widget.isEnglish,
                       inactiveTrackColor: Colors.white,
-                      onChanged: (_) {
-                        isEnglish = !isEnglish;
-                        widget.isEnglish(isEnglish);
+                      onChanged: (value) {
+                        widget.shouldChangeLanguage(value);
                       },
                     ),
-                    CountryFlag.fromCountryCode(
-                      'US',
-                      height: 30,
-                      width: 30,
+                    InkWell(
+                      onTap: () {
+                        widget.shouldChangeLanguage(true);
+                      },
+                      child: CountryFlag.fromCountryCode(
+                        'US',
+                        height: 30,
+                        width: 30,
+                      ),
                     ),
                   ],
                 ),

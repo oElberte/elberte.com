@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/helpers/language_selector.dart';
 import '../../core/ui/size_extensions.dart';
 import '../../core/ui/styles/text_styles.dart';
 import '../../models/certifications_model.dart';
@@ -7,10 +8,12 @@ import 'widgets/certificates_item_widget.dart';
 
 class CertificatesSection extends StatelessWidget {
   final List<CertificationsModel> certificates;
+  final bool isEnglish;
 
   const CertificatesSection({
     super.key,
     required this.certificates,
+    required this.isEnglish,
   });
 
   @override
@@ -24,7 +27,7 @@ class CertificatesSection extends StatelessWidget {
           Align(
             alignment: Alignment.topLeft,
             child: Text(
-              'Certificados',
+              LanguageSelector.certificates(isEnglish),
               style: context.textStyles.textBold.copyWith(
                 color: Colors.white,
                 fontSize: 42,

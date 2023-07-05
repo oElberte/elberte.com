@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../helpers/html_open.dart';
+import '../helpers/language_selector.dart';
 import '../ui/size_extensions.dart';
 import 'left_menu_button.dart';
 import 'left_menu_logo.dart';
@@ -9,11 +10,13 @@ import 'social_media_button.dart';
 class LeftMenuBar extends StatelessWidget {
   final double width;
   final Function(int index) navigateTo;
+  final bool isEnglish;
 
   const LeftMenuBar({
     super.key,
     required this.width,
     required this.navigateTo,
+    required this.isEnglish,
   });
 
   @override
@@ -41,23 +44,23 @@ class LeftMenuBar extends StatelessWidget {
                     endIndent: 30,
                   ),
                   LeftMenuButton(
-                    label: 'Início',
+                    label: LanguageSelector.start(isEnglish),
                     onPressed: () => navigateTo(0),
                   ),
                   LeftMenuButton(
-                    label: 'Projetos',
+                    label: LanguageSelector.projects(isEnglish),
                     onPressed: () => navigateTo(1),
                   ),
                   LeftMenuButton(
-                    label: 'Habilidades',
+                    label: LanguageSelector.skills(isEnglish),
                     onPressed: () => navigateTo(2),
                   ),
                   LeftMenuButton(
-                    label: 'Formação',
+                    label: LanguageSelector.education(isEnglish),
                     onPressed: () => navigateTo(3),
                   ),
                   LeftMenuButton(
-                    label: 'Certificados',
+                    label: LanguageSelector.certificates(isEnglish),
                     onPressed: () => navigateTo(4),
                   ),
                   const Divider(

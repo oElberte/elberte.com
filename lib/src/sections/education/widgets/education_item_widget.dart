@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/helpers/language_selector.dart';
 import '../../../core/ui/size_extensions.dart';
 import '../../../core/ui/styles/colors_app.dart';
 import '../../../core/ui/styles/text_styles.dart';
@@ -9,10 +10,12 @@ import 'education_item_date_widget.dart';
 
 class EducationItem extends StatelessWidget {
   final EducationModel education;
+  final bool isEnglish;
 
   const EducationItem({
     super.key,
     required this.education,
+    required this.isEnglish,
   });
 
   @override
@@ -29,7 +32,7 @@ class EducationItem extends StatelessWidget {
                   text: education.type,
                   children: [
                     TextSpan(
-                      text: ' em ${education.name}',
+                      text: '${LanguageSelector.at(isEnglish)} ${education.name}',
                       style: context.textStyles.textRegular.copyWith(
                         fontSize: 32,
                         color: Colors.white,
@@ -53,6 +56,7 @@ class EducationItem extends StatelessWidget {
               EducationItemDate(
                 isMobile: true,
                 education: education,
+                isEnglish: isEnglish,
               ),
             ],
           ),
@@ -73,6 +77,7 @@ class EducationItem extends StatelessWidget {
               visible: context.screenWidth > 700,
               child: EducationItemDate(
                 education: education,
+                isEnglish: isEnglish,
               ),
             ),
           ],
