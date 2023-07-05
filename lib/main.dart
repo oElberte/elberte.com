@@ -51,8 +51,11 @@ class _MainAppState extends State<MainApp> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      GetCountryCode.call().then((value) => setState(() => isEnglish = value));
+
+    GetCountryCode().get().then((value) {
+      setState(() {
+        isEnglish = value;
+      });
     });
   }
 

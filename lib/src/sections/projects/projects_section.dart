@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scroll_to_index/scroll_to_index.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../../core/helpers/language_selector.dart';
 import '../../core/ui/size_extensions.dart';
@@ -9,7 +9,7 @@ import '../../models/apps_model.dart';
 import 'widgets/arrow_button_widget.dart';
 import 'widgets/project_item_widget.dart';
 
-class ProjectsSection extends StatelessWidget {
+class ProjectsSection extends StatefulWidget {
   final List<AppsModel> apps;
   final bool isEnglish;
 
@@ -20,9 +20,16 @@ class ProjectsSection extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    final controller = AutoScrollController();
+  State<ProjectsSection> createState() => _ProjectsSectionState();
+}
 
+class _ProjectsSectionState extends State<ProjectsSection> {
+  final scrollController = ItemScrollController();
+
+  int index = 1;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       width: double.infinity,
@@ -36,7 +43,7 @@ class ProjectsSection extends StatelessWidget {
             child: Align(
               alignment: Alignment.topLeft,
               child: Text(
-                LanguageSelector.projects(isEnglish),
+                LanguageSelector.projects(widget.isEnglish),
                 style: context.textStyles.textBold.copyWith(
                   color: Colors.white,
                   fontSize: 42,
@@ -59,10 +66,11 @@ class ProjectsSection extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   height: context.percentHeight(.5),
-                  child: ListView.builder(
+                  //TODO: Check possibility to move to CarouselSlider
+                  child: ScrollablePositionedList.builder(
                     scrollDirection: Axis.horizontal,
-                    controller: controller,
-                    itemCount: apps.length,
+                    itemScrollController: scrollController,
+                    itemCount: widget.apps.length,
                     itemBuilder: (context, index) {
                       return Container(
                         margin: const EdgeInsets.all(15),
@@ -93,15 +101,10 @@ class ProjectsSection extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              child: AutoScrollTag(
-                                key: ValueKey(index),
+                              child: ProjectItem(
+                                apps: widget.apps,
+                                constraints: constraints,
                                 index: index,
-                                controller: controller,
-                                child: ProjectItem(
-                                  apps: apps,
-                                  constraints: constraints,
-                                  index: index,
-                                ),
                               ),
                             );
                           },
@@ -116,36 +119,42 @@ class ProjectsSection extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: CustomButton(
-                          padding: const EdgeInsets.only(),
-                          onTap: () {
-                            controller.animateTo(
-                              context.screenWidth > 1200
-                                  ? controller.offset - context.percentWidth(.45)
-                                  : controller.offset - context.percentWidth(.75),
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.easeIn,
-                            );
-                          },
-                          icon: Icons.arrow_circle_left_outlined,
+                      Visibility(
+                        visible: context.screenWidth > 700 ? index != 1 : false,
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: CustomButton(
+                            padding: const EdgeInsets.only(),
+                            onTap: () {
+                              setState(() {
+                                scrollController.scrollTo(
+                                  index: --index - 1,
+                                  duration: const Duration(milliseconds: 500),
+                                );
+                              });
+                            },
+                            icon: Icons.arrow_circle_left_outlined,
+                          ),
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: CustomButton(
-                          padding: const EdgeInsets.only(),
-                          onTap: () {
-                            controller.animateTo(
-                              context.screenWidth > 1200
-                                  ? controller.offset + context.percentWidth(.45)
-                                  : controller.offset + context.percentWidth(.75),
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.easeIn,
-                            );
-                          },
-                          icon: Icons.arrow_circle_right_outlined,
+                      Visibility(
+                        visible: context.screenWidth > 700 ? (widget.apps.length - 1) != index : false,
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: CustomButton(
+                            padding: const EdgeInsets.only(),
+                            onTap: () {
+                              if ((widget.apps.length - 1) != index) {
+                                setState(() {
+                                  scrollController.scrollTo(
+                                    index: index++,
+                                    duration: const Duration(milliseconds: 500),
+                                  );
+                                });
+                              }
+                            },
+                            icon: Icons.arrow_circle_right_outlined,
+                          ),
                         ),
                       ),
                     ],

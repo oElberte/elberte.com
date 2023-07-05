@@ -2,9 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class GetCountryCode {
-  GetCountryCode._();
-
-  static Future<bool> call() async {
+  Future<bool> get() async {
     try {
       final response = await http.get(Uri.parse('http://ip-api.com/json'));
 

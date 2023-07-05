@@ -68,18 +68,24 @@ class ImageCarousel extends StatelessWidget {
                       icon: Icons.close,
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: CustomButton(
-                      onTap: () => controller.previousPage(),
-                      icon: Icons.arrow_circle_left_outlined,
+                  Visibility(
+                    visible: context.screenWidth > 700,
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: CustomButton(
+                        onTap: () => controller.previousPage(),
+                        icon: Icons.arrow_circle_left_outlined,
+                      ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: CustomButton(
-                      onTap: () => controller.nextPage(),
-                      icon: Icons.arrow_circle_right_outlined,
+                  Visibility(
+                    visible: context.screenWidth > 700,
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: CustomButton(
+                        onTap: () => controller.nextPage(),
+                        icon: Icons.arrow_circle_right_outlined,
+                      ),
                     ),
                   ),
                   Align(

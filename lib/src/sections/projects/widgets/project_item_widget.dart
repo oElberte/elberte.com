@@ -86,6 +86,7 @@ class ProjectItem extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: 5),
               Expanded(
                 flex: 1,
                 child: SizedBox(
