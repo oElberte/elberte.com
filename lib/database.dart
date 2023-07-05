@@ -10,9 +10,25 @@ class Database {
       'name': 'MDAL',
       'description':
           'O aplicativo é uma loja de roupas virtual da marca MDAL, onde os usuários podem comprar as roupas diretamente e acompanhar os pedidos conforme o administrador atualiza.',
-      'images': ['assets/apps/mdal/', 'assets/apps/mdal/', 'assets/apps/mdal/'],
+      'images': ['assets/apps/mdal/', 'assets/apps/mdal/', 'assets/apps/mdal/',],
       'link': null,
       'enabled': false
+    },
+    {
+      'app_type': 'MOBILE APP',
+      'name': 'Todo List',
+      'description':
+          'O aplicativo oferece uma interface simples porém funcional, onde o usuário pode adicionar lembretes para tarefas que ele precisa efetuar em algum dia específico.',
+      'images': [
+        'assets/apps/todo_list/img_1.png',
+        'assets/apps/todo_list/img_2.png',
+        'assets/apps/todo_list/img_3.png',
+        'assets/apps/todo_list/img_4.png',
+        'assets/apps/todo_list/img_5.png',
+        'assets/apps/todo_list/img_6.png',
+      ],
+      'link': 'https://github.com/oElberte/todo_list_provider_sqlite',
+      'enabled': true
     },
     {
       'app_type': 'MOBILE APP',
@@ -23,7 +39,7 @@ class Database {
         'assets/apps/aida/img_1.png',
         'assets/apps/aida/img_2.png',
         'assets/apps/aida/img_3.png',
-        'assets/apps/aida/img_4.png'
+        'assets/apps/aida/img_4.png',
       ],
       'link': 'https://play.google.com/store/apps/details?id=br.com.carteiraverde.carteira_verde',
       'enabled': true
@@ -38,7 +54,7 @@ class Database {
         'assets/apps/pokedex/img_2.png',
         'assets/apps/pokedex/img_3.png',
         'assets/apps/pokedex/img_4.png',
-        'assets/apps/pokedex/img_5.png'
+        'assets/apps/pokedex/img_5.png',
       ],
       'link': 'https://github.com/oelberte/pokedex#readme',
       'enabled': true
@@ -47,7 +63,7 @@ class Database {
       'app_type': 'WEBSITE',
       'name': 'Elberte.com',
       'description':
-          'Este site que você está agora! Feito totalmente utilizando Flutter Web para que as pessoas possam ver sobre meus trabalhos e me contratarem caso precisem de algum serviço.',
+          'Este site que você está agora! Feito totalmente utilizando Flutter Web para que as pessoas possam ver sobre meus trabalhos e me contatarem caso precisem de algum serviço.',
       'images': ['assets/apps/website/img_1.png'],
       'link': 'https://elberte.com',
       'enabled': true

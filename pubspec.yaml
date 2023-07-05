@@ -70,9 +70,9 @@ flutter:
     - assets/apps/aida/
     - assets/apps/pokedex/
     - assets/apps/website/
+    - assets/apps/todo_list/
     - assets/skills/icons_2/
     - assets/skills/icons_3/
-  #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
