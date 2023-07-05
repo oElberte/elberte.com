@@ -14,13 +14,21 @@ import 'src/sections/intro/intro_section.dart';
 import 'src/sections/projects/projects_section.dart';
 import 'src/sections/skills/skills_section.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   setPathUrlStrategy();
-  runApp(const MyApp());
+  final isEnglish = await GetCountryCode().get();
+  runApp(
+    MyApp(
+      isEnglish: isEnglish,
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  final bool isEnglish;
+
+  const MyApp({super.key, required this.isEnglish});
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -33,30 +41,30 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Elberte',
       theme: ThemeConfig.theme,
-      home: const MainApp(),
+      home:  MainApp(isEnglish: widget.isEnglish),
     );
   }
 }
 
 class MainApp extends StatefulWidget {
-  const MainApp({super.key});
+  final bool isEnglish;
+
+  const MainApp({super.key, required this.isEnglish});
 
   @override
   State<MainApp> createState() => _MainAppState();
 }
 
 class _MainAppState extends State<MainApp> {
-  bool isEnglish = true;
+  // bool isEnglish = true;
+
+  late bool isEnglish;
 
   @override
   void initState() {
     super.initState();
-
-    GetCountryCode().get().then((value) {
-      setState(() {
-        isEnglish = value;
-      });
-    });
+    isEnglish = widget.isEnglish;
+    
   }
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
