@@ -25,23 +25,19 @@ void main() async {
   );
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   final bool isEnglish;
 
   const MyApp({super.key, required this.isEnglish});
 
   @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Elberte',
+      title: 'Elberte Plínio',
+      initialRoute: '/',
       theme: ThemeConfig.theme,
-      home:  MainApp(isEnglish: widget.isEnglish),
+      home: MainApp(isEnglish: isEnglish),
     );
   }
 }
@@ -64,7 +60,6 @@ class _MainAppState extends State<MainApp> {
   void initState() {
     super.initState();
     isEnglish = widget.isEnglish;
-    
   }
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
