@@ -20,6 +20,30 @@ class DatabasePt {
     },
     {
       'app_type': 'MOBILE APP',
+      'name': 'AIDA',
+      'description':
+          'O aplicativo oferece funções para que o usuário cadastre receitas e despesas monetárias, com uma visão ampla dos dados e com gráficos, para maior controle da sua vida financeira.',
+      'images': [
+        'assets/apps/aida/img_1.png',
+        'assets/apps/aida/img_2.png',
+        'assets/apps/aida/img_3.png',
+        'assets/apps/aida/img_4.png',
+        'assets/apps/aida/img_5.png',
+        'assets/apps/aida/img_6.png',
+        'assets/apps/aida/img_7.png',
+        'assets/apps/aida/img_8.png',
+        'assets/apps/aida/img_9.png',
+        'assets/apps/aida/img_10.png',
+        'assets/apps/aida/img_11.png',
+        'assets/apps/aida/img_12.png',
+        'assets/apps/aida/img_13.png',
+        'assets/apps/aida/img_14.png',
+      ],
+      'link': 'https://play.google.com/store/apps/details?id=br.com.carteiraverde.carteira_verde',
+      'enabled': true
+    },
+    {
+      'app_type': 'MOBILE APP',
       'name': 'Todo List',
       'description':
           'O aplicativo oferece uma interface simples porém funcional, onde o usuário pode adicionar lembretes para tarefas que ele precisa efetuar em algum dia específico.',
@@ -32,20 +56,6 @@ class DatabasePt {
         'assets/apps/todo_list/img_6.png',
       ],
       'link': 'https://github.com/oElberte/todo_list_provider_sqlite',
-      'enabled': true
-    },
-    {
-      'app_type': 'MOBILE APP',
-      'name': 'AIDA',
-      'description':
-          'O aplicativo oferece funções para que o usuário cadastre receitas e despesas monetárias, com uma visão ampla dos dados e com gráficos, para maior controle da sua vida financeira.',
-      'images': [
-        'assets/apps/aida/img_1.png',
-        'assets/apps/aida/img_2.png',
-        'assets/apps/aida/img_3.png',
-        'assets/apps/aida/img_4.png',
-      ],
-      'link': 'https://play.google.com/store/apps/details?id=br.com.carteiraverde.carteira_verde',
       'enabled': true
     },
     {

@@ -31,6 +31,8 @@ class SkillsItem extends StatelessWidget {
           ),
           child: Image.asset(
             isHovered ? skill.iconHovered : skill.icon,
+            height: double.infinity,
+            width: 60,
             color: isHovered ? null : Colors.white,
           ),
         ),
