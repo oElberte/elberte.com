@@ -84,13 +84,16 @@ class _IntroSectionState extends State<IntroSection> {
                           color: context.colors.primary,
                         ),
                       ),
-                      Visibility(
-                        visible: _show,
-                        child: Text(
-                          '.',
-                          style: context.textStyles.textSemiBold.copyWith(
-                            fontSize: context.screenWidth > 1300 ? 82 : 68,
-                            color: context.colors.primary,
+                      SizedBox(
+                        width: 20,
+                        child: Visibility(
+                          visible: _show,
+                          child: Text(
+                            '.',
+                            style: context.textStyles.textSemiBold.copyWith(
+                              fontSize: context.screenWidth > 1300 ? 82 : 68,
+                              color: context.colors.primary,
+                            ),
                           ),
                         ),
                       ),

@@ -71,37 +71,40 @@ class _BaseLayoutState extends State<BaseLayout> {
               ),
               Positioned(
                 right: 10,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        widget.shouldChangeLanguage(false);
-                      },
-                      child: CountryFlag.fromCountryCode(
-                        'BR',
-                        height: 30,
-                        width: 30,
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          widget.shouldChangeLanguage(false);
+                        },
+                        child: CountryFlag.fromCountryCode(
+                          'BR',
+                          height: 30,
+                          width: 30,
+                        ),
                       ),
-                    ),
-                    Switch(
-                      value: widget.isEnglish,
-                      inactiveTrackColor: Colors.white,
-                      onChanged: (value) {
-                        widget.shouldChangeLanguage(value);
-                      },
-                    ),
-                    InkWell(
-                      onTap: () {
-                        widget.shouldChangeLanguage(true);
-                      },
-                      child: CountryFlag.fromCountryCode(
-                        'US',
-                        height: 30,
-                        width: 30,
+                      Switch(
+                        value: widget.isEnglish,
+                        inactiveTrackColor: Colors.white,
+                        onChanged: (value) {
+                          widget.shouldChangeLanguage(value);
+                        },
                       ),
-                    ),
-                  ],
+                      InkWell(
+                        onTap: () {
+                          widget.shouldChangeLanguage(true);
+                        },
+                        child: CountryFlag.fromCountryCode(
+                          'US',
+                          height: 30,
+                          width: 30,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Visibility(
