@@ -4,11 +4,11 @@ import 'package:http/http.dart' as http;
 class GetCountryCode {
   Future<bool> get() async {
     try {
-      final response = await http.get(Uri.parse('http://ip-api.com/json'));
+      final response = await http.get(Uri.parse('https://ipapi.co/json'));
 
       if (response.body.isNotEmpty) {
-        final countryCode = json.decode(response.body)['countryCode'].toString();
-        if (countryCode == 'BR') {
+        final country = json.decode(response.body)['country'].toString();
+        if (country == 'BR') {
           return false;
         } else {
           return true;
