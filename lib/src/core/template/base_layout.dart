@@ -72,7 +72,7 @@ class _BaseLayoutState extends State<BaseLayout> {
               Positioned(
                 right: 10,
                 child: Padding(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 10),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
