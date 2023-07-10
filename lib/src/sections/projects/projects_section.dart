@@ -105,6 +105,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                                 apps: widget.apps,
                                 constraints: constraints,
                                 index: index,
+                                isEnglish: widget.isEnglish,
                               ),
                             );
                           },

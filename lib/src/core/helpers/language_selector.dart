@@ -14,4 +14,5 @@ class LanguageSelector {
   static String skills(bool isEnglish) => isEnglish ? 'Skills' : 'Habilidades';
   static String education(bool isEnglish) => isEnglish ? 'Education' : 'Formação';
   static String certificates(bool isEnglish) => isEnglish ? 'Certificates' : 'Certificados';
+  static String seeMore(bool isEnglish) => isEnglish ? 'VIEW MORE' : 'VEJA MAIS';
 }

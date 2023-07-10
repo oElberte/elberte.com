@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/helpers/html_open.dart';
+import '../../../core/helpers/language_selector.dart';
 import '../../../core/ui/size_extensions.dart';
 import '../../../core/ui/styles/colors_app.dart';
 import '../../../core/ui/styles/text_styles.dart';
@@ -12,12 +13,14 @@ class ProjectItem extends StatelessWidget {
   final List<AppsModel> apps;
   final BoxConstraints constraints;
   final int index;
+  final bool isEnglish;
 
   const ProjectItem({
     super.key,
     required this.apps,
     required this.constraints,
     required this.index,
+    required this.isEnglish,
   });
 
   @override
@@ -94,7 +97,7 @@ class ProjectItem extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () => context.openLink(apps[index].link ?? ''),
                     style: ElevatedButton.styleFrom(backgroundColor: context.colors.secondary),
-                    child: const Text('VEJA MAIS'),
+                    child: Text(LanguageSelector.seeMore(isEnglish)),
                   ),
                 ),
               ),
