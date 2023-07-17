@@ -53,9 +53,16 @@ class ImageCarousel extends StatelessWidget {
                       itemBuilder: (context, imageIndex, realIndex) {
                         return Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 5),
-                          child: Image.asset(
-                            apps[index].images[imageIndex],
+                          child: Image(
+                            image: AssetImage(apps[index].images[imageIndex]),
                             fit: BoxFit.cover,
+                            loadingBuilder: (context, child, loadingProgress) {
+                              if (loadingProgress == null) {
+                                return child;
+                              } else {
+                                return const CircularProgressIndicator();
+                              }
+                            },
                           ),
                         );
                       },
