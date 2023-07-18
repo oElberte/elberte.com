@@ -22,15 +22,16 @@ class IntroSection extends StatefulWidget {
 }
 
 class _IntroSectionState extends State<IntroSection> {
-  bool _show = true;
+  final ValueNotifier<bool> _showVN = ValueNotifier(false);
   Timer? _timer;
 
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(const Duration(milliseconds: 700), (_) {
-      setState(() => _show = !_show);
-    });
+    _timer = Timer.periodic(
+      const Duration(milliseconds: 700),
+      (_) => _showVN.value = !_showVN.value,
+    );
   }
 
   @override
@@ -86,15 +87,20 @@ class _IntroSectionState extends State<IntroSection> {
                       ),
                       SizedBox(
                         width: 20,
-                        child: Visibility(
-                          visible: _show,
-                          child: Text(
-                            '.',
-                            style: context.textStyles.textSemiBold.copyWith(
-                              fontSize: context.screenWidth > 1300 ? 82 : 68,
-                              color: context.colors.primary,
-                            ),
-                          ),
+                        child: ValueListenableBuilder(
+                          valueListenable: _showVN,
+                          builder: (_, showVNValue, child) {
+                            return Visibility(
+                              visible: showVNValue,
+                              child: Text(
+                                '.',
+                                style: context.textStyles.textSemiBold.copyWith(
+                                  fontSize: context.screenWidth > 1300 ? 82 : 68,
+                                  color: context.colors.primary,
+                                ),
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ],
