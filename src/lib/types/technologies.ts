@@ -207,12 +207,6 @@ export const TECHNOLOGIES = {
 	// 	icon: Code,
 	// 	category: TechCategory.TOOLS
 	// },
-	// POSTMAN: {
-	// 	id: 'postman',
-	// 	name: 'Postman',
-	// 	icon: Code,
-	// 	category: TechCategory.TOOLS
-	// },
 	// FIGMA: {
 	// 	id: 'figma',
 	// 	name: 'Figma',
@@ -237,12 +231,6 @@ export const TECHNOLOGIES = {
 	// 	icon: Code,
 	// 	category: TechCategory.TOOLS
 	// },
-	// OPENAI: {
-	// 	id: 'openai',
-	// 	name: 'OpenAI',
-	// 	icon: Code,
-	// 	category: TechCategory.TOOLS
-	// }
 } as const;
 
 /**
