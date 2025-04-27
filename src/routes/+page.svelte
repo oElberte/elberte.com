@@ -67,6 +67,61 @@
 		}
 	];
 
+	interface Experience {
+		title: string;
+		company: string;
+		image: string;
+		href?: string;
+		description: string;
+		technologies: Array<keyof typeof TECHNOLOGIES>;
+	}
+
+	const experiences: Experience[] = [
+		{
+			title: 'Software Engineer / Tech Lead',
+			company: 'MusicPlayce - Project',
+			image: '/musicplayce.png',
+			href: 'https://musicplayce.com',
+			description: 'A music streaming platform built with Flutter and Firebase.',
+			technologies: ['FLUTTER', 'FIREBASE', 'CLOUDFIRESTORE', 'GOLANG', 'GCP', 'DOCKER', 'CICD']
+		},
+		{
+			title: 'Software Engineer / Tech Lead',
+			company: 'GAV Resorts - Project',
+			image: '/gavresorts.png',
+			description: 'A music streaming platform built with Flutter and Firebase.',
+			technologies: [
+				'SVELTE',
+				'TAILWINDCSS',
+				'TYPESCRIPT',
+				'NEON',
+				'DRIZZLE',
+				'POSTGRESQL',
+				'DOCKER',
+				'GCP',
+				'CICD'
+			]
+		},
+		{
+			title: 'Software Engineer',
+			company: 'Zellor - Project',
+			image: '/zellor.png',
+			href: 'https://zellor.com',
+			description: 'A music streaming platform built with Flutter and Firebase.',
+			technologies: [
+				'SVELTE',
+				'TYPESCRIPT',
+				'NESTJS',
+				'SHOPIFY',
+				'AWS',
+				'PRISMA',
+				'POSTGRESQL',
+				'DOCKER',
+				'CICD'
+			]
+		}
+	];
+
 	// Tech stack data with icons using the new technology system
 	const techStack = [
 		{
@@ -166,10 +221,46 @@
 
 		<!-- Experience Section -->
 		<!-- TODO: Add experiences (to the top menu as well) -->
+		<section id="experience" class="px-4 py-16 md:py-24">
+			<div class="mx-auto max-w-7xl">
+				<h2 class="mb-12 text-center text-3xl font-bold md:text-4xl">Experience</h2>
+
+				<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+					<!-- md:grid-cols-2"> -->
+					{#each experiences as experience}
+						<div class="flex flex-col">
+							<a
+								href={experience.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="glow-container overflow-hidden rounded-lg border border-purple-600 bg-purple-900 p-6"
+							>
+								<img
+									src={experience.image}
+									alt={experience.company}
+									class="absolute -top-[11%] -right-[9%] h-[125%] flex-shrink-0 overflow-clip object-contain opacity-10"
+								/>
+								<div class="relative z-10">
+									<h3 class="mb-4 text-xl font-bold">{experience.title}</h3>
+									<p class="mb-4 text-purple-300">{experience.company}</p>
+									<div class="flex flex-wrap gap-2">
+										{#each experience.technologies as tech}
+											<span class="rounded bg-purple-800 px-2 py-1 text-xs"
+												>{TECHNOLOGIES[tech].name}</span
+											>
+										{/each}
+									</div>
+								</div>
+							</a>
+							<p class="mt-2 text-purple-300">{experience.description}</p>
+						</div>
+					{/each}
+				</div>
+			</div>
+		</section>
 
 		<!-- Projects Section -->
-		<!-- TODO: Add projects -->
-		<section id="projects" class="px-4 py-16 md:py-24">
+		<section id="projects" class="bg-purple-900 px-4 py-16 md:py-24">
 			<div class="mx-auto max-w-7xl">
 				<h2 class="mb-12 text-center text-3xl font-bold md:text-4xl">GitHub Projects</h2>
 				<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -207,11 +298,11 @@
 		</section>
 
 		<!-- Tech Stack Section -->
-		<section class="bg-purple-900 px-4 py-16 md:py-24">
+		<section class="bg-purple-950 px-4 py-16 md:py-24">
 			<div class="mx-auto max-w-7xl">
 				<h2 class="mb-12 text-center text-3xl font-bold md:text-4xl">Tech Stack</h2>
 
-				<div class="grid grid-cols-2 gap-8 md:grid-cols-3">
+				<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 					<!-- md:grid-cols-2"> -->
 					{#each techStack as stack}
 						<div class="glow-container rounded-lg border border-purple-600 bg-purple-900 p-6">
@@ -235,11 +326,11 @@
 		</section>
 
 		<!-- Education Section -->
-		<section class="bg-purple-950 px-4 py-16 md:py-24">
+		<section class="bg-purple-900 px-4 py-16 md:py-24">
 			<div class="mx-auto max-w-7xl">
 				<h2 class="mb-12 text-center text-3xl font-bold md:text-4xl">Education</h2>
 
-				<div class="grid grid-cols-2 gap-8 md:grid-cols-3">
+				<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 					<!-- md:grid-cols-2"> -->
 					{#each educations as education}
 						<a
@@ -271,13 +362,13 @@
 		</section>
 
 		<!-- Contact Section -->
-		<section id="contact" class="bg-purple-900 px-4 py-20">
+		<section id="contact" class="bg-purple-950 px-4 py-20">
 			<div class="mx-auto max-w-3xl">
 				<h2 class="mb-16 text-center text-4xl font-bold">Get in Touch</h2>
 
 				<form
 					on:submit|preventDefault={handleSubmit}
-					class="glow-container rounded-lg border border-purple-600 bg-purple-950 p-8"
+					class="glow-container rounded-lg border border-purple-600 bg-purple-900 p-8"
 				>
 					<div class="mb-6">
 						<label for="name" class="mb-2 block">Name</label>
@@ -325,7 +416,7 @@
 
 	<!-- Footer -->
 	<footer class="border-t border-purple-700 px-4 py-6">
-		<div class="mx-auto flex max-w-7xl flex-col items-center justify-between md:flex-row">
+		<div class="mx-auto flex max-w-7xl flex-col items-center justify-center md:flex-row">
 			<p class="mb-4 text-sm text-purple-400 md:mb-0">
 				&copy; {new Date().getFullYear()} - Made with <svelte:component
 					this={Heart}
@@ -334,14 +425,14 @@
 					className="inline-block"
 				/> by Elberte Plínio.
 			</p>
-			<div class="flex space-x-6">
+			<!-- <div class="flex space-x-6">
 				<a href="/terms" class="text-sm text-purple-400 transition-colors hover:text-white"
 					>Terms of Service</a
 				>
 				<a href="/privacy" class="text-sm text-purple-400 transition-colors hover:text-white"
 					>Privacy</a
 				>
-			</div>
+			</div> -->
 		</div>
 	</footer>
 </div>
