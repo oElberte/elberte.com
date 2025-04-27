@@ -4,7 +4,7 @@
 		type = 'Person',
 		name = 'Elberte Plínio',
 		jobTitle = 'Software Engineer',
-		url = 'https://www.elberte.com',
+		url = 'https://elberte.com',
 		image = '/og-image.svg',
 		description = 'Software Engineer building digital experiences with modern technologies',
 		sameAs = [],

@@ -7,7 +7,7 @@
 		ogImage = '/og-image.svg',
 		ogType = 'website',
 		twitterCard = 'summary_large_image',
-		canonicalUrl = 'https://www.elberte.com',
+		canonicalUrl = 'https://elberte.com',
 		locale = 'en_US'
 	} = $props();
 
