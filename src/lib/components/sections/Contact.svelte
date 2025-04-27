@@ -18,9 +18,9 @@
 	);
 </script>
 
-<section id="contact" class="bg-purple-900 px-4 py-20">
+<section id="contact" class="bg-purple-900 px-4 py-20" aria-labelledby="contact-heading">
 	<div class="mx-auto max-w-3xl">
-		<h2 class="mb-16 text-center text-4xl font-bold">Get in Touch</h2>
+		<h2 id="contact-heading" class="mb-16 text-center text-4xl font-bold">Get in Touch</h2>
 
 		<div class="relative">
 			<!-- Form submission overlay -->
@@ -28,11 +28,14 @@
 				<div
 					transition:fade={{ duration: 300 }}
 					class="absolute inset-0 z-10 flex items-center justify-center rounded-lg bg-purple-950/50 backdrop-blur-sm"
+					role="alert"
+					aria-live="assertive"
 				>
 					{#if submissionState === SubmissionState.SUCCESS}
 						<div in:fly={{ duration: 300, delay: 300 }} class="text-center">
 							<div
 								class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-green-500/20"
+								aria-hidden="true"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -40,6 +43,7 @@
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
+									aria-hidden="true"
 								>
 									<path
 										stroke-linecap="round"
@@ -65,6 +69,7 @@
 						<div in:fly={{ duration: 300, delay: 300 }} class="text-center">
 							<div
 								class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-red-500/20"
+								aria-hidden="true"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -72,6 +77,7 @@
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
+									aria-hidden="true"
 								>
 									<path
 										stroke-linecap="round"
@@ -110,25 +116,31 @@
 				}}
 				class:opacity-70={submissionState !== SubmissionState.NOT_SUBMITTED}
 				class:pointer-events-none={submissionState !== SubmissionState.NOT_SUBMITTED}
+				itemscope
+				itemtype="https://schema.org/ContactPage"
+				aria-labelledby="contact-form-heading"
 			>
-				<Input id="name" name="name" type="text" label="Name" required />
+				<h3 id="contact-form-heading" class="sr-only">Contact Form</h3>
+				<div itemprop="mainEntity" itemscope itemtype="https://schema.org/ContactPoint">
+					<Input id="name" name="name" type="text" label="Name" required />
 
-				<Input id="email" name="email" type="email" label="Email" required />
+					<Input id="email" name="email" type="email" label="Email" required itemprop="email" />
 
-				<TextArea id="message" name="message" label="Message" rows={5} required />
+					<TextArea id="message" name="message" label="Message" rows={5} required />
 
-				<button
-					type="submit"
-					class="w-full rounded bg-purple-500 py-3 font-medium text-white transition-all"
-					disabled={isFormDisabled}
-					class:opacity-50={isFormDisabled}
-					class:cursor-not-allowed={isFormDisabled}
-					class:hover:bg-purple-600={!isFormDisabled}
-					class:cursor-pointer={!isFormDisabled}
-					class:hover:scale-[1.02]={!isFormDisabled}
-				>
-					Send Message
-				</button>
+					<button
+						type="submit"
+						class="w-full rounded bg-purple-500 py-3 font-medium text-white transition-all"
+						disabled={isFormDisabled}
+						class:opacity-50={isFormDisabled}
+						class:cursor-not-allowed={isFormDisabled}
+						class:hover:bg-purple-600={!isFormDisabled}
+						class:cursor-pointer={!isFormDisabled}
+						class:hover:scale-[1.02]={!isFormDisabled}
+					>
+						Send Message
+					</button>
+				</div>
 			</form>
 		</div>
 	</div>
