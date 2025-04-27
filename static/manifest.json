@@ -1,16 +1,16 @@
 {
-  "name": "Elberte Plínio | Software Engineer",
-  "short_name": "Elberte Plínio",
-  "description": "Portfolio of Elberte Plínio, a skilled Software Engineer specializing in building modern web applications with cutting-edge technologies.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#4C1D95",
-  "theme_color": "#4C1D95",
-  "icons": [
-    {
-      "src": "/favicon.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    }
-  ]
+	"name": "Elberte Plínio | Software Engineer",
+	"short_name": "Elberte Plínio",
+	"description": "Portfolio of Elberte Plínio, a skilled Software Engineer specializing in building modern web applications with cutting-edge technologies.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#4C1D95",
+	"theme_color": "#4C1D95",
+	"icons": [
+		{
+			"src": "/favicon.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		}
+	]
 }

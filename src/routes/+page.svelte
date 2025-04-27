@@ -9,23 +9,23 @@
 	import Hero from '$lib/components/sections/Hero.svelte';
 	import TechStack from '$lib/components/sections/TechStack.svelte';
 	import { socialLinks } from '$lib/data/social-links';
-	
+
 	// Extract social media URLs for structured data
-	const socialMediaUrls = socialLinks.map(link => link.url);
+	const socialMediaUrls = socialLinks.map((link) => link.url);
 </script>
 
-<SEO 
+<SEO
 	title="Elberte Plínio | Software Engineer"
 	description="Portfolio of Elberte Plínio, a skilled Software Engineer specializing in building modern web applications with cutting-edge technologies. Explore my work experience, projects, and technical skills."
 	keywords="software engineer, web developer, frontend developer, backend developer, full stack developer, portfolio, Elberte Plínio"
-	canonicalUrl="https://elberte.com"
+	canonicalUrl="https://www.elberte.com"
 	ogImage="/og-image.svg"
 />
 
-<StructuredData 
+<StructuredData
 	name="Elberte Plínio"
 	jobTitle="Software Engineer"
-	url="https://elberte.com"
+	url="https://www.elberte.com"
 	image="/og-image.svg"
 	description="Software Engineer building digital experiences with modern technologies"
 	sameAs={socialMediaUrls}
