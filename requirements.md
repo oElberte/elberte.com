@@ -5,12 +5,12 @@
 - [x] Add professional experiences section
 - [] Add Github projects section
 - [x] Add education section
-- [] Add e-mail somewhere in the screen
-- [] Add contact section
+- [x] Add e-mail somewhere in the screen
+- [x] Add contact section
 - [x] Add footer
 - [] Add animations
 - [] Add icon
 - [] Add SEO
-- [] Refactor code
+- [x] Refactor code
 - [] Add tests
 - [] Update README.md
