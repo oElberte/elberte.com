@@ -20,6 +20,7 @@ import Nest from '$lib/icons/Nest.svelte';
 import Node from '$lib/icons/Node.svelte';
 import Postgresql from '$lib/icons/Postgresql.svelte';
 import Prisma from '$lib/icons/Prisma.svelte';
+import Shopify from '$lib/icons/Shopify.svelte';
 import Svelte from '$lib/icons/Svelte.svelte';
 import Tailwind from '$lib/icons/Tailwind.svelte';
 import Tdd from '$lib/icons/Tdd.svelte';
@@ -96,6 +97,12 @@ export const TECHNOLOGIES = {
 		id: 'css',
 		name: 'CSS',
 		icon: Css,
+		category: TechCategory.FRONTEND
+	},
+	SHOPIFY: {
+		id: 'shopify',
+		name: 'Shopify',
+		icon: Shopify,
 		category: TechCategory.FRONTEND
 	},
 
