@@ -1,13 +1,17 @@
 <script lang="ts">
-	// Import SVG icon components
+	import { enhance } from '$app/forms';
+	import { FormErrorsContext } from '$lib/actions/form-errors.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import Input from '$lib/components/Input.svelte';
+	import TextArea from '$lib/components/TextArea.svelte';
 	import Email from '$lib/icons/Email.svelte';
 	import GitHub from '$lib/icons/GitHub.svelte';
 	import Heart from '$lib/icons/Heart.svelte';
 	import LinkedIn from '$lib/icons/LinkedIn.svelte';
 	import WhatsApp from '$lib/icons/WhatsApp.svelte';
-	// Import technologies
-	import Header from '$lib/components/Header.svelte';
 	import { TECHNOLOGIES, TechCategory, getTechnologiesByCategory } from '$lib/types/technologies';
+	import { contactFormSchema } from '$lib/validations/contact';
+	import { setContext } from 'svelte';
 
 	// Social media links
 	const socialLinks = [
@@ -160,20 +164,9 @@
 		}
 	];
 
-	// Form data
-	let name = '';
-	let email = '';
-	let message = '';
+	const formErrors = setContext(FormErrorsContext.key, new FormErrorsContext(contactFormSchema));
 
-	// Handle form submission
-	function handleSubmit() {
-		console.log({ name, email, message });
-		// Reset form
-		name = '';
-		email = '';
-		message = '';
-		alert('Message sent successfully!');
-	}
+	const formHasErrors = $derived(Object.keys(formErrors.errors).length > 0);
 </script>
 
 <svelte:head>
@@ -212,7 +205,7 @@
 							aria-label={link.ariaLabel}
 							class="glow-container flex h-full flex-col overflow-hidden rounded-lg border border-purple-600 bg-purple-800 p-3 transition-transform hover:scale-110 hover:bg-purple-700"
 						>
-							<svelte:component this={link.icon} />
+							<link.icon />
 						</a>
 					{/each}
 				</div>
@@ -310,11 +303,7 @@
 							<div class="flex flex-wrap gap-2">
 								{#each stack.technologies as tech}
 									<span class="flex items-center rounded-full bg-purple-800 px-3 py-1 text-sm">
-										<svelte:component
-											this={tech.icon}
-											size={16}
-											className="mr-1.5 text-purple-400"
-										/>
+										<tech.icon size={16} className="mr-1.5 text-purple-400" />
 										{tech.name}
 									</span>
 								{/each}
@@ -367,45 +356,25 @@
 				<h2 class="mb-16 text-center text-4xl font-bold">Get in Touch</h2>
 
 				<form
-					on:submit|preventDefault={handleSubmit}
+					method="post"
 					class="glow-container rounded-lg border border-purple-600 bg-purple-900 p-8"
+					use:formErrors.action
+					use:enhance
 				>
-					<div class="mb-6">
-						<label for="name" class="mb-2 block">Name</label>
-						<input
-							type="text"
-							id="name"
-							bind:value={name}
-							required
-							class="w-full rounded border border-purple-700 bg-purple-950 p-3 focus:border-purple-400 focus:outline-none"
-						/>
-					</div>
+					<Input id="name" name="name" type="text" label="Name" required />
 
-					<div class="mb-6">
-						<label for="email" class="mb-2 block">Email</label>
-						<input
-							type="email"
-							id="email"
-							bind:value={email}
-							required
-							class="w-full rounded border border-purple-700 bg-purple-950 p-3 focus:border-purple-400 focus:outline-none"
-						/>
-					</div>
+					<Input id="email" name="email" type="email" label="Email" required />
 
-					<div class="mb-6">
-						<label for="message" class="mb-2 block">Message</label>
-						<textarea
-							id="message"
-							bind:value={message}
-							required
-							rows="5"
-							class="w-full resize-none rounded border border-purple-700 bg-purple-950 p-3 focus:border-purple-400 focus:outline-none"
-						></textarea>
-					</div>
+					<TextArea id="message" name="message" label="Message" rows={5} required />
 
 					<button
 						type="submit"
-						class="w-full cursor-pointer rounded bg-purple-500 py-3 font-medium text-white transition-colors hover:bg-purple-600"
+						class="w-full rounded bg-purple-500 py-3 font-medium text-white transition-colors"
+						disabled={formHasErrors}
+						class:opacity-50={formHasErrors}
+						class:cursor-not-allowed={formHasErrors}
+						class:hover:bg-purple-600={!formHasErrors}
+						class:cursor-pointer={!formHasErrors}
 					>
 						Send Message
 					</button>
@@ -418,8 +387,7 @@
 	<footer class="border-t border-purple-700 px-4 py-6">
 		<div class="mx-auto flex max-w-7xl flex-col items-center justify-center md:flex-row">
 			<p class="mb-4 text-sm text-purple-400 md:mb-0">
-				&copy; {new Date().getFullYear()} - Made with <svelte:component
-					this={Heart}
+				&copy; {new Date().getFullYear()} - Made with <Heart
 					size={14}
 					color="#ef4444"
 					className="inline-block"
