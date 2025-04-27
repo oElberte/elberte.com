@@ -9,7 +9,7 @@
 - [x] Add contact section
 - [x] Add footer
 - [] Add animations
-- [] Add icon
+- [x] Add icon
 - [] Add SEO
 - [x] Refactor code
 - [] Add tests
