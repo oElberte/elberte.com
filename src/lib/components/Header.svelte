@@ -35,6 +35,7 @@
 		<!-- Desktop Navigation -->
 		<nav class="hidden items-center space-x-6 md:flex">
 			<a href="#about" class="transition-colors hover:text-purple-300">About</a>
+			<a href="#experience" class="transition-colors hover:text-purple-300">Experience</a>
 			<a href="#projects" class="transition-colors hover:text-purple-300">Projects</a>
 			<a href="#contact" class="transition-colors hover:text-purple-300">Contact</a>
 			<a
@@ -65,6 +66,11 @@
 			<div class="flex flex-col space-y-4 p-4">
 				<a href="#about" class="transition-colors hover:text-purple-300" onclick={closeMobileMenu}
 					>About</a
+				>
+				<a
+					href="#experience"
+					class="transition-colors hover:text-purple-300"
+					onclick={closeMobileMenu}>Experience</a
 				>
 				<a
 					href="#projects"
