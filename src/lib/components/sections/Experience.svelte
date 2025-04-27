@@ -33,7 +33,7 @@
 							</div>
 						</div>
 					</a>
-					<p class="mt-2 text-purple-300">{experience.description}</p>
+					<p class="mt-2 text-justify text-purple-300">{experience.description}</p>
 				</div>
 			{/each}
 		</div>
