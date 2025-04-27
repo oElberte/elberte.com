@@ -13,4 +13,6 @@
 - [x] Add SEO
 - [x] Refactor code
 - [] Add tests
-- [] Update README.md
+- [x] Update README.md
+- [x] Deploy (Vercel)
+- [x] Add Analytics (Vercel)

@@ -1,38 +1,90 @@
-# sv
+# 🌐 Elberte's Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A modern personal portfolio website built with SvelteKit and Tailwind CSS.
 
-## Creating a project
+## 👨‍💻 About
 
-If you're seeing this, you've probably already done this step. Congrats!
+This portfolio website showcases my professional experience, skills, and projects as a Software Engineer. It features a clean and intuitive user interface with a purple-themed design, focusing on presenting my work and skills in an engaging way.
 
-```bash
-# create a new project in the current directory
-npx sv create
+## 🏗️ Architecture
 
-# create a new project in my-app
-npx sv create my-app
+This project is built with:
+
+- **SvelteKit**: Frontend framework for building fast, SEO-friendly web applications
+- **Tailwind CSS**: Utility-first CSS framework for styling
+- **Responsive Design**: Optimized for all device sizes
+- **SEO Optimization**: Structured for search engine visibility
+- **Analytics**: Monitors website traffic and user behavior
+
+## 🛠️ Tech Stack
+
+- **SvelteKit**: Frontend framework
+- **TypeScript**: Programming language
+- **Tailwind CSS**: Styling
+- **Vite**: Build tool
+- **Markdown**: Content management
+- **Vercel**: Deployment
+
+## 🌟 Features
+
+- Responsive design
+- About section
+- Experience timeline
+- Tech stack showcase
+- Education history
+- Contact information
+- SEO optimized
+- Analytics
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (>=22.x)
+- npm or pnpm
+
+### Installation
+
+1. Clone the repository
+
+   ```
+   git clone https://github.com/oElberte/elberte.com.git
+   ```
+
+2. Install dependencies
+
+   ```
+   npm install
+   # or
+   pnpm install
+   ```
+
+3. Run the development server
+   ```
+   npm run dev
+   # or
+   pnpm dev
+   ```
+
+## 📂 Project Structure
+
+```
+elberte.com/
+├── src/
+│   ├── routes/             # SvelteKit routes
+│   ├── lib/                # Shared components and utilities
+│   ├── app.html            # HTML template
+│   └── app.css             # Global styles
+├── static/                 # Static assets
+│   ├── images/             # Images and icons
+│   ├── fonts/              # Custom fonts
+│   └── favicon.png         # Site favicon
+├── tailwind.config.js      # Tailwind configuration
+└── svelte.config.js        # SvelteKit configuration
 ```
 
-## Developing
+## 🔗 Links
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- **Live Site**: [elberte.com](https://elberte.com)
+- **GitHub**: [github.com/oElberte](https://github.com/oElberte)
+- **LinkedIn**: [linkedin.com/in/elberte](https://linkedin.com/in/elberte)
