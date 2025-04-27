@@ -2,7 +2,7 @@
 	import { educations } from '$lib/data/education';
 </script>
 
-<section class="bg-purple-900 px-4 py-16 md:py-24">
+<section class="bg-purple-950 px-4 py-16 md:py-24">
 	<div class="mx-auto max-w-7xl">
 		<h2 class="mb-12 text-center text-3xl font-bold md:text-4xl">Education</h2>
 

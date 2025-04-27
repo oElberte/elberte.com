@@ -5,7 +5,6 @@
 	import Education from '$lib/components/sections/Education.svelte';
 	import Experience from '$lib/components/sections/Experience.svelte';
 	import Hero from '$lib/components/sections/Hero.svelte';
-	import Projects from '$lib/components/sections/Projects.svelte';
 	import TechStack from '$lib/components/sections/TechStack.svelte';
 </script>
 
@@ -23,7 +22,7 @@
 	<main class="flex-grow">
 		<Hero />
 		<Experience />
-		<Projects />
+		<!-- <Projects /> -->
 		<TechStack />
 		<Education />
 		<Contact />
