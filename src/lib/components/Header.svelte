@@ -83,7 +83,9 @@
 					>Contact</a
 				>
 				<a
-					href="/resume.pdf"
+					href="/elberte-plinio-cv.pdf"
+					target="_blank"
+					rel="noopener noreferrer"
 					class="rounded border border-purple-500 px-4 py-2 text-center transition-colors hover:bg-purple-500 hover:text-white"
 					>Resume</a
 				>
