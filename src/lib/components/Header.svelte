@@ -28,8 +28,10 @@
 	});
 </script>
 
-<header class="sticky top-0 z-50 border-b border-purple-700 px-4 py-4 backdrop-blur-xs md:px-6">
-	<div class="mx-auto flex max-w-7xl items-center justify-between">
+<header class="sticky top-0 z-50 border-b border-purple-700">
+	<div
+		class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 backdrop-blur-xs md:px-6"
+	>
 		<a href="/" class="text-xl font-bold">Elberte Plínio</a>
 
 		<!-- Desktop Navigation -->
@@ -61,7 +63,7 @@
 	{#if mobileMenuOpen}
 		<nav
 			transition:slide
-			class="absolute top-16 right-0 left-0 z-50 border-b border-purple-700 backdrop-blur-xs md:hidden"
+			class="absolute top-[3.80rem] right-0 left-0 z-50 border-b border-purple-700 backdrop-blur-xs md:hidden"
 		>
 			<div class="flex flex-col space-y-4 p-4">
 				<a href="#about" class="transition-colors hover:text-purple-300" onclick={closeMobileMenu}
