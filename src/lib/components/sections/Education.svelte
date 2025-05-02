@@ -4,7 +4,7 @@
 
 <section
 	id="education"
-	class="bg-purple-950 px-4 py-16 md:py-24"
+	class="bg-purple-900 px-4 py-16 md:py-24"
 	aria-labelledby="education-heading"
 >
 	<div class="mx-auto max-w-7xl">

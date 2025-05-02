@@ -18,7 +18,7 @@
 	);
 </script>
 
-<section id="contact" class="bg-purple-900 px-4 py-20" aria-labelledby="contact-heading">
+<section id="contact" class="bg-purple-950 px-4 py-20" aria-labelledby="contact-heading">
 	<div class="mx-auto max-w-3xl">
 		<h2 id="contact-heading" class="mb-16 text-center text-4xl font-bold">Get in Touch</h2>
 
