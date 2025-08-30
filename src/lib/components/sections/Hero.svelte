@@ -5,7 +5,7 @@
 <section id="about" class="px-4 py-20 text-center md:py-32" aria-labelledby="about-heading">
   <div class="mx-auto max-w-3xl">
     <h1 id="about-heading" class="mb-6 text-4xl font-bold md:text-6xl">
-      <span class="sr-only">Elberte Plínio - </span>Software Engineer
+      <span class="sr-only">Elberte Plínio - </span>Mobile Engineer
     </h1>
     <p class="mx-auto mb-10 max-w-2xl text-lg text-purple-300 md:text-xl" itemprop="description">
       Crafting digital experiences using cutting-edge technologies. Dedicated to designing sleek
@@ -14,7 +14,7 @@
 
     <!-- Social Links -->
     <div class="flex justify-center space-x-6">
-      {#each socialLinks as link}
+      {#each socialLinks as link (link.name)}
         <a
           href={link.url}
           target="_blank"

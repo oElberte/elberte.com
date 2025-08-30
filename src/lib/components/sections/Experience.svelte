@@ -10,7 +10,7 @@
 		</h2>
 
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-			{#each experiences as experience}
+			{#each experiences as experience (experience.company)}
 				<article class="flex flex-col" itemscope itemtype="https://schema.org/WorkPosition">
 					<a
 						href={experience.href}
@@ -35,7 +35,7 @@
 								<span itemprop="name">{experience.company}</span>
 							</p>
 							<div class="flex flex-wrap gap-2" itemprop="skills">
-								{#each experience.technologies as tech}
+								{#each experience.technologies as tech (tech)}
 									<span class="rounded bg-purple-800 px-2 py-1 text-xs"
 										>{TECHNOLOGIES[tech].name}</span
 									>
