@@ -1,6 +1,6 @@
 import gavresortsImage from '$lib/images/gavresorts.png';
 import musicplayceImage from '$lib/images/musicplayce.png';
-import zellorImage from '$lib/images/zellor.png';
+import farsoftImage from '$lib/images/farsoftsystems.png';
 import type { TECHNOLOGIES } from '$lib/types/technologies';
 
 export interface Experience {
@@ -15,7 +15,7 @@ export interface Experience {
 export const experiences: Experience[] = [
 	{
 		title: 'Tech Lead Mobile',
-		company: 'GAV Resorts - Project',
+		company: 'GAV Resorts',
 		image: gavresortsImage,
 		description: `Architected a Flutter app's integration with a distributed Nest.js/Go backend. I led a legacy system rebuild, achieving an 80% efficiency gain and 45% cost reduction, and executed a database migration from MongoDB to PostgreSQL that boosted query performance by 50%.`,
 		technologies: [
@@ -32,28 +32,26 @@ export const experiences: Experience[] = [
 	},
 	{
 		title: 'Mobile Engineer',
+		company: 'Farsoft Systems',
+		image: farsoftImage,
+		description: `Architected and led the large-scale full-stack migration of legacy CRM and ERP systems to a modern, scalable architecture, developing critical components and integrating diverse modules with REST APIs. This initiative applied DevOps practices to establish CI/CD pipelines.`,
+		technologies: [
+			'FLUTTER',
+			'SVELTE',
+			'TYPESCRIPT',
+			'GOLANG',
+			'AWS',
+			'POSTGRESQL',
+			'DOCKER',
+			'CICD'
+		]
+	},
+	{
+		title: 'Mobile Engineer',
 		company: 'MusicPlayce - Project',
 		image: musicplayceImage,
 		href: 'https://musicplayce.com',
 		description: `Developed and maintained full-stack software solutions for MusicPlayce, handling both mobile and web application components. Key projects included the core "MusicPlayce" mobile app for music streaming and discovery, and engineering a complementary web portal.`,
 		technologies: ['FLUTTER', 'FIREBASE', 'CLOUDFIRESTORE', 'GOLANG', 'GCP', 'DOCKER', 'CICD']
-	},
-	{
-		title: 'Software Engineer',
-		company: 'Zellor - Project',
-		image: zellorImage,
-		href: 'https://zellor.com',
-		description: `Developed and maintained full-stack software solutions, progressing from front-end focus to full-stack responsibilities. Key projects included the core "Zellor" portal and Shopify application.`,
-		technologies: [
-			'SVELTE',
-			'TYPESCRIPT',
-			'NESTJS',
-			'SHOPIFY',
-			'AWS',
-			'PRISMA',
-			'POSTGRESQL',
-			'DOCKER',
-			'CICD'
-		]
 	}
 ];
