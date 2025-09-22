@@ -14,7 +14,7 @@ export interface Experience {
 
 export const experiences: Experience[] = [
 	{
-		title: 'Tech Lead Mobile',
+		title: 'Mobile Engineer',
 		company: 'GAV Resorts',
 		image: gavresortsImage,
 		description: `Architected a Flutter app's integration with a distributed Nest.js/Go backend. I led a legacy system rebuild, achieving an 80% efficiency gain and 45% cost reduction, and executed a database migration from MongoDB to PostgreSQL that boosted query performance by 50%.`,
@@ -48,7 +48,7 @@ export const experiences: Experience[] = [
 	},
 	{
 		title: 'Mobile Engineer',
-		company: 'MusicPlayce - Project',
+		company: 'MusicPlayce',
 		image: musicplayceImage,
 		href: 'https://musicplayce.com',
 		description: `Developed and maintained full-stack software solutions for MusicPlayce, handling both mobile and web application components. Key projects included the core "MusicPlayce" mobile app for music streaming and discovery, and engineering a complementary web portal.`,
