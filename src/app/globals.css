@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0b0d;
+  --surface: #111113;
+  --surface-2: #17171a;
+  --foreground: #f2f2ef;
+  --muted: #9d9d98;
+  --line: rgba(242, 242, 239, 0.08);
+  --accent: #e0a35c;
+  --accent-soft: rgba(224, 163, 92, 0.14);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: #171310;
+}
+
+.logo-spark {
+  display: none;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .marquee-track {
+    animation: marquee 48s linear infinite;
+  }
+
+  .logo-spark {
+    display: block;
+    animation:
+      spark-travel 4.5s linear infinite,
+      spark-in 0.6s ease 1.6s forwards;
+  }
+
+  .logo-spark-rev {
+    animation:
+      spark-travel 4.5s linear infinite reverse,
+      spark-in 0.6s ease 1.6s forwards;
+  }
+}
+
+@keyframes spark-travel {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes spark-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
