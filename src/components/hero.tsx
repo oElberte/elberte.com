@@ -55,8 +55,7 @@ export function Hero() {
           className="mt-8 max-w-[52ch] text-base leading-relaxed text-muted md:text-lg"
         >
           I&apos;m Elberte Plínio, Flutter specialist and AI engineer. Five
-          years shipping high-scale apps for companies in Brazil, Ireland, and
-          beyond.
+          years shipping high-scale apps across Brazil, Europe, and the US.
         </motion.p>
         <motion.div
           {...item(0.4)}
