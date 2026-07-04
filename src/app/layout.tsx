@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -13,14 +14,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://elberte.com"),
   title: "Elberte Plínio | Flutter Specialist & AI Engineer",
   description:
     "Flutter specialist and AI engineer shipping high-scale mobile software. Creator of Pickforge.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Elberte Plínio",
     description:
       "Flutter specialist and AI engineer shipping high-scale mobile software. Creator of Pickforge.",
+    url: "/",
+    siteName: "Elberte Plínio",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Elberte Plínio",
+    description:
+      "Flutter specialist and AI engineer shipping high-scale mobile software. Creator of Pickforge.",
+    creator: "@ElbertePlinio",
   },
 };
 
@@ -44,6 +58,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         {children}
+        <Analytics />
         <div
           aria-hidden
           className="pointer-events-none fixed inset-0 z-50 opacity-[0.035]"
