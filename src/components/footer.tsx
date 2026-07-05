@@ -1,7 +1,7 @@
 const LINKS = [
-  { name: "GitHub", href: "https://github.com/oElberte" },
+  { name: "GitHub", href: "https://github.com/ElbertePlinio" },
   { name: "X", href: "https://x.com/ElbertePlinio" },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/oelberte/" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/ElbertePlinio/" },
   { name: "Pickforge", href: "https://pickforge.dev" },
 ];
 
