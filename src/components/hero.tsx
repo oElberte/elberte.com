@@ -10,11 +10,11 @@ import {
 import { Logo } from "./logo";
 
 const SOCIALS = [
-  { name: "GitHub", href: "https://github.com/oElberte", icon: GithubLogo },
+  { name: "GitHub", href: "https://github.com/ElbertePlinio", icon: GithubLogo },
   { name: "X", href: "https://x.com/ElbertePlinio", icon: XLogo },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/oelberte/",
+    href: "https://www.linkedin.com/in/ElbertePlinio/",
     icon: LinkedinLogo,
   },
 ];
